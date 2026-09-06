@@ -21,5 +21,4 @@ __pycache__/
 # Duplicated by data/public/ and out/tables/
 out/audit_log.jsonl
 data/interim/
-out/table*.csv
 out/pilot_s1.log

@@ -5,6 +5,7 @@ import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 sys.path.insert(0,"code")
 from common import FINAL, RAW, OUT
+FIG = OUT/"figures"; FIG.mkdir(exist_ok=True)
 from importlib import import_module
 bm_mod = None
 
@@ -65,8 +66,8 @@ for ax, b in zip(axes, [0,1,2]):
     ax.grid(alpha=.25, lw=.5)
 fig.suptitle("Figure 1. Rent-commute structure of the NYC listing universe, with Pareto frontiers",
              fontsize=12.5, y=1.02)
-fig.tight_layout(); fig.savefig(OUT/"figure1_pareto.png", dpi=170, bbox_inches="tight")
-print(f"\nsaved: {OUT/'figure1_pareto.png'}")
+fig.tight_layout(); fig.savefig(FIG/"figure1_pareto.png", dpi=170, bbox_inches="tight")
+print(f"\nsaved: {FIG/'figure1_pareto.png'}")
 
 print("\n=== Frontier size in the full universe, by bedroom type ===")
 for b in [0,1,2]:

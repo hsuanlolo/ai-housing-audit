@@ -326,7 +326,7 @@ Router validation against known routes (to Midtown): Grand Central 10.2 min, Wal
 
 The rent–commute correlations are the material result in this table. They are negative, as theory requires, but far from −1. Had they approached −1, rent and commute would collapse onto a single dimension and strict dominance would lose all discriminating power (design check B, §5.5).
 
-**Figure 1. Rent–commute structure of the listing universe, with Pareto frontiers, by bedroom count.** [`out/figure1_pareto.png`] Each panel plots all listings of one bedroom type on transit commute to Midtown against monthly rent. Highlighted points are the Pareto frontier: no listing in the sample is both cheaper and faster. Frontier sizes in the full universe are 8 of 546 studios (1.5%), 8 of 1,620 one-bedrooms (0.5%), and 13 of 1,081 two-bedrooms (1.2%). The scale of the dominated region is the visual statement of the paper's construct — and the reason P2 must be reported separately against the pool and against the universe (§6.1).
+**Figure 1. Rent–commute structure of the listing universe, with Pareto frontiers, by bedroom count.** [`out/figures/figure1_pareto.png`] Each panel plots all listings of one bedroom type on transit commute to Midtown against monthly rent. Highlighted points are the Pareto frontier: no listing in the sample is both cheaper and faster. Frontier sizes in the full universe are 8 of 546 studios (1.5%), 8 of 1,620 one-bedrooms (0.5%), and 13 of 1,081 two-bedrooms (1.2%). The scale of the dominated region is the visual statement of the paper's construct — and the reason P2 must be reported separately against the pool and against the universe (§6.1).
 
 **Table 5. Feasible-set descriptives across the 150 scenarios.**
 

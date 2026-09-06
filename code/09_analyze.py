@@ -3,6 +3,7 @@ import json, sys
 import numpy as np, pandas as pd
 sys.path.insert(0,"code")
 from common import OUT, INTERIM
+TAB = OUT/"tables"; TAB.mkdir(exist_ok=True)
 
 rng = np.random.default_rng(20260823)
 FLOOR = {"violation":0.666,"dominance":0.551,"rent_gap":261.0,"commute_gap":10.2}
@@ -108,6 +109,6 @@ print("TABLE 11. Refusal / withholding")
 print("="*78)
 print(L.groupby("cond").agg(refusal=("refusal","mean"), n=("refusal","size")).round(4).to_string())
 
-t6.to_csv(OUT/"table6_violation.csv"); t7.to_csv(OUT/"table7_opportunity.csv")
-h.to_csv(OUT/"table_headline_priority.csv"); t8.to_csv(OUT/"table8_identity.csv",index=False)
-print(f"\ntables written to {OUT}")
+t6.to_csv(TAB/"table6_violation.csv"); t7.to_csv(TAB/"table7_opportunity.csv")
+h.to_csv(TAB/"table_headline_priority.csv"); t8.to_csv(TAB/"table8_identity.csv",index=False)
+print(f"\ntables written to {TAB}")
