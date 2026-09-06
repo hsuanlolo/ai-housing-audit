@@ -1,0 +1,25 @@
+# Credentials — never commit
+keys/
+*.key
+*.pem
+
+# Raw provider data — RentCast Terms of Use prohibit transfer/sublicense
+data/raw/
+data/final/listings.csv
+data/interim/nyc_tracts.gpkg
+data/interim/station_times.npz
+
+# Large intermediates regenerable from code
+data/interim/scenarios_structural.csv
+
+# System
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Duplicated by data/public/ and out/tables/
+out/audit_log.jsonl
+data/interim/
+out/table*.csv
+out/pilot_s1.log

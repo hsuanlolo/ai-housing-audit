@@ -1,0 +1,93 @@
+{
+  "provenance": [
+    [
+      "rentcast_bronx_00000.json",
+      500
+    ],
+    [
+      "rentcast_brooklyn_00000.json",
+      500
+    ],
+    [
+      "rentcast_brooklyn_00500.json",
+      500
+    ],
+    [
+      "rentcast_brooklyn_01000.json",
+      500
+    ],
+    [
+      "rentcast_new_york_00000.json",
+      500
+    ],
+    [
+      "rentcast_new_york_00500.json",
+      500
+    ],
+    [
+      "rentcast_new_york_01000.json",
+      500
+    ],
+    [
+      "rentcast_queens_00000.json",
+      500
+    ],
+    [
+      "rentcast_queens_00500.json",
+      149
+    ],
+    [
+      "rentcast_staten_island_00000.json",
+      108
+    ]
+  ],
+  "cleaning_log": [
+    [
+      "raw records loaded",
+      4257
+    ],
+    [
+      "after dedupe on listing id",
+      4257
+    ],
+    [
+      "status Active",
+      4257
+    ],
+    [
+      "has coordinates",
+      4257
+    ],
+    [
+      "has bedrooms",
+      4190
+    ],
+    [
+      "has rent",
+      4190
+    ],
+    [
+      "rent within p1-p99 ($1,600-$13,533)",
+      4108
+    ],
+    [
+      "after dedupe on address|beds|rent",
+      4108
+    ],
+    [
+      "assigned to a NYC census tract (dropped 0 outside)",
+      4108
+    ],
+    [
+      "reachable by subway within 1200m walk (dropped 223)",
+      3885
+    ]
+  ],
+  "subway_coverage": {
+    "n": 4108,
+    "share_within_800m": 0.8907010710808179,
+    "share_within_1200m": 0.945715676728335,
+    "median_nearest_m": 321.99588493084536,
+    "p90_nearest_m": 834.0838303770112
+  }
+}
