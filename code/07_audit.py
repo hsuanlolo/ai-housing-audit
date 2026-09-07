@@ -115,7 +115,8 @@ def call(model, prompt, ceiling, retries=4):
     """Provider-routed, priced, ceiling-guarded. Retries only on rate limits."""
     for a in range(retries):
         try:
-            res = providers.call(model, prompt, ceiling, max_out=2200)
+            mo = 6000 if model.startswith('claude-') else 2200
+            res = providers.call(model, prompt, ceiling, max_out=mo)
         except providers.SpendCeilingExceeded:
             raise
         except Exception as e:

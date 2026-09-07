@@ -18,14 +18,29 @@ PRICES = {
     "gpt-5.6-terra":      (2.00, 0.20, 12.00),
     "gpt-5.6-sol":        (4.00, 0.40, 20.00),
     "openai/gpt-oss-120b":(0.00, 0.00, 0.00),   # Groq free tier
+    "claude-opus-5":      (5.00, 0.50, 25.00),
+    "claude-sonnet-5":    (3.00, 0.30, 15.00),
 }
-PROVIDER_OF = {m: ("groq" if m.startswith("openai/") else "openai") for m in PRICES}
+def _provider(m):
+    if m.startswith("openai/"): return "groq"
+    if m.startswith("claude-"): return "anthropic"
+    return "openai"
+PROVIDER_OF = {m: _provider(m) for m in PRICES}
 
 def _load():
     return json.loads(LEDGER.read_text()) if LEDGER.exists() else {"calls": [], "total_usd": 0.0}
 
 def spent():
     return _load()["total_usd"]
+
+def spent_on(provider):
+    """Per-provider spend. Budgets are held per vendor account, so a single
+    cross-provider total is the wrong guard: OpenAI spend must not consume an
+    Anthropic ceiling. This was found the hard way -- a cumulative $38 ceiling
+    aborted the Claude arm at $22.58 because $15.63 of unrelated OpenAI spend
+    counted against it."""
+    return round(sum(c["usd"] for c in _load()["calls"]
+                     if PROVIDER_OF.get(c["model"]) == provider), 6)
 
 def price(model, pt, ct, cached=0):
     pin, pcache, pout = PRICES[model]
@@ -43,10 +58,12 @@ def record(model, pt, ct, cached, usd):
 
 class SpendCeilingExceeded(RuntimeError): pass
 
-def check_ceiling(ceiling):
-    s = spent()
+def check_ceiling(ceiling, provider=None):
+    """Ceiling applies to one provider's account when given, else to the total."""
+    s = spent_on(provider) if provider else spent()
     if s >= ceiling:
-        raise SpendCeilingExceeded(f"spend ceiling hit: ${s:.4f} >= ${ceiling:.2f}")
+        label = f"{provider} " if provider else ""
+        raise SpendCeilingExceeded(f"{label}spend ceiling hit: ${s:.4f} >= ${ceiling:.2f}")
     return s
 
 # ---------------------------------------------------------------- OpenAI
@@ -79,10 +96,29 @@ def call_groq(model, prompt, max_out=2200):
                 in_tok=u["prompt_tokens"], out_tok=u["completion_tokens"], cached=0,
                 finish=d["choices"][0]["finish_reason"])
 
+# ---------------------------------------------------------------- Anthropic
+def call_anthropic(model, prompt, max_out=2200):
+    """Claude 5 family. NOTE: temperature/top_p are REMOVED on these models and
+    return a 400 if passed. Adaptive thinking is on by default on Opus 5; we
+    leave it at the default because the audit measures shipped behavior, not a
+    cost-tuned configuration."""
+    import anthropic
+    c = anthropic.Anthropic(api_key=load_key("anthropic"))
+    r = c.messages.create(model=model, max_tokens=max_out,
+                          messages=[{"role": "user", "content": prompt}])
+    txt = "".join(b.text for b in r.content if getattr(b, "type", "") == "text")
+    think = "".join(getattr(b, "thinking", "") or "" for b in r.content
+                    if getattr(b, "type", "") == "thinking")
+    u = r.usage
+    cached = getattr(u, "cache_read_input_tokens", 0) or 0
+    return dict(text=txt, reasoning=think, in_tok=u.input_tokens,
+                out_tok=u.output_tokens, cached=cached, finish=r.stop_reason)
+
 def call(model, prompt, ceiling, max_out=2200):
     """Priced, ledgered, ceiling-guarded model call."""
-    check_ceiling(ceiling)
-    fn = call_groq if PROVIDER_OF[model]=="groq" else call_openai
+    prov = PROVIDER_OF[model]
+    check_ceiling(ceiling, provider=prov)
+    fn = {"groq": call_groq, "anthropic": call_anthropic}.get(prov, call_openai)
     res = fn(model, prompt, max_out)
     if "error" in res: return res
     usd = price(model, res["in_tok"], res["out_tok"], res["cached"])

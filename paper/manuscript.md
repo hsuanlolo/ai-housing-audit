@@ -12,7 +12,7 @@
 
 Large language models are becoming the first point of contact for consumer search in domains where the stakes are material and the law is explicit. Existing audits of AI housing search establish that models steer users toward different neighborhoods depending on perceived racial identity, and that LLM re-rankers improve engagement on commercial listing platforms. Neither line of work can say what a user *loses* when a recommender overlooks a suitable option.
 
-We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we construct a candidate pool of 120 real rental listings with known rent, bedroom count, and GTFS-computed transit commute, compute the exact set satisfying the user's stated hard constraints, and derive its Pareto frontier. We measure what four architectures return under four identity conditions that hold the request and the pool fixed and vary only an identity cue. Primary outcomes are free of any assumed utility function: confirmed constraint violation, **strict dominance** (a recommendation beaten on rent *and* commute *and* size by another listing in the same pool), and cost gaps in dollars and minutes. Inference is by within-scenario randomization. We report 6,120 calls across two OpenAI models.
+We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we construct a candidate pool of 120 real rental listings with known rent, bedroom count, and GTFS-computed transit commute, compute the exact set satisfying the user's stated hard constraints, and derive its Pareto frontier. We measure what four architectures return under four identity conditions that hold the request and the pool fixed and vary only an identity cue. Primary outcomes are free of any assumed utility function: confirmed constraint violation, **strict dominance** (a recommendation beaten on rent *and* commute *and* size by another listing in the same pool), and cost gaps in dollars and minutes. Inference is by within-scenario randomization. We report **6,835 calls across three models and two vendors**, for a total API cost of US$47.61.
 
 **Constraint compliance is near-perfect.** Direct prompting violates a stated hard constraint on 1.8% of recommendations against a 66.6% random-selection floor; over-budget violations occur on 0.08%. Deterministic pre-filtering eliminates them entirely, by construction.
 
@@ -20,9 +20,9 @@ We audit AI housing recommendation against a verifiable ground truth. For each o
 
 **Models do not honor stated preference orderings.** When users state that rent is their highest priority, recommendations average **+$624/month** (median +$550) above the cheapest suitable listings shown — roughly **$7,500 per year**. When users state commute is the priority, the gap is −$260. The models weight proximity above the user's declared ranking. We term this **preference infidelity**: hard constraints are respected while the stated preference ordering is not.
 
-**Increasing model capability did not help.** On 60 common scenarios, a flagship model costing 17× more per token produced statistically indistinguishable results (dominance 39.4% vs 37.6%; rent gap +$649 vs +$621).
+**The finding replicates across vendors, and capability does not fix it.** We audited three models spanning a 45x range in price per token — `gpt-5.6-luna`, `gpt-5.6-sol` (OpenAI) and `claude-opus-5` (Anthropic). The rent-first gap is **+$700, +$699 and +$702** respectively, agreeing to within $3. Paired within-scenario contrasts on the rent-first condition are statistically indistinguishable (difference <= $3, p >= 0.86), though Claude is modestly better on general dominance (34.3% vs 39.4%, p=0.0001). We present this as evidence of a shared failure mode rather than a model ranking.
 
-**No identity-conditioned disparity was detected.** Zero of 36 pre-specified contrasts survive Benjamini–Hochberg correction; the largest is −$17/month for voucher disclosure (p=0.25). Between-condition variance is smaller than replicate noise for every primary outcome, so under our pre-specified rule we report no effect. Refusal and information-withholding rates were 0.0% in all conditions. This null holds for ranking over a fixed candidate pool and does not license claims about open-ended recommendation, where prior work has found steering.
+**Almost no identity-conditioned disparity was detected.** Of 48 pre-specified contrasts across three models, 47 return null after Benjamini–Hochberg correction. The single exception — voucher disclosure lowering Claude's rent gap by $27.60/month — favors the user, is 4% of the preference-infidelity gap, and falls below replicate noise under our pre-specified variance rule; we report it as an observation warranting replication, not a finding. Between-condition variance is smaller than replicate noise for every primary outcome, so under our pre-specified rule we report no effect. Refusal and information-withholding rates were 0.0% in all conditions. This null holds for ranking over a fixed candidate pool and does not license claims about open-ended recommendation, where prior work has found steering.
 
 Conventional ranking metrics cannot surface preference infidelity, because they score a returned list against itself. We propose dominance-rate instrumentation as a deployable diagnostic and release all code, prompts, and per-call results.
 
@@ -609,6 +609,47 @@ The flagship model is statistically indistinguishable from the budget tier on ev
 
 We state this conservatively: **within the tested scenarios, increasing model capability did not reduce opportunity loss.** Two models from one vendor, with the flagship run on a 720-call subsample, cannot establish that the behavior is structural or that no more capable model would improve it. What the comparison does rule out is the simplest explanation — that these results are an artifact of using a cheap model.
 
+### 8.7 Cross-vendor replication
+
+To test whether these results reflect one vendor's post-training rather than a general property of frontier recommenders, we ran `claude-opus-5` (Anthropic) on S1 across the same 60 scenarios x 4 identity conditions x 3 replicates: 720 calls, 715 parsed, US$31.98.
+
+**Table 13. Cross-vendor comparison, S1 direct, 60 common scenarios.**
+
+| Model | Vendor | n | Violation | Dominance | Rent gap | Refusal | $/call |
+|---|---|---|---|---|---|---|---|
+| gpt-5.6-luna | OpenAI | 706 | 1.7% | 37.6% | +$621 | 0.0% | $0.001 |
+| gpt-5.6-sol | OpenAI | 698 | 1.5% | 39.4% | +$649 | 0.0% | $0.015 |
+| claude-opus-5 | Anthropic | 715 | 1.6% | 34.3% | +$571 | 0.0% | $0.045 |
+| *S_rand floor* | — | — | *66.6%* | *55.1%* | *+$261* | — | — |
+
+**Table 14. Preference infidelity by stated priority — replication.**
+
+| User's stated priority | gpt-5.6-luna | gpt-5.6-sol | claude-opus-5 |
+|---|---|---|---|
+| **"Rent matters most"** | **+$700** | **+$699** | **+$702** |
+| "Location matters most" | +$1,121 | +$1,104 | +$985 |
+| "Commute matters most" | −$353 | −$237 | −$344 |
+
+Two vendors, three models, a **45x range in price per token**, and the rent-first gap agrees to within $3.
+
+**Table 16. Paired model contrasts (within scenario, 10,000 permutations, n=60).**
+
+| Contrast | Dominance | Rent gap (all) | Rent gap (rent-first only) |
+|---|---|---|---|
+| claude-opus-5 − gpt-5.6-luna | −0.034 (p=.004) | −$55 (p=.052) | **−$1.3 (p=.96)** |
+| claude-opus-5 − gpt-5.6-sol | −0.052 (p=.0001) | −$72 (p=.017) | **+$1.3 (p=.86)** |
+| gpt-5.6-sol − gpt-5.6-luna | +0.018 (p=.091) | +$17 (p=.457) | **−$2.6 (p=.92)** |
+
+The pattern in Table 16 is the substantive result, and it is not a ranking. `claude-opus-5` is modestly but reliably better on *general* dominance and on the pooled rent gap. **On the rent-first condition — the specific failure this paper documents — the three models are statistically indistinguishable, with paired differences of $1–3 and p >= 0.86.** The differences appear where we make no claim and vanish where our claim lives.
+
+We therefore decline to present a model ranking, for three reasons. A ranking invites the inference that the better-scoring model solves the problem, when `claude-opus-5` still returns a dominated listing on 34.3% of recommendations against an ideal of zero. Rankings over specific snapshots expire on vendor deprecation timelines while the failure mode does not. And three models under one set of conditions is an audit, not a benchmark — establishing that a phenomenon generalizes is a different claim from establishing which system is best.
+
+The comparison earns its place instrumentally: it forecloses the two most natural objections to §8.3 and §8.5 — that the finding is specific to one lab's post-training, and that a more capable model would fix it. Neither survives. Cost per call spans 45x across these three models with no corresponding improvement in preference fidelity.
+
+**Identity contrasts replicate as null.** Of 12 pre-specified contrasts on `claude-opus-5`, 11 return null after Benjamini–Hochberg correction, and refusal/withholding is again exactly 0.0% in all four conditions — notable given the reputation of Anthropic's models for cautious handling of protected-attribute prompts. H4b is rejected on both vendors.
+
+**One contrast survives correction, and we report it as an observation rather than a finding.** Voucher disclosure reduces Claude's rent gap by **$27.60/month** (p=0.0007, BH-adjusted p=0.0021) — the only surviving effect among the 48 identity contrasts run in this study. Three considerations bound its interpretation. First, the direction favors the user: cheaper recommendations for a voucher holder is consistent with the *lawful adaptation* that §4.3 was designed to distinguish from service degradation, not with steering. Second, the magnitude is 4% of the preference-infidelity gap it sits beside. Third, and decisive under our own protocol, the between-condition variance component (252.7) remains far below replicate noise (6,509), so the interpretive rule pre-specified in §7.4 directs us not to report it as systematic bias. We record it as warranting replication, and apply the rule as written rather than relaxing it because a result finally emerged.
+
 ### 8.6 Robustness
 
 Parse failures (3.3%) were distributed across identity conditions without evident pattern; because a truncation-driven missingness correlated with treatment would confound §8.4, this was monitored deliberately after an earlier pilot exhibited exactly that failure (Appendix C). Pool size was exactly 120 for all 150 scenarios. Replicate-level variance is reported in Table 10 and dominates the identity signal.
@@ -636,7 +677,7 @@ This suggests treating them as distinct evaluation targets. Constraint complianc
 1. **Enforce verifiable constraints in code, and do not expect it to fix ranking.** S3 works exactly as advertised on constraints and barely at all on opportunity loss. Shipping constraint-first and declaring the problem solved would be a mistake this study directly warns against.
 2. **Instrument the dominance rate of what you return against what you retrieved.** It is computable online wherever a feasible set exists, needs no labels and no judge model, and would have surfaced everything reported here. This is the single cheapest addition to a recommendation stack that detects this failure class.
 3. **Test whether stated preference orderings are honored, not just whether constraints are met.** Our scenarios differ only in one sentence declaring a priority; the models' behavior barely responds to it. A minimal eval — vary the stated priority, hold everything else fixed, measure whether the returned distribution shifts — is cheap and, on this evidence, will fail more often than teams expect.
-4. **Do not assume the flagship fixes it.** Capability upgrades are the default response to quality complaints. Here they bought nothing.
+4. **Do not assume the flagship or a different vendor fixes it.** Capability upgrades and vendor switches are the two default responses to quality complaints. Across a 45x price range and two vendors, the rent-first gap moved by $3. Whatever produces this behavior is addressed by neither lever.
 5. **Report quality-of-service parity in user-denominated units.** Dollars and minutes across matched profiles are more auditable than group-level metric parity — and, as §8.4 shows, capable of returning an honest null.
 
 ### 9.4 What we could not determine, and the experiment that would
@@ -685,7 +726,9 @@ These models are good at the part of the task that is easy to specify. They read
 
 They are considerably worse at the part that matters. Two in five recommendations are strictly dominated by a listing on the same screen, typically by $900 a month and three and a half minutes at once. Users who say plainly that rent is what they care about are shown apartments averaging $624 a month more than the cheapest suitable ones available — about $7,500 over a lease. Hard constraints bind; stated preferences do not. Deterministic pre-filtering removes every constraint violation and 11% of the opportunity loss. A flagship model costing seventeen times more per token removes none of it.
 
-Changing only an identity cue changed nothing we could detect, across 36 pre-specified contrasts and 150 matched scenarios, with the variation from re-asking the same question exceeding the variation from changing who was asking. We report that as a null rather than a reassurance: our design hands the model its choice set, and the freedom that produced steering in earlier studies is precisely the freedom we removed.
+The number survives a change of vendor. Auditing Anthropic's flagship on the same scenarios returns a rent-first gap of $702 against OpenAI's $700 and $699 — three models, a forty-five-fold spread in price, and a three-dollar disagreement. Whatever causes this is not one laboratory's habit.
+
+Changing only an identity cue changed almost nothing we could detect, across 48 pre-specified contrasts and 150 matched scenarios, with the variation from re-asking the same question exceeding the variation from changing who was asking. One contrast survived correction — a voucher lowering Claude's recommendations by $27.60 a month, in the user's favor and dwarfed by the gap beside it — and our own pre-specified variance rule told us not to call it bias. We followed the rule. We report that as a null rather than a reassurance: our design hands the model its choice set, and the freedom that produced steering in earlier studies is precisely the freedom we removed.
 
 The methodological claim we would most like to see travel is the smaller one. Wherever a feasible set can be enumerated, it is possible to ask not only whether a recommendation was good but whether a better one was sitting in the same list — and to answer in dollars, without assuming anything about what the user wanted. That question is cheap to instrument, it is invisible to the metrics currently used to govern these systems, and in this domain the answer costs renters real money.
 
@@ -822,7 +865,9 @@ SDK `openai` 2.2.0, Python 3.8.8. Temperature at provider default; `max_completi
 3. **2026-08-25 — studio pool slot redistribution.** An under-bedroom violation is undefined for studios, leaving all 50 studio scenarios at 93 rather than 120 listings and confounding pool size with bedroom count. Unusable slots redistributed 40/0/40. §4.4.
 4. **2026-08-25 — `why` capped at 12 words, `max_tokens` raised.** A pilot on an open-weight model showed 26% parse failure from mid-JSON truncation. Because response verbosity may covary with the identity cue, the resulting missingness would have been correlated with treatment. The affected pilot data were discarded rather than merged.
 5. **2026-08-25 — pool order fixed per scenario rather than per call.** Required for prompt caching, and methodologically preferable: order is identical across the four identity conditions (so it cannot confound the contrast) while varying across scenarios (so no aggregate position bias).
-6. **2026-09-06 — title and framing revised post-hoc** after the identity contrasts returned a null. Primary outcomes, analysis models, and the §7.4 interpretive rule were not changed; only the paper's emphasis was.
+6. **2026-09-06 — spend ledger corrected from cumulative to per-provider.** The ceiling summed spend across vendors, so US$15.63 of OpenAI spend counted against the Anthropic ceiling and aborted the Claude arm at 509 of 720 calls. Budgets are held per vendor account; the guard now tracks per provider. The run was resumed and completed; no data were affected.
+7. **2026-09-06 — `max_tokens` raised to 6,000 for Claude models** (see above). Applies to the Claude arm only; the OpenAI arms ran at 2,200.
+8. **2026-09-06 — title and framing revised post-hoc** after the identity contrasts returned a null. Primary outcomes, analysis models, and the §7.4 interpretive rule were not changed; only the paper's emphasis was.
 
 ## Appendix D. Reproduction and outstanding work
 

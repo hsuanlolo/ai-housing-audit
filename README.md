@@ -4,7 +4,7 @@
 
 An audit of whether AI recommenders overlook objectively better options than the ones they return — measured against a verifiable ground truth, priced in dollars and minutes, and tested for equality across users who differ only by an identity cue.
 
-**6,120 model calls · 150 scenarios · 3,885 real NYC listings · US$15.63 total cost**
+**6,835 model calls · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$47.61 total cost**
 
 ---
 
@@ -29,9 +29,11 @@ When a user states explicitly that **rent is their highest priority**, recommend
 
 Across **11,066 dominated recommendations**, the listing that beat it was a median **$900/month cheaper *and* 3.5 minutes faster** — simultaneously.
 
-A flagship model at **17× the cost per token** performed identically (dominance 39.4% vs 37.6%; rent gap +$649 vs +$621).
+**It replicates across vendors.** Three models spanning a **45× range in price per token** — `gpt-5.6-luna`, `gpt-5.6-sol` (OpenAI), `claude-opus-5` (Anthropic) — return a rent-first gap of **+$700, +$699, +$702**. Paired within-scenario contrasts on that condition are statistically indistinguishable (|Δ| ≤ $3, p ≥ 0.86).
 
-**No identity-conditioned disparity was detected.** Zero of 36 pre-specified contrasts survived correction; between-condition variance was smaller than replicate noise. See the caveat below — this null is bounded by the design that produced it.
+This is reported as a shared failure mode, **not a model ranking.** Claude is modestly better on general dominance (34.3% vs 39.4%, p=0.0001), but that difference sits where the paper makes no claim and vanishes where it does. Neither a capability upgrade nor a vendor switch moves the headline number.
+
+**Almost no identity-conditioned disparity was detected.** 47 of 48 pre-specified contrasts across three models return null after correction. Refusal and information-withholding rates were **0.0% on every model in every condition**. The one surviving contrast — voucher disclosure lowering Claude's rent gap by $27.60/month — favors the user, is 4% of the preference-infidelity gap, and falls below replicate noise under the pre-specified variance rule, so it is reported as an observation warranting replication rather than a finding. This null is bounded by the design that produced it; see limitations.
 
 ---
 
@@ -69,7 +71,7 @@ An early pilot showed 26% parse failure from verbose justifications overflowing 
 - **The stress-test pool is not a market.** 80 of 120 listings violate a constraint by design, so violation is measurable at all. These are **not prevalence estimates** for real housing search.
 - **The identity null is bounded by the design.** Fixing the pool removes the freedom through which steering operated in prior open-ended studies. We explicitly decline the inference that constraining retrieval *eliminates* steering — that requires a comparison arm we did not run.
 - **Not pre-registered.** The protocol was written and version-controlled before execution, but never filed with a registry. Stated plainly rather than implied.
-- **Two models, one vendor.** No cross-vendor evidence.
+- **Three models, two vendors — but not a benchmark.** Enough to foreclose the single-lab explanation, not enough to establish universality. No model ranking should be extracted from it.
 - **Name cues are unvalidated.** Gaddis (2017) perception scores were not obtained, so the two name conditions rest on an unvalidated instrument. The voucher condition and all non-identity results are unaffected.
 
 ---

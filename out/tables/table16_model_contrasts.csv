@@ -1,0 +1,10 @@
+metric,contrast,obs,p,n
+dominance,claude-opus-5 - gpt-5.6-luna,-0.03400589225589224,0.004,60
+dominance,claude-opus-5 - gpt-5.6-sol,-0.05172769360269359,0.0001,60
+dominance,gpt-5.6-sol - gpt-5.6-luna,0.017721801346801347,0.0906,60
+rent_gap,claude-opus-5 - gpt-5.6-luna,-54.786123737373735,0.0517,60
+rent_gap,claude-opus-5 - gpt-5.6-sol,-72.04992424242424,0.0168,60
+rent_gap,gpt-5.6-sol - gpt-5.6-luna,17.263800505050515,0.4572,60
+violation,claude-opus-5 - gpt-5.6-luna,-0.0015656565656565647,0.6203,60
+violation,claude-opus-5 - gpt-5.6-sol,0.0007777777777777786,0.4982,60
+violation,gpt-5.6-sol - gpt-5.6-luna,-0.002343434343434343,0.3672,60

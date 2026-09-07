@@ -1,0 +1,23 @@
+building candidate pools ...
+pools built: 60
+tasks: 708   already done: 12   ceiling $38.0
+spend ledger: $16.2140 across 5929 calls
+   gpt-5.6-luna            5219 calls  $5.1011
+   gpt-5.6-sol              698 calls  $10.5316
+   claude-opus-5             12 calls  $0.5813
+  50/708  ok=50  $18.273
+  100/708  ok=100  $20.487
+  150/708  ok=150  $22.740
+  200/708  ok=200  $24.974
+  250/708  ok=249  $27.361
+  300/708  ok=298  $29.296
+  350/708  ok=348  $31.542
+  400/708  ok=397  $33.720
+  450/708  ok=447  $35.887
+!! spend ceiling hit: $38.0272 >= $38.00
+
+done in 22.4 min   494/497 parsed
+spend ledger: $38.2174 across 6423 calls
+   gpt-5.6-luna            5219 calls  $5.1011
+   gpt-5.6-sol              698 calls  $10.5316
+   claude-opus-5            506 calls  $22.5846
