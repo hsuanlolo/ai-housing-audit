@@ -1,4 +1,4 @@
-# Obeying the Rules, Missing the Point: Preference Infidelity and Priced Opportunity Loss in AI Housing Recommendation
+# Following the Preference, Missing the Optimum: Compliance Without Optimization in AI Housing Recommendation
 
 **Author(s).** Hsuan Lo. [Affiliation]. Correspondence: jimmylo0827@gmail.com
 
@@ -12,21 +12,25 @@
 
 Large language models are becoming the first point of contact for consumer search in domains where the stakes are material and the law is explicit. Existing audits of AI housing search establish that models steer users toward different neighborhoods depending on perceived racial identity, and that LLM re-rankers improve engagement on commercial listing platforms. Neither line of work can say what a user *loses* when a recommender overlooks a suitable option.
 
-We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we construct a candidate pool of 120 real rental listings with known rent, bedroom count, and GTFS-computed transit commute, compute the exact set satisfying the user's stated hard constraints, and derive its Pareto frontier. We measure what four architectures return under four identity conditions that hold the request and the pool fixed and vary only an identity cue. Primary outcomes are free of any assumed utility function: confirmed constraint violation, **strict dominance** (a recommendation beaten on rent *and* commute *and* size by another listing in the same pool), and cost gaps in dollars and minutes. Inference is by within-scenario randomization. We report **6,835 calls across three models and two vendors**, for a total API cost of US$47.61.
+We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we construct a candidate pool of 120 real rental listings with known rent, bedroom count, and GTFS-computed transit commute, compute the exact set satisfying the user's stated hard constraints, and derive its Pareto frontier. We measure what four architectures return under four identity conditions that hold the request and the pool fixed and vary only an identity cue. Primary outcomes are free of any assumed utility function: confirmed constraint violation, **strict dominance** (a recommendation beaten on rent *and* commute *and* bedroom count by another listing in the same pool; floor area is not used), and cost gaps in dollars and minutes. Inference is by within-scenario randomization. We report **6,840 attempted calls (6,631 parsed) across three models and two vendors**, for a total API cost of US$47.61.
 
 **Constraint compliance is near-perfect.** Direct prompting violates a stated hard constraint on 1.8% of recommendations against a 66.6% random-selection floor; over-budget violations occur on 0.08%. Deterministic pre-filtering eliminates them entirely, by construction.
 
-**Opportunity loss is large and priced.** 39.0% of recommendations are strictly dominated by a listing the model was shown. Across 11,066 dominated recommendations the dominating listing is a median **$900/month cheaper and 3.5 minutes faster**. Mean rent gap against the oracle is **+$498/month**, versus **+$261** for uniform random selection — on price specifically, the model underperforms chance, though its overall dominance rate (39.0%) remains well below the random floor (55.1%).
+**Opportunity loss is large and priced.** 39.0% of recommendations are strictly dominated by a listing the model was shown; across 11,066 dominated recommendations the dominating listing is a median **$900/month cheaper and 3.5 minutes faster**. Mean rent gap against the oracle is **+$498/month** versus **+$261** for uniform random selection — on price specifically the model underperforms chance, though its dominance rate stays well below the 55.1% random floor.
 
-**Models do not honor stated preference orderings.** When users state that rent is their highest priority, recommendations average **+$624/month** (median +$550) above the cheapest suitable listings shown — roughly **$7,500 per year**. When users state commute is the priority, the gap is −$260. The models weight proximity above the user's declared ranking. We term this **preference infidelity**: hard constraints are respected while the stated preference ordering is not.
+**A robustness arm separates what travels from what does not.** Varying pool size and infeasible share, the dominance *rate* ranges from 17.6% to 51.1% and tracks the number of feasible listings almost mechanically — it is substantially an artifact of sampling parameters and must always be quoted with its configuration. The *rent gap* moves only between +$518 and +$564 over the same range. We therefore treat the dollar-denominated measure, not the rate, as the transportable quantity.
+
+**Models honor stated preferences but do not optimize.** A within-scenario manipulation — same pool, same ordering, one fixed rent oracle, one sentence changed — moves the median recommended rent by **$646/month** and the median commute by **12.3 minutes** in the correct direction (p < 0.0001). Responsiveness is high. Yet under "rent matters most" the recommendations still sit **+$606/month above the five cheapest feasible listings in the same pool**, and an unambiguous lexicographic instruction produces **no improvement at all** (+$611 vs +$606, p = 0.70). The residual gap is therefore not a prompt-clarity problem. We characterize it as **compliance without optimization**.
+
+**The gap scales with candidate-set size, and the limitation binds early.** With filtering removed and only feasible listings shown, the share of responses containing the single cheapest available listing falls from **93.7% at ten candidates to 53.5% at eighty**, and the rent gap rises from +$111 to +$419, plateauing above forty. The model responds correctly to the stated priority but fails to execute the resulting optimization reliably over a large candidate set. We do not claim to isolate the mechanism.
 
 **The finding replicates across vendors, and capability does not fix it.** We audited three models spanning a 45x range in price per token — `gpt-5.6-luna`, `gpt-5.6-sol` (OpenAI) and `claude-opus-5` (Anthropic). The rent-first gap is **+$700, +$699 and +$702** respectively, agreeing to within $3. Paired within-scenario contrasts on the rent-first condition are statistically indistinguishable (difference <= $3, p >= 0.86), though Claude is modestly better on general dominance (34.3% vs 39.4%, p=0.0001). We present this as evidence of a shared failure mode rather than a model ranking.
 
 **Almost no identity-conditioned disparity was detected.** Of 48 pre-specified contrasts across three models, 47 return null after Benjamini–Hochberg correction. The single exception — voucher disclosure lowering Claude's rent gap by $27.60/month — favors the user, is 4% of the preference-infidelity gap, and falls below replicate noise under our pre-specified variance rule; we report it as an observation warranting replication, not a finding. Between-condition variance is smaller than replicate noise for every primary outcome, so under our pre-specified rule we report no effect. Refusal and information-withholding rates were 0.0% in all conditions. This null holds for ranking over a fixed candidate pool and does not license claims about open-ended recommendation, where prior work has found steering.
 
-Conventional ranking metrics cannot surface preference infidelity, because they score a returned list against itself. We propose dominance-rate instrumentation as a deployable diagnostic and release all code, prompts, and per-call results.
+Conventional deployment metrics cannot surface this failure, because they score a returned list against itself or against a judge sharing the ranker's priors. We propose dominance-rate instrumentation as a deployable diagnostic and release all code, prompts, and per-call results.
 
-**Keywords:** algorithm auditing; large language models; recommender systems; preference fidelity; opportunity cost; fair housing; algorithmic fairness
+**Keywords:** algorithm auditing; large language models; recommender systems; constrained optimization; opportunity cost; fair housing; algorithmic fairness
 
 ---
 
@@ -52,7 +56,7 @@ Housing is, to our knowledge, the only consumer search domain that satisfies thr
 
 We exploit all three. Our contribution is not the observation that AI recommenders omit things, which is established, nor that they steer, which is established. It is that **the omission has a measurable price, that the price can be computed without assuming a utility function, and that it can be tested for equality across identity conditions while holding the request and the inventory fixed.** The sentence this design licenses, and that no prior work can produce, has the form: *holding the request and the candidate inventory constant and changing only an identity cue, recommendations shift by $X per month and Y minutes of commute, and Z% of what is recommended is strictly dominated by something the system also saw.*
 
-The methodological core is the **strict-dominance rate**. A recommended listing is strictly dominated if the candidate pool contains another listing that is cheaper, has a shorter commute, and is no smaller. Dominance requires no weights, no scoring function, and no claim about what the user values; it is a statement about the choice set alone. This matters because the standard objection to opportunity-loss claims — that the researcher's utility function is assumed rather than measured — does not apply to a Pareto comparison. We retain a weighted score as a secondary robustness exhibit only, and no headline claim depends on it.
+The methodological core is the **strict-dominance rate**. A recommended listing is strictly dominated if the candidate pool contains another listing that is cheaper, has a shorter commute, and has no fewer bedrooms. Floor area is missing for 39% of records and is not used. Dominance requires no weights, no scoring function, and no claim about what the user values; it is a statement about the choice set alone. This matters because the standard objection to opportunity-loss claims — that the researcher's utility function is assumed rather than measured — does not apply to a Pareto comparison. We retain a weighted score as a secondary robustness exhibit only, and no headline claim depends on it.
 
 We also treat as a first-class outcome something prior work has noted only in passing: **information withholding**. Models that have been tuned to avoid fair-housing violations may decline to discuss neighborhood characteristics at all. If a guardrail reduces steering while also withholding information the renter legitimately needs, that is a design trade-off developers must price, not a success. We measure it.
 
@@ -139,14 +143,14 @@ A deployed product — ChatGPT with browsing, Perplexity, the Gemini app, an in-
 
 Because our research questions concern **ranking behavior over a known choice set**, our main study fixes the candidate pool and calls models through APIs at pinned snapshots. We recover internal validity and reproducibility, and we give up the claim that our numbers describe any shipped product. Section 10 states this limitation in the terms it deserves.
 
-**Main study — API models (as executed).** Two OpenAI models spanning a wide capability and price range:
+**Main study — API models (as executed).** Three models across two vendors, spanning a 45x range in price per token:
 
 | Role | Model | Calls | Rationale |
 |---|---|---|---|
 | Budget tier | `gpt-5.6-luna` | 5,400 (full grid) | $0.20/$1.20 per MTok. Cheap enough to run the complete 150 × 4 × 3 × 3 design, which the identity contrasts require for power. |
 | Flagship tier | `gpt-5.6-sol` | 720 (S1, 60 scenarios) | $4.00/$20.00 per MTok — 17× the cost. Tests whether capability reduces opportunity loss (§8.5). |
 
-This is a **within-vendor capability comparison, not a cross-vendor design.** We state the limitation plainly: both models share a training lineage, so nothing here rules out that the behavior is specific to one lab's post-training. A cross-vendor arm was scoped at ~US$62 and deferred on budget grounds; it is the second-priority extension after §9.4. Total spend for the audit reported here was US$15.63.
+`claude-opus-5` (Anthropic, $5.00/$25.00 per MTok) was added on S1 across the same 60 scenarios as `gpt-5.6-sol`, giving both a capability-tier comparison *within* a vendor and a flagship comparison *across* vendors (§8.7). Total spend was US$47.61. This is still not a benchmark: three models under one set of conditions establishes that the phenomenon generalizes, not which system is best, and §8.7 deliberately declines to present a ranking.
 
 Exact model identifiers, SDK versions and call dates are in Appendix C. Temperature is at provider default rather than 0, because deployment is stochastic and a single greedy draw cannot separate model bias from sampling noise; we take three replicates per cell and report within-cell variance (§7.4, Table 10).
 
@@ -210,9 +214,10 @@ Pool order is randomized **once per scenario** and held identical across that sc
 | Main grid | `gpt-5.6-luna` | 150 scenarios × 4 conditions × 3 architectures (S1,S2,S3) × 3 replicates | 5,400 |
 | Capability tier | `gpt-5.6-sol` | 60 scenarios × 4 conditions × S1 × 3 replicates | 720 |
 | Chance floor | S_rand | 150 scenarios × 200 draws, computed offline | — |
-| **Total API calls** | | | **6,120** |
+| Cross-vendor | `claude-opus-5` | 60 scenarios × 4 conditions × S1 × 3 replicates | 720 |
+| **Total attempted** | | | **6,840** |
 
-5,916 (96.7%) yielded parseable output with at least one valid listing id. Realized cost **US$15.63** at ~3,100 input and ~620 output tokens per call.
+6,631 of 6,840 (97.0%) yielded parseable output with at least one valid listing id. Realized cost **US$47.61**.
 
 **Specified but not executed in this version**, and reported nowhere in Section 8: the S0 BM25 baseline; the commute-hidden arm; prompt-wording variants; top-*k* sensitivity; the N ∈ {60, 120} pool-density arm; and the consumer-product probe. The pool-density arm matters most of these, because §6.1 identifies pool size as the principal sensitivity of the dominance measure; until it is run, the absolute level of P2a should be read as conditional on N = 120. These are the first items in any revision.
 
@@ -234,7 +239,7 @@ Cleaning: deduplication on an (address, bedrooms, rent) fingerprint; retention o
 
 ### 5.2 Commute matrix
 
-Transit travel times are computed with a purpose-built time-dependent search over the MTA static GTFS feed (implemented in Python; no external routing engine), from each listing centroid to each of three workplace anchors — Midtown Manhattan, Downtown Manhattan/Financial District, and Downtown Brooklyn — at a fixed departure of 08:00 on a representative weekday. Approximately 4,000 × 3 = 12,000 routings.
+Transit travel times are computed with a purpose-built time-dependent search over the MTA static GTFS feed (implemented in Python; no external routing engine), from each listing centroid to each of three workplace anchors — Midtown Manhattan, Downtown Manhattan/Financial District, and Downtown Brooklyn — under an arrive-by constraint of 09:00 on a representative weekday. Approximately 4,000 × 3 = 12,000 routings.
 
 Departure time is fixed rather than varied because no hypothesis concerns time-of-day variation, and three anchors are used rather than the larger set initially contemplated for the same reason. Walk access to and from stops is computed as straight-line distance with a 1.3 detour factor at 4.8 km/h rather than routed over the street network, within a **1,200 m** access radius. The radius was set empirically rather than by convention. At the literature-standard 800 m, 11% of listings fall outside walking range of any station, and those listings are **$600/month cheaper at the median** and concentrated in Queens (28.7% of the excluded versus 13.2% of the retained), Staten Island (14.0% versus 1.1%) and the Bronx (19.8% versus 11.0%) — that is, the filter removes precisely the cheap, bus-dependent outer-borough inventory that a study of rent gaps cannot afford to lose. Widening to 1,200 m retains 94.6% of listings while moving the median commute only from 30.0 to 30.4 minutes. The 800 m universe is reported as a robustness check. Buses remain excluded; this is the residual cost of that exclusion, and it is measured rather than assumed.
 
@@ -246,7 +251,7 @@ ACS 5-year estimates at census-tract level: median household income, median gros
 
 ### 5.4 Coverage benchmark
 
-New York's rental market transacts substantially through StreetEasy and REBNY channels rather than MLS syndication, so a syndication-derived sample may under-represent no-fee units and small-landlord inventory. We benchmark the listing sample's rent distribution and borough composition against ACS median gross rent by tract and against the NYC Housing and Vacancy Survey, and report the direction and magnitude of divergence in Table 2. This does not eliminate the bias; it makes it legible, and it bounds the claims in Section 9.
+New York's rental market transacts substantially through StreetEasy and REBNY channels rather than MLS syndication, so a syndication-derived sample may under-represent no-fee units and small-landlord inventory. We benchmark the listing sample's rent distribution and borough composition against ACS median gross rent by tract and against the NYC Housing and Vacancy Survey, and report the direction and magnitude of divergence in Table 2a. This does not eliminate the bias; it makes it legible, and it bounds the claims in Section 9.
 
 **Table 2a. Direction of the walk-access exclusion (n = 4,108 geocoded listings).**
 
@@ -499,7 +504,16 @@ With 150 matched scenarios and three replicates per cell, the observed 95% perce
 
 ## 8. Results
 
-We report 6,120 model calls: 5,400 on `gpt-5.6-luna` (the full grid — 150 scenarios × 4 identity conditions × 3 architectures × 3 replicates) and 720 on `gpt-5.6-sol` (S1 only, 60 scenarios × 4 conditions × 3 replicates, as a capability-tier comparison). 5,916 (96.7%) returned parseable output with at least one valid listing id; 204 failed and are excluded. **Zero hallucinated listing ids** were observed. Total API cost: US$15.63.
+We report **6,840 attempted calls** across three models and two vendors:
+
+| Model | Vendor | Design | Attempted | Parsed |
+|---|---|---|---|---|
+| `gpt-5.6-luna` | OpenAI | 150 scen × 4 cond × 3 arch × 3 reps | 5,400 | 5,218 (96.6%) |
+| `gpt-5.6-sol` | OpenAI | 60 scen × 4 cond × S1 × 3 reps | 720 | 698 (97.0%) |
+| `claude-opus-5` | Anthropic | 60 scen × 4 cond × S1 × 3 reps | 720 | 715 (99.3%) |
+| **Total** | | | **6,840** | **6,631 (97.0%)** |
+
+**Zero hallucinated listing ids** were observed across all 6,631 parsed responses. Total API cost: **US$47.61**. Parse failures are analyzed for treatment-correlated missingness in §8.7.
 
 ### 8.1 Constraint fidelity (RQ1)
 
@@ -542,23 +556,21 @@ When a recommendation is dominated, the listing that beats it is typically **$90
 
 **Architecture barely helps.** Constraint-first reduces dominance from 39.0% to 34.8% and rent gap from $498 to $467 — real but modest. Prompt-level grounding (S2) does nothing at all (39.1%, +$506). **The mitigation that eliminates every hard-constraint violation leaves ~89% of the opportunity loss intact**, which localizes the failure firmly in the soft ranking stage rather than in constraint comprehension.
 
-### 8.3 Preference infidelity — the principal finding
+### 8.3 Opportunity loss varies with the stated priority (superseded by §8.8)
 
-**Table 8. Rent gap by the user's stated priority (S1 direct, `gpt-5.6-luna`).**
+**Table 8. Rent gap by the user's stated priority (S1 direct, `gpt-5.6-luna`, between-scenario).**
 
 | User's stated priority | n | Mean rent gap | Median | Commute gap | Dominance |
 |---|---|---|---|---|---|
-| "Rent matters most" | 586 | **+$624/mo** | +$550 | −4.2 min | 39% |
+| "Rent matters most" | 586 | +$624/mo | +$550 | −4.2 min | 39% |
 | "Location matters most" | 582 | +$1,122/mo | +$1,050 | −11.7 min | 40% |
 | "Commute matters most" | 575 | −$260/mo | −$105 | +4.1 min | 31% |
 
-Users who state explicitly that **rent is their highest priority** receive recommendations averaging **$624/month above the cheapest suitable listings the model was shown** — approximately **$7,500 over a twelve-month lease** — while every stated hard constraint is satisfied. Users who state commute is the priority receive cheaper listings (−$260), which is not evidence of better service so much as evidence that the model's own default weighting happens to coincide with their stated one.
+**This table is confounded and we report it only for transparency.** Priority is a *between-scenario* factor in the main grid: each scenario carries exactly one priority, so these rows compare different scenarios with different budgets, workplaces and commute ceilings. Worse, the oracle is *defined by* the stated priority (§6.1), so each row is scored against a different benchmark.
 
-We call this **preference infidelity**: constraints are treated as binding, stated preference orderings are not. The models appear to carry a default weighting favoring proximity that overrides the user's declared ranking.
+Our first reading of this table was that models fail to honor stated preference orderings — a "preference infidelity" claim. **That reading was wrong.** §8.8 reports a within-scenario manipulation that isolates the effect properly and reaches the opposite conclusion on responsiveness, while sustaining and sharpening the conclusion on optimization. Readers should treat §8.8, not Table 8, as the finding.
 
-Two cautions. The `location_first` row is the weakest of the three: our oracle for that condition is defined as the lowest-rent members of the Pareto frontier, a weak operationalization of a preference our data cannot measure directly, so +$1,122 should not be read as a clean effect. And the `commute_first` negative gap partly reflects the model trading longer commutes for lower rent, not superior selection.
-
-### 8.4 Identity-conditioned disparity (RQ3) — a well-powered null
+### 8.4 Identity-conditioned disparity (RQ3) — no evidence of large effects
 
 **Table 9. Within-scenario identity contrasts, randomization inference (10,000 permutations, Benjamini–Hochberg within outcome family).**
 
@@ -605,11 +617,11 @@ Under the interpretive rule pre-specified in §7.4 — if the replicate variance
 | gpt-5.6-luna | 706 | 1.7% | 37.6% | +$621 | +$700 |
 | gpt-5.6-sol (17× cost/token) | 698 | 1.5% | 39.4% | +$649 | +$699 |
 
-The flagship model is statistically indistinguishable from the budget tier on every primary outcome, and the rent-first preference-infidelity gap is essentially identical (+$699 vs +$700).
+The flagship model is statistically indistinguishable from the budget tier on every primary outcome, and the rent-first gap is essentially identical (+$699 vs +$700). Note this arm inherits the between-scenario limitation of §8.3; the within-scenario result is §8.8, which was run on `gpt-5.6-luna` only.
 
 We state this conservatively: **within the tested scenarios, increasing model capability did not reduce opportunity loss.** Two models from one vendor, with the flagship run on a 720-call subsample, cannot establish that the behavior is structural or that no more capable model would improve it. What the comparison does rule out is the simplest explanation — that these results are an artifact of using a cheap model.
 
-### 8.7 Cross-vendor replication
+### 8.6 Cross-vendor replication
 
 To test whether these results reflect one vendor's post-training rather than a general property of frontier recommenders, we ran `claude-opus-5` (Anthropic) on S1 across the same 60 scenarios x 4 identity conditions x 3 replicates: 720 calls, 715 parsed, US$31.98.
 
@@ -622,7 +634,7 @@ To test whether these results reflect one vendor's post-training rather than a g
 | claude-opus-5 | Anthropic | 715 | 1.6% | 34.3% | +$571 | 0.0% | $0.045 |
 | *S_rand floor* | — | — | *66.6%* | *55.1%* | *+$261* | — | — |
 
-**Table 14. Preference infidelity by stated priority — replication.**
+**Table 14. Rent gap by stated priority — cross-vendor replication of the between-scenario pattern.**
 
 | User's stated priority | gpt-5.6-luna | gpt-5.6-sol | claude-opus-5 |
 |---|---|---|---|
@@ -632,7 +644,7 @@ To test whether these results reflect one vendor's post-training rather than a g
 
 Two vendors, three models, a **45x range in price per token**, and the rent-first gap agrees to within $3.
 
-**Table 16. Paired model contrasts (within scenario, 10,000 permutations, n=60).**
+**Table 15. Paired model contrasts (within scenario, 10,000 permutations, n=60).**
 
 | Contrast | Dominance | Rent gap (all) | Rent gap (rent-first only) |
 |---|---|---|---|
@@ -640,21 +652,137 @@ Two vendors, three models, a **45x range in price per token**, and the rent-firs
 | claude-opus-5 − gpt-5.6-sol | −0.052 (p=.0001) | −$72 (p=.017) | **+$1.3 (p=.86)** |
 | gpt-5.6-sol − gpt-5.6-luna | +0.018 (p=.091) | +$17 (p=.457) | **−$2.6 (p=.92)** |
 
-The pattern in Table 16 is the substantive result, and it is not a ranking. `claude-opus-5` is modestly but reliably better on *general* dominance and on the pooled rent gap. **On the rent-first condition — the specific failure this paper documents — the three models are statistically indistinguishable, with paired differences of $1–3 and p >= 0.86.** The differences appear where we make no claim and vanish where our claim lives.
+The pattern in Table 15 is the substantive result, and it is not a ranking. `claude-opus-5` is modestly but reliably better on *general* dominance and on the pooled rent gap. **On the rent-first condition — the specific failure this paper documents — the three models are statistically indistinguishable, with paired differences of $1–3 and p >= 0.86.** The differences appear where we make no claim and vanish where our claim lives.
 
 We therefore decline to present a model ranking, for three reasons. A ranking invites the inference that the better-scoring model solves the problem, when `claude-opus-5` still returns a dominated listing on 34.3% of recommendations against an ideal of zero. Rankings over specific snapshots expire on vendor deprecation timelines while the failure mode does not. And three models under one set of conditions is an audit, not a benchmark — establishing that a phenomenon generalizes is a different claim from establishing which system is best.
 
 The comparison earns its place instrumentally: it forecloses the two most natural objections to §8.3 and §8.5 — that the finding is specific to one lab's post-training, and that a more capable model would fix it. Neither survives. Cost per call spans 45x across these three models with no corresponding improvement in preference fidelity.
 
+**Table 16. Identity contrasts on `claude-opus-5` (randomization inference, n=60 paired scenarios).**
+
+| Metric | Contrast | Observed | p | p (BH) |
+|---|---|---|---|---|
+| Dominance | C1 name A − C0 | +0.004 | 0.430 | 0.645 |
+| Dominance | C2 name B − C0 | −0.006 | 0.414 | 1.000 |
+| Dominance | C3 voucher − C0 | −0.004 | 0.716 | 0.716 |
+| Rent gap | C1 name A − C0 | −$9.08 | 0.392 | 0.587 |
+| Rent gap | C2 name B − C0 | −$10.22 | 0.487 | 0.487 |
+| **Rent gap** | **C3 voucher − C0** | **−$27.60** | **0.0007** | **0.0021** |
+| Commute gap | C3 voucher − C0 | +0.22 min | 0.018 | 0.055 |
+| Violation | all contrasts | ≤ 0.004 | ≥ 0.494 | 1.000 |
+
 **Identity contrasts replicate as null.** Of 12 pre-specified contrasts on `claude-opus-5`, 11 return null after Benjamini–Hochberg correction, and refusal/withholding is again exactly 0.0% in all four conditions — notable given the reputation of Anthropic's models for cautious handling of protected-attribute prompts. H4b is rejected on both vendors.
 
-**One contrast survives correction, and we report it as an observation rather than a finding.** Voucher disclosure reduces Claude's rent gap by **$27.60/month** (p=0.0007, BH-adjusted p=0.0021) — the only surviving effect among the 48 identity contrasts run in this study. Three considerations bound its interpretation. First, the direction favors the user: cheaper recommendations for a voucher holder is consistent with the *lawful adaptation* that §4.3 was designed to distinguish from service degradation, not with steering. Second, the magnitude is 4% of the preference-infidelity gap it sits beside. Third, and decisive under our own protocol, the between-condition variance component (252.7) remains far below replicate noise (6,509), so the interpretive rule pre-specified in §7.4 directs us not to report it as systematic bias. We record it as warranting replication, and apply the rule as written rather than relaxing it because a result finally emerged.
+**One contrast survives correction, and we report it as an observation rather than a finding.** Voucher disclosure reduces Claude's rent gap by **$27.60/month** (p=0.0007, BH-adjusted p=0.0021) — the only surviving effect among the 48 identity contrasts run in this study. Three considerations bound its interpretation. First, the direction favors the user: cheaper recommendations for a voucher holder is consistent with the *lawful adaptation* that §4.3 was designed to distinguish from service degradation, not with steering. Second, the magnitude is 4% of the optimization gap it sits beside. Third, and decisive under our own protocol, the between-condition variance component (252.7) remains far below replicate noise (6,509), so the interpretive rule pre-specified in §7.4 directs us not to report it as systematic bias. We record it as warranting replication, and apply the rule as written rather than relaxing it because a result finally emerged.
 
-### 8.6 Robustness
+### 8.7 Parse failures and treatment-correlated missingness
 
-Parse failures (3.3%) were distributed across identity conditions without evident pattern; because a truncation-driven missingness correlated with treatment would confound §8.4, this was monitored deliberately after an earlier pilot exhibited exactly that failure (Appendix C). Pool size was exactly 120 for all 150 scenarios. Replicate-level variance is reported in Table 10 and dominates the identity signal.
+209 of 6,840 attempted calls (3.1%) failed to return parseable output and are excluded from the analyses above. Because a missingness pattern correlated with the identity cue would confound §8.4 — the concern that forced a protocol change during piloting (Appendix C, deviation 4) — we test it rather than assume it away.
 
----
+**Table 17. Parse-failure rate by model, architecture, and identity condition.**
+
+| Model | Failure rate | | Architecture (luna) | Failure rate | | Condition (luna) | Failure rate |
+|---|---|---|---|---|---|---|---|
+| claude-opus-5 | 0.69% | | S1 direct | 3.17% | | C0 neutral | **4.74%** |
+| gpt-5.6-sol | 3.06% | | S2 grounded | 3.44% | | C1 name A | 3.26% |
+| gpt-5.6-luna | 3.37% | | S3 constraint-first | 3.50% | | C2 name B | **2.37%** |
+| | | | | | | C3 voucher | 3.11% |
+
+**Missingness is not independent of the identity condition.** A chi-square test on the luna corpus rejects independence (χ² = 12.26, df = 3, *p* = 0.007): the neutral condition loses 4.74% of responses against 2.37% for name cue B, a two-fold spread. The mitigation applied during piloting reduced this problem but did not eliminate it.
+
+**We therefore bound the effect rather than rely on complete-case analysis.** For each contrast we impute every failed call at the extreme value that would most inflate the observed difference, then at the extreme that would most suppress it:
+
+**Table 18. Worst-case bounds on identity contrasts under adversarial imputation (luna, S1).**
+
+| Metric | Contrast | Observed | Worst-case range |
+|---|---|---|---|
+| Dominance | C1 − C0 | −0.00 | [−0.04, +0.03] |
+| Dominance | C2 − C0 | −0.00 | [−0.05, +0.04] |
+| Dominance | C3 − C0 | −0.00 | [−0.04, +0.03] |
+| Rent gap | C1 − C0 | −$3.30 | [−$79, +$108] |
+| Rent gap | C2 − C0 | +$5.03 | [−$120, +$140] |
+| Rent gap | C3 − C0 | −$24.07 | [−$126, +$101] |
+
+Every worst-case interval brackets zero. Even under adversarial imputation the missingness cannot manufacture the §8.4 null, and the bounds (±$140 on rent gap) are narrow relative to the effect the paper documents (+$700). The level estimates are similarly robust: luna S1 dominance is 39.0% observed, with worst-case bounds of 37.8% to 41.0%.
+
+This does not make the missingness harmless. It means the specific inferences drawn here survive it. The remedy for future work is provider-side structured output enforcement, which would drive parse failure toward zero and remove the issue rather than bounding it.
+
+### 8.8 Within-scenario priority manipulation — the principal finding
+
+Table 8 cannot separate the effect of a stated priority from the scenario it appeared in. This arm does: the same scenario, the same 120-listing pool in the same order, the same identity condition (C0 neutral), and **one fixed oracle for every condition** — the five lowest-rent feasible listings. Only one sentence changes. A third condition replaces the qualitative phrasing with an unambiguous lexicographic rule, removing any interpretive slack about what compliance means.
+
+`gpt-5.6-luna`, 150 scenarios × 3 priority conditions × 3 replicates = 1,350 calls, 1,338 parsed, US$1.27.
+
+**Table 19. Within-scenario priority conditions (n = 150 scenarios, single fixed rent oracle).**
+
+| Condition | Instruction | Median rent recommended | Median commute | Rent gap vs oracle |
+|---|---|---|---|---|
+| P_rent | "Rent is the most important thing to me, then commute." | **$2,634** | 25.2 min | **+$606** |
+| P_commute | "Commute is the most important thing to me, then rent." | **$3,280** | 12.9 min | **+$1,251** |
+| P_explicit | "Minimize monthly rent first. Use commute only to break ties within $50." | $2,637 | 25.2 min | **+$611** |
+
+**Table 20. Paired contrasts (within scenario, 10,000 permutations, n = 150).**
+
+| Contrast | Rent gap | Median rent | Commute gap | p |
+|---|---|---|---|---|
+| P_rent − P_commute | **−$646** | −$646 | +12.3 min | **< 0.0001** |
+| P_explicit − P_commute | −$643 | −$643 | +12.3 min | < 0.0001 |
+| **P_explicit − P_rent** | **+$3.5** | +$3.5 | −0.0 min | **0.70 (ns)** |
+
+Three results follow, and they must be stated separately because they point in different directions.
+
+**Preference responsiveness is high.** Changing one sentence moves the median recommended rent by **$646/month** and the median commute by **12.3 minutes**, in the correct direction, at p < 0.0001. The model plainly understands the objective and acts on it. Any claim that these systems ignore stated preferences is not supported by this experiment, and our own earlier reading of Table 8 was mistaken.
+
+**Optimization quality is poor regardless.** Under "rent matters most" the recommendations still sit **+$606/month above the five cheapest feasible listings in the same pool.** Compliance is directional, not material.
+
+**Instruction precision does not help.** The explicit lexicographic rule — which leaves no ambiguity about what to minimize or how to break ties — produces **no improvement whatsoever** (+$611 vs +$606, paired difference +$3.5, p = 0.70). This is the negative control that matters: the residual gap is not a prompt-clarity problem, and prompt engineering is not the remedy.
+
+### 8.9 Pool-density and near-miss-ratio robustness
+
+§6.1 identified the size and composition of the scored set as the principal sensitivity of the dominance measure. This arm varies both: `gpt-5.6-luna`, 80 scenarios × 5 configurations × 2 replicates, 800 calls, 784 parsed, US$0.81.
+
+**Table 21. Dominance and rent gap by pool size and infeasible share.**
+
+| N | Infeasible share | Feasible listings shown | Violation | **Dominance** | **Rent gap** |
+|---|---|---|---|---|---|
+| 120 | 0.25 | ~89 | 0.3% | **51.1%** | +$551 |
+| 120 | 0.50 | ~60 | 0.3% | **48.5%** | +$561 |
+| 120 | 0.667 *(headline)* | 40 | 1.1% | **39.2%** | +$564 |
+| 60 | 0.50 | 30 | 0.8% | **28.0%** | +$547 |
+| 60 | 0.667 | 20 | 4.0% | **17.6%** | +$518 |
+
+This is the most consequential robustness result in the paper, and it cuts both ways.
+
+**The dominance rate does not travel.** It ranges from 17.6% to 51.1% — a three-fold spread — and tracks the number of feasible listings shown almost mechanically. The headline 39% is an artifact of our sampling parameters as much as of model behavior. **Any dominance figure from this study must be quoted with its pool configuration attached**, and cross-study comparison of dominance rates is meaningless without it. This vindicates the §6.1 concern and is the reason P2 was split into pool- and universe-referenced variants.
+
+**The rent gap does travel.** Across a three-fold change in feasible-set size and a near-threefold change in infeasible share, it moves only between **+$518 and +$564** — a 9% band. The dollar-denominated measure is robust to exactly the parameter that destabilizes the rate-denominated one. We therefore treat the rent gap, not the dominance rate, as the paper's transportable quantity.
+
+### 8.10 Does the gap scale with candidate-set size? A mechanism diagnostic
+
+§8.8 establishes that the residual gap is not caused by instruction ambiguity. It does not establish what *does* cause it. Several mechanisms are consistent with the evidence so far: attention dilution over a long list, unstable numeric comparison across many items, position effects, a default preference surviving into the output stage, or correct internal ranking with faulty execution at output. **This arm cannot separate all of them.** It tests one hypothesis that is separable — scale.
+
+Design: pools contain **only feasible listings**, so filtering is removed and the task is pure optimization; the instruction is held fixed at the explicit lexicographic rule; and the cheapest listing is guaranteed present. Only the number of candidates varies. `gpt-5.6-luna`, 100 scenarios × {10, 20, 40, 80} × 2 replicates, 691 parsed.
+
+**Table 22. Optimization quality by candidate-set size (all-feasible pools, explicit rule).**
+
+| Feasible listings shown | n | Rent gap | Median rent | Optimal rent | **Cheapest listing selected** |
+|---|---|---|---|---|---|
+| 10 | 174 | **+$111** | $1,909 | $1,797 | **93.7%** |
+| 20 | 170 | +$356 | $2,119 | $1,763 | 72.4% |
+| 40 | 177 | +$465 | $2,248 | $1,782 | 57.1% |
+| 80 | 170 | +$419 | $2,200 | $1,781 | 53.5% |
+
+Paired against the largest set: n=10 vs n=80 is **−$305 (p < 0.0001)**; n=20 vs n=80 is −$74 (p = 0.24); n=40 vs n=80 is +$49 (p = 0.36).
+
+**Scale is implicated, and the limitation binds early.** The share of responses containing the single cheapest available listing falls monotonically from **93.7% at ten candidates to 53.5% at eighty**. The rent gap rises steeply from ten to forty candidates and then plateaus, so the constraint appears to bind by roughly 20–40 items rather than degrading smoothly with length.
+
+We state the interpretation conservatively: **the model responds correctly to the stated priority but fails to execute the resulting optimization reliably over a large candidate set.** That is what the data support. We do not claim to have identified a search or attention mechanism — distinguishing attention dilution from numeric-comparison instability from output-stage execution error would require interventions this study did not run (ordering manipulations, forced full-ranking before selection, tool-based sorting, and pre-sorted inputs), and §9.4 lists them.
+
+**[INSERT FIGURE 4 HERE — `out/figures/figure4_mechanism.png`]**
+
+**Figure 4. Compliance without optimization.** (a) The model responds strongly to a stated priority and not at all to instruction precision. (b) Optimization quality degrades with candidate-set size: the cheapest-listing hit rate falls from 93.7% to 53.5% while the rent gap rises, plateauing above forty. (c) The dominance *rate* tracks pool configuration; the rent *gap* does not.
+
+Two further observations bound even the optimistic end. Even at ten candidates, with an unambiguous rule and every distractor removed, the gap is **not zero** ($111) and the cheapest listing is missed **6.3%** of the time. And the plateau above forty means enlarging the retrieved set — the natural product instinct for improving recall — makes optimization worse, not better.
 
 ## 9. Discussion and Recommendations
 
@@ -662,11 +790,11 @@ Parse failures (3.3%) were distributed across identity conditions without eviden
 
 The models in this study did almost everything a ranking metric measures well. They obeyed budget, bedroom, and commute constraints on ~98% of recommendations, hallucinated no listings, refused nothing, and returned well-formed, plausibly-justified answers. A deployment monitoring precision, NDCG, or click-through would show a healthy system.
 
-It would also be overcharging users who asked for cheap apartments by roughly $624 a month.
+It would also be returning listings roughly $624/month more expensive than the cheapest suitable ones it was shown, to users who had said price was their priority.
 
 This is not a claim that ranking metrics are incapable of detecting omission — with an external oracle, recall and top-*k* capture do penalize it. The claim is narrower and more practical: **the metrics actually used in deployment — engagement signals and LLM-judged relevance — score a returned list against itself or against a judge that shares the ranker's priors.** Neither has access to the counterfactual "a better option was present and skipped." Dominance does, at the cost of requiring an enumerable feasible set.
 
-### 9.2 Constraint compliance and preference fidelity are different capabilities
+### 9.2 Three capabilities, not one
 
 The sharpest structural result is that **the architecture eliminating 100% of constraint violations reduces opportunity loss by only 11%.** Deterministic pre-filtering solves the problem that is easy to specify and leaves the one that matters mostly untouched.
 
@@ -675,14 +803,17 @@ This suggests treating them as distinct evaluation targets. Constraint complianc
 ### 9.3 Recommendations for developers
 
 1. **Enforce verifiable constraints in code, and do not expect it to fix ranking.** S3 works exactly as advertised on constraints and barely at all on opportunity loss. Shipping constraint-first and declaring the problem solved would be a mistake this study directly warns against.
-2. **Instrument the dominance rate of what you return against what you retrieved.** It is computable online wherever a feasible set exists, needs no labels and no judge model, and would have surfaced everything reported here. This is the single cheapest addition to a recommendation stack that detects this failure class.
-3. **Test whether stated preference orderings are honored, not just whether constraints are met.** Our scenarios differ only in one sentence declaring a priority; the models' behavior barely responds to it. A minimal eval — vary the stated priority, hold everything else fixed, measure whether the returned distribution shifts — is cheap and, on this evidence, will fail more often than teams expect.
-4. **Do not assume the flagship or a different vendor fixes it.** Capability upgrades and vendor switches are the two default responses to quality complaints. Across a 45x price range and two vendors, the rent-first gap moved by $3. Whatever produces this behavior is addressed by neither lever.
-5. **Report quality-of-service parity in user-denominated units.** Dollars and minutes across matched profiles are more auditable than group-level metric parity — and, as §8.4 shows, capable of returning an honest null.
+2. **Instrument the dominance rate of what you return against what you retrieved — and log the pool configuration with it.** It is computable online wherever a feasible set exists and needs no labels or judge model. But §8.9 shows the rate is strongly sensitive to candidate-set size, so it is usable as an internal regression signal against a fixed configuration and not as a cross-system benchmark. For comparison across systems, prefer the dollar-denominated gap, which was stable across a three-fold change in set size.
+3. **Do not ask a language model to perform a computation you can specify exactly.** This is the operational conclusion. Where a user's rule is expressible — minimize rent subject to constraints, break ties within $50 — sort in code and let the model handle what only it can: parsing natural language, eliciting preferences the user has not stated, and explaining the result. The recommended architecture is (i) deterministic filtering of hard constraints, (ii) deterministic ranking on any explicitly stated rule, (iii) the model for language understanding, ambiguous preference and explanation, and (iv) a dominance check on the output before it ships. Prompt improvement is demonstrably not sufficient: the explicit lexicographic instruction changed nothing (§8.8).
+4. **Keep retrieved sets small when the model must rank them.** Optimization quality degrades with candidate count and the limitation binds by roughly 20–40 items (§8.10). Enlarging the retrieved set to improve recall makes the ranking worse — a direct trade-off most stacks do not currently measure.
+5. **Do not assume the flagship or a different vendor fixes it.** Capability upgrades and vendor switches are the two default responses to quality complaints. Across a 45x price range and two vendors, the rent-first gap moved by $3. Whatever produces this behavior is addressed by neither lever.
+6. **Report quality-of-service parity in user-denominated units.** Dollars and minutes across matched profiles are more auditable than group-level metric parity — and, as §8.4 shows, capable of returning an honest null.
 
-### 9.4 What we could not determine, and the experiment that would
+### 9.4 What we could not determine, and the experiments that would
 
-Our null on identity is confined to ranking over a fixed pool. The obvious and important follow-up is a **retrieval-freedom manipulation**: the same scenarios and identity cues run under (a) our fixed pool, (b) a model-selected pool from a retrieval index, and (c) fully open-ended neighborhood recommendation as in Liu et al. (2024). If disparity appears in (c) and not (a), the mitigation implication — *retrieve deterministically, then rank* — would be established rather than conjectured. We regard this as the highest-value extension and note it is inexpensive: the infrastructure here supports it directly.
+**The mechanism behind the optimization gap.** §8.10 implicates candidate-set scale but cannot isolate a cause. Four interventions would separate the remaining candidates, and all are inexpensive on this infrastructure: (a) randomize listing order across replicates to test position effects; (b) require the model to rank *all* feasible candidates before selecting five, separating internal ranking from output-stage execution; (c) supply the pool pre-sorted by rent, which removes the comparison burden entirely; and (d) give the model a sorting tool to call. If (c) or (d) closes the gap, the limitation is computational rather than interpretive.
+
+**Identity, under retrieval freedom.** Our null on identity is confined to ranking over a fixed pool. The obvious and important follow-up is a **retrieval-freedom manipulation**: the same scenarios and identity cues run under (a) our fixed pool, (b) a model-selected pool from a retrieval index, and (c) fully open-ended neighborhood recommendation as in Liu et al. (2024). If disparity appears in (c) and not (a), the mitigation implication — *retrieve deterministically, then rank* — would be established rather than conjectured. We regard this as the highest-value extension and note it is inexpensive: the infrastructure here supports it directly.
 
 ### 9.5 Generalization
 
@@ -694,7 +825,7 @@ Dominance auditing transfers to any high-stakes search domain with an enumerable
 
 **Synthetic profiles are not renters.** Scenarios are researcher-authored. They cannot capture how real users phrase requests, revise them across turns, or trade off attributes we did not model. The study measures system behavior under specified inputs, not behavior under real demand.
 
-**Listing coverage is biased in a known direction.** RentCast's New York coverage derives from MLS syndication, which under-represents the no-fee and small-landlord segment that constitutes a substantial share of the city's rental market. Table 2 quantifies the divergence. Because the bias is common to all conditions and architectures, it threatens external validity — the absolute magnitude of cost gaps — but not the internal validity of within-scenario identity contrasts.
+**Listing coverage is biased in a known direction.** RentCast's New York coverage derives from MLS syndication, which under-represents the no-fee and small-landlord segment that constitutes a substantial share of the city's rental market. Table 2a quantifies the divergence. Because the bias is common to all conditions and architectures, it threatens external validity — the absolute magnitude of cost gaps — but not the internal validity of within-scenario identity contrasts.
 
 **One city.** Anonymous (2026a) found steering patterns vary by city and concluded that the city is not a neutral testing unit. Our magnitudes are New York facts. The dominance method generalizes; the numbers do not.
 
@@ -708,7 +839,7 @@ Dominance auditing transfers to any high-stakes search domain with an enumerable
 
 **The identity null is bounded by the design that produced it.** Fixing the candidate pool removes the model's ability to choose *where* to look, which is the degree of freedom through which steering operated in the open-ended studies that found it. Our null therefore applies to ranking over a supplied choice set and cannot be extended to open-ended recommendation. We explicitly decline the tempting inference that constraining retrieval *eliminates* steering: that is a hypothesis requiring the comparison arm specified in §9.4, which we did not run.
 
-**Two models, one vendor.** `gpt-5.6-luna` and `gpt-5.6-sol` share a training lineage. The capability comparison rules out the explanation that these results are an artifact of a small model; it cannot establish that the behavior is structural across model families. A cross-vendor arm is the second priority extension after §9.4.
+**Parse failures are correlated with the identity cue.** Missingness is not independent of condition (χ² = 12.26, *p* = 0.007; §8.7). Worst-case bounds show the §8.4 null survives adversarial imputation, but complete-case analysis is not fully defensible here and future runs should enforce structured output at the provider level.
 
 **The stress-test pool is not a market.** Pools contain 80 infeasible listings out of 120 by design, so that constraint violation is measurable at all. The resulting violation and dominance rates describe behavior under a deliberately adversarial choice set and must not be read as prevalence estimates for deployed housing search. A naturalistic-pool arm — candidates sampled as a real search would return them, without the enforced 2:1 infeasible ratio — is needed before any claim about real-world incidence.
 
@@ -720,19 +851,19 @@ Dominance auditing transfers to any high-stakes search domain with an enumerable
 
 ## 11. Conclusion
 
-We set out to ask whether AI housing recommenders overlook better options and whether that loss falls unevenly across users. The data answer the first question emphatically and the second, within our design, in the negative.
+We set out to ask whether AI housing recommenders overlook better options, and whether that loss falls unevenly across users. The answers are yes, and — within our design — no. Along the way we had to correct our own account of why.
 
-These models are good at the part of the task that is easy to specify. They read a budget, a bedroom count, and a commute ceiling, and they respect all three on roughly 98% of recommendations — against a random-selection floor of 34%. They invent nothing and refuse nothing.
+These models are good at the part of the task that is easy to specify. They read a budget, a bedroom count and a commute ceiling and respect all three on roughly 98% of recommendations, against a random-selection compliance rate of 33.4%. They invent nothing and refuse nothing.
 
-They are considerably worse at the part that matters. Two in five recommendations are strictly dominated by a listing on the same screen, typically by $900 a month and three and a half minutes at once. Users who say plainly that rent is what they care about are shown apartments averaging $624 a month more than the cheapest suitable ones available — about $7,500 over a lease. Hard constraints bind; stated preferences do not. Deterministic pre-filtering removes every constraint violation and 11% of the opportunity loss. A flagship model costing seventeen times more per token removes none of it.
+They are also better at understanding preferences than we first concluded. Told that rent matters most rather than commute, and holding the candidate list and its ordering fixed, they move the median recommendation **$646 a month cheaper and twelve minutes further out**. Our earlier reading — that these systems ignore stated priorities — came from a between-scenario comparison scored against a moving benchmark, and it was wrong. Responsiveness is not the problem.
 
-The number survives a change of vendor. Auditing Anthropic's flagship on the same scenarios returns a rent-first gap of $702 against OpenAI's $700 and $699 — three models, a forty-five-fold spread in price, and a three-dollar disagreement. Whatever causes this is not one laboratory's habit.
+What they cannot do is finish the job. Told plainly to minimize rent, they still return listings **$606 a month above the five cheapest suitable ones on the same screen**. Given an unambiguous rule — minimize rent, break ties within fifty dollars — they improve by three dollars and fifty cents, which is to say not at all. Strip out every unsuitable listing and hand them ten candidates and they find the cheapest 94% of the time; hand them eighty and they find it half the time. The constraint binds somewhere around twenty or forty items, and past that, enlarging the list to improve recall makes the ranking worse.
 
-Changing only an identity cue changed almost nothing we could detect, across 48 pre-specified contrasts and 150 matched scenarios, with the variation from re-asking the same question exceeding the variation from changing who was asking. One contrast survived correction — a voucher lowering Claude's recommendations by $27.60 a month, in the user's favor and dwarfed by the gap beside it — and our own pre-specified variance rule told us not to call it bias. We followed the rule. We report that as a null rather than a reassurance: our design hands the model its choice set, and the freedom that produced steering in earlier studies is precisely the freedom we removed.
+We do not know why, and we say so. Scale is implicated; attention, numeric comparison, position and output execution are not separated by anything we ran. What the evidence supports is narrow and, we think, useful: **the model responds correctly to the stated priority and fails to execute the resulting optimization reliably over a large candidate set.** Neither a clearer prompt, nor a flagship model, nor a different vendor changed it — across a forty-five-fold range in price per token the headline number moved by three dollars.
 
-The methodological claim we would most like to see travel is the smaller one. Wherever a feasible set can be enumerated, it is possible to ask not only whether a recommendation was good but whether a better one was sitting in the same list — and to answer in dollars, without assuming anything about what the user wanted. That question is cheap to instrument, it is invisible to the metrics currently used to govern these systems, and in this domain the answer costs renters real money.
+Changing only an identity cue changed almost nothing we could detect, across 48 pre-specified contrasts and 150 matched scenarios, with the variation from re-asking the same question exceeding the variation from changing who was asking. One contrast survived correction — a voucher lowering Claude's recommendations by $27.60 a month, in the user's favor and dwarfed by the gap beside it — and our own pre-specified variance rule told us not to call it bias. We followed the rule. The null is bounded by the design that produced it: we hand the model its choice set, and the freedom that produced steering in earlier studies is precisely the freedom we removed.
 
----
+The practical conclusion is unglamorous and, we suspect, general. Filtering and ranking against an explicit rule are computations. A few lines of code perform them exactly, every time, at any list length. A frontier language model performs them approximately, and worse as the list grows. The useful division of labour is therefore not "let the model handle search" but the reverse: let code do the arithmetic, let the model do the language, and check the output for dominance before anyone sees it. That check is cheap, it needs no labels and no judge, and in this domain the thing it catches costs renters about six hundred dollars a month.
 
 ## References
 
@@ -867,7 +998,9 @@ SDK `openai` 2.2.0, Python 3.8.8. Temperature at provider default; `max_completi
 5. **2026-08-25 — pool order fixed per scenario rather than per call.** Required for prompt caching, and methodologically preferable: order is identical across the four identity conditions (so it cannot confound the contrast) while varying across scenarios (so no aggregate position bias).
 6. **2026-09-06 — spend ledger corrected from cumulative to per-provider.** The ceiling summed spend across vendors, so US$15.63 of OpenAI spend counted against the Anthropic ceiling and aborted the Claude arm at 509 of 720 calls. Budgets are held per vendor account; the guard now tracks per provider. The run was resumed and completed; no data were affected.
 7. **2026-09-06 — `max_tokens` raised to 6,000 for Claude models** (see above). Applies to the Claude arm only; the OpenAI arms ran at 2,200.
-8. **2026-09-06 — title and framing revised post-hoc** after the identity contrasts returned a null. Primary outcomes, analysis models, and the §7.4 interpretive rule were not changed; only the paper's emphasis was.
+8. **2026-09-06 — spend ledger race condition.** `threading.Lock` serialized threads within a process but not across processes. Two experiment scripts running concurrently corrupted the ledger JSON with interleaved read-modify-write; every subsequent priced call then failed on a JSON decode error that surfaced as a spurious parse failure (555 of 790 calls in the first size-sweep run). The ledger was rebuilt from the append-only per-call logs, `fcntl.flock` added, the affected records purged, and the arm re-run at 97% parse. No analyzed result derives from the corrupted period.
+9. **2026-09-07 — "preference infidelity" retracted.** The within-scenario manipulation (§8.8) showed the between-scenario contrast in §8.3 was confounded by scenario and by a priority-dependent oracle. The claim that models ignore stated preferences was withdrawn; the paper's title and abstract were rewritten around compliance-without-optimization. §8.3 is retained with the confound stated rather than deleted.
+10. **2026-09-07 — title and framing revised post-hoc** after the identity contrasts returned a null. Primary outcomes, analysis models, and the §7.4 interpretive rule were not changed; only the paper's emphasis was.
 
 ## Appendix D. Reproduction and outstanding work
 
@@ -875,11 +1008,16 @@ SDK `openai` 2.2.0, Python 3.8.8. Temperature at provider default; `max_completi
 
 **Outstanding work, in priority order.**
 
+**Completed since v0.2:** cross-vendor replication on `claude-opus-5` (§8.6); parse-failure sensitivity with worst-case bounds (§8.7); within-scenario priority manipulation (§8.8); pool-density and near-miss-ratio robustness (§8.9); candidate-set size sweep as a mechanism diagnostic (§8.10). Total spend US$49.95.
+
 1. **Retrieval-freedom arm (§9.4).** The experiment that would convert our identity null from a bounded negative into a mitigation finding. Highest value; infrastructure already supports it.
-2. **Cross-vendor arm.** One non-OpenAI model on S1, ~US$21, to test whether preference infidelity and the null both replicate outside one training lineage.
-3. **Pool-density arm (N ∈ {60, 120}).** Required to show the dominance level is not an artifact of our sampling parameter (§6.1).
+2. **Mechanism separation (§9.4).** Order randomization, forced full-ranking before selection, pre-sorted input, and tool-based sorting. These four would distinguish attention dilution from numeric-comparison instability from output-stage execution error. Highest-value remaining item after the retrieval-freedom arm, and cheap.
+2b. **Replicate §8.8 and §8.10 on a second vendor.** Both ran on `gpt-5.6-luna` only. ~US$25 on Claude.
 4. **Naturalistic-pool arm.** Candidates sampled as a real search would return them, without the enforced 2:1 infeasible ratio, before any claim about real-world prevalence.
 5. **Name-perception validation (Appendix B).** Gaddis (2017) scores, without which C1/C2 rest on an unvalidated instrument.
+5b. **Router cross-validation.** The nine-route check in §5.2 is a sanity test, not a validation. A 50–100 route comparison against an independent routing source, reporting MAE, median absolute error and 90th-percentile error stratified by borough, is needed before the commute layer can be called validated.
+5c. **Human coding of information withholding.** §6.2 detection is keyword-based. The observed rate is 0.0% across 6,631 responses, but a blind double-coding of 100–200 sampled responses with reported agreement would establish that the rule is not simply failing to fire.
+5d. **Reference verification.** Author names for the 2026 preprints are incomplete and marked "Anonymous" throughout the reference list. Every citation must be resolved to the version of record before submission.
 6. **Table 2b.** ACS/NYCHVS coverage benchmark; requires a free Census API key.
 7. **Open-weight arm.** A fixed-weight model so at least one result remains reproducible after snapshot deprecation.
 8. **Registration.** Any additional data collection should be registered before it begins (§7.6).

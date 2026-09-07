@@ -1,10 +1,10 @@
-# Obeying the Rules, Missing the Point
+# Following the Preference, Missing the Optimum
 
-**Preference infidelity and priced opportunity loss in AI housing recommendation.**
+**Compliance without optimization in AI housing recommendation.**
 
 An audit of whether AI recommenders overlook objectively better options than the ones they return — measured against a verifiable ground truth, priced in dollars and minutes, and tested for equality across users who differ only by an identity cue.
 
-**6,835 model calls · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$47.61 total cost**
+**8,989 model calls · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$49.95 total cost**
 
 ---
 
@@ -17,23 +17,32 @@ An audit of whether AI recommenders overlook objectively better options than the
 | Strictly dominated recommendations | **39.0%** | 55.1% |
 | Rent gap vs. oracle | **+$498/mo** | +$261/mo |
 
-**Constraint compliance is near-perfect. Preference fidelity is not.**
+**Constraint compliance is high. Preference responsiveness is high. Optimization is not.**
 
-When a user states explicitly that **rent is their highest priority**, recommendations average **+$624/month** above the cheapest suitable listings the model was shown — about **$7,500 over a twelve-month lease** — while every stated hard constraint is satisfied.
+A within-scenario manipulation — same pool, same ordering, one fixed rent oracle, one sentence changed:
 
-| User's stated priority | Rent gap |
-|---|---|
-| "Rent matters most" | **+$624/mo** |
-| "Location matters most" | +$1,122/mo |
-| "Commute matters most" | −$260/mo |
+| Instruction | Median rent recommended | Rent gap vs. cheapest feasible |
+|---|---|---|
+| "Commute matters most" | $3,280 | +$1,251 |
+| "Rent matters most" | **$2,634** | **+$606** |
+| "Minimize rent first; break ties within $50" | $2,637 | **+$611** |
 
-Across **11,066 dominated recommendations**, the listing that beat it was a median **$900/month cheaper *and* 3.5 minutes faster** — simultaneously.
+The models **do** honor stated preferences — one sentence moves the median recommendation **$646/month** and **12.3 minutes** in the right direction (p < 0.0001). But under "rent matters most" they still sit **$606/month above the five cheapest suitable listings on the same screen**, and an unambiguous lexicographic rule improves this by **$3.50 (p = 0.70)**. The residual gap is not a prompting problem.
 
-**It replicates across vendors.** Three models spanning a **45× range in price per token** — `gpt-5.6-luna`, `gpt-5.6-sol` (OpenAI), `claude-opus-5` (Anthropic) — return a rent-first gap of **+$700, +$699, +$702**. Paired within-scenario contrasts on that condition are statistically indistinguishable (|Δ| ≤ $3, p ≥ 0.86).
+**The gap grows with the candidate set.** Filtering removed, only feasible listings shown, explicit rule held fixed:
 
-This is reported as a shared failure mode, **not a model ranking.** Claude is modestly better on general dominance (34.3% vs 39.4%, p=0.0001), but that difference sits where the paper makes no claim and vanishes where it does. Neither a capability upgrade nor a vendor switch moves the headline number.
+| Feasible listings shown | Cheapest listing selected | Rent gap |
+|---|---|---|
+| 10 | **93.7%** | +$111 |
+| 20 | 72.4% | +$356 |
+| 40 | 57.1% | +$465 |
+| 80 | **53.5%** | +$419 |
 
-**Almost no identity-conditioned disparity was detected.** 47 of 48 pre-specified contrasts across three models return null after correction. Refusal and information-withholding rates were **0.0% on every model in every condition**. The one surviving contrast — voucher disclosure lowering Claude's rent gap by $27.60/month — favors the user, is 4% of the preference-infidelity gap, and falls below replicate noise under the pre-specified variance rule, so it is reported as an observation warranting replication rather than a finding. This null is bounded by the design that produced it; see limitations.
+The limitation binds by roughly 20–40 items. **We do not claim to have isolated the mechanism** — attention, numeric comparison, position effects and output execution are not separated by anything run here.
+
+**It replicates across vendors.** Three models spanning a **45× range in price per token** return a rent-first gap of **+$700, +$699, +$702**; paired contrasts on that condition are indistinguishable (|Δ| ≤ $3, p ≥ 0.86). Reported as a shared failure mode, **not a ranking.**
+
+**What travels and what doesn't.** Varying pool size and infeasible share, the dominance *rate* ranges 17.6%–51.1% and tracks feasible-set size almost mechanically — quote it only with its configuration. The *rent gap* moves only $518–$564 over the same range, and is the transportable quantity.
 
 ---
 

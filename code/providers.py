@@ -5,11 +5,15 @@ The ceiling is enforced mechanically before every call. It exists because a
 token estimate can be wrong -- earlier in this project an Anthropic cost estimate
 was off by ~3x -- and a wrong estimate must not be able to turn into a wrong bill.
 """
-import json, os, re, time, datetime, pathlib, threading
+import json, os, re, time, datetime, pathlib, threading, fcntl
 from common import OUT, load_key
 
 LEDGER = OUT/"spend_ledger.json"
-_LOCK = threading.Lock()   # ledger is read-modify-write; threads must serialize
+_LOCK = threading.Lock()   # serializes threads within one process
+# A threading.Lock does NOT serialize separate PROCESSES. Two concurrently running
+# experiment scripts corrupted this file with interleaved read-modify-write, and
+# every subsequent call failed with a JSON decode error that surfaced as a bogus
+# parse failure. fcntl.flock adds the cross-process guarantee.
 
 # USD per 1M tokens: (input, cached_input, output). Verified against the
 # providers' own pricing pages on 2026-08-25.
@@ -49,6 +53,23 @@ def price(model, pt, ct, cached=0):
 
 def record(model, pt, ct, cached, usd):
   with _LOCK:
+    LEDGER.touch(exist_ok=True)
+    with open(LEDGER, "r+") as fh:
+        fcntl.flock(fh, fcntl.LOCK_EX)
+        try:
+            try: d = json.load(fh)
+            except Exception: d = {"calls": [], "total_usd": 0.0}
+            d["calls"].append({
+                "ts": datetime.datetime.now().isoformat(timespec="seconds"),
+                "model": model, "in": pt, "cached": cached, "out": ct,
+                "usd": round(usd, 6)})
+            d["total_usd"] = round(d["total_usd"] + usd, 6)
+            fh.seek(0); fh.truncate(); json.dump(d, fh, indent=1); fh.flush()
+        finally:
+            fcntl.flock(fh, fcntl.LOCK_UN)
+    return d["total_usd"]
+
+def _record_unused(model, pt, ct, cached, usd):
     d = _load()
     d["calls"].append({"ts": datetime.datetime.now().isoformat(timespec="seconds"),
                        "model": model, "in": pt, "cached": cached, "out": ct, "usd": round(usd, 6)})
