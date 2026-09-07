@@ -4,7 +4,7 @@
 
 An audit of whether AI recommenders overlook objectively better options than the ones they return — measured against a verifiable ground truth, priced in dollars and minutes, and tested for equality across users who differ only by an identity cue.
 
-**8,989 model calls · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$49.95 total cost**
+**9,612 model calls · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$57.01 total cost**
 
 ---
 
@@ -28,6 +28,8 @@ A within-scenario manipulation — same pool, same ordering, one fixed rent orac
 | "Minimize rent first; break ties within $50" | $2,637 | **+$611** |
 
 The models **do** honor stated preferences — one sentence moves the median recommendation **$646/month** and **12.3 minutes** in the right direction (p < 0.0001). But under "rent matters most" they still sit **$606/month above the five cheapest suitable listings on the same screen**, and an unambiguous lexicographic rule improves this by **$3.50 (p = 0.70)**. The residual gap is not a prompting problem.
+
+**Both claims replicate on a second vendor.** Re-run on `claude-opus-5` over the same 54 scenarios: responsiveness **−$688 (p < 0.0001)**, precision effect **+$2 (p = 1.000)**, residual gap **+$593** — against luna's −$659 / +$29 / +$579.
 
 **The gap grows with the candidate set.** Filtering removed, only feasible listings shown, explicit rule held fixed:
 

@@ -1,0 +1,4 @@
+pools: 55
+tasks: 165  (est $0.17 on claude-opus-5)
+  150/165
+done

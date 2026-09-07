@@ -21,7 +21,8 @@ import importlib.util as u
 _a=u.spec_from_file_location("ad","code/07_audit.py"); ad=u.module_from_spec(_a); _a.loader.exec_module(ad)
 _s=u.spec_from_file_location("sc","code/02_build_scenarios.py"); sc=u.module_from_spec(_s); _s.loader.exec_module(sc)
 
-LOG = OUT/"priority_swap.jsonl"
+import os
+LOG = OUT/os.environ.get("PSWAP_LOG","priority_swap.jsonl")
 _lock = threading.Lock()
 
 PRIORITIES = {
