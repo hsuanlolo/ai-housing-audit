@@ -12,7 +12,7 @@
 
 Large language models are becoming the first point of contact for consumer search in domains where the stakes are material and the law is explicit. Existing audits of AI housing search establish that models steer users toward different neighborhoods depending on perceived racial identity, and that LLM re-rankers improve engagement on commercial listing platforms. Neither line of work can say what a user *loses* when a recommender overlooks a suitable option.
 
-We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we construct a candidate pool of 120 real rental listings with known rent, bedroom count, and GTFS-computed transit commute, compute the exact set satisfying the user's stated hard constraints, and derive its Pareto frontier. We measure what four architectures return under four identity conditions that hold the request and the pool fixed and vary only an identity cue. Primary outcomes are free of any assumed utility function: confirmed constraint violation, **strict dominance** (a recommendation beaten on rent *and* commute *and* bedroom count by another listing in the same pool; floor area is not used), and cost gaps in dollars and minutes. Inference is by within-scenario randomization. We report **9,612 priced calls across three models and two vendors**, for a total API cost of US$57.01.
+We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we construct a candidate pool of 120 real rental listings with known rent, bedroom count, and GTFS-computed transit commute, compute the exact set satisfying the user's stated hard constraints, and derive its Pareto frontier. We measure what four architectures return under four identity conditions that hold the request and the pool fixed and vary only an identity cue. Primary outcomes are free of any assumed utility function: confirmed constraint violation, **strict dominance** (a recommendation beaten on rent *and* commute *and* bedroom count by another listing in the same pool; floor area is not used), and cost gaps in dollars and minutes. Inference is by within-scenario randomization. We report **9,945 attempted calls (9,601 parsed, 96.5%) across three models and two vendors**, for a total API cost of **US$57.01** (Table 12b).
 
 **Constraint compliance is near-perfect.** Direct prompting violates a stated hard constraint on 1.8% of recommendations against a 66.6% random-selection floor; over-budget violations occur on 0.08%. Deterministic pre-filtering eliminates them entirely, by construction.
 
@@ -20,7 +20,7 @@ We audit AI housing recommendation against a verifiable ground truth. For each o
 
 **A robustness arm separates what travels from what does not.** Varying pool size and infeasible share, the dominance *rate* ranges from 17.6% to 51.1% and tracks the number of feasible listings almost mechanically — it is substantially an artifact of sampling parameters and must always be quoted with its configuration. The *rent gap* moves only between +$518 and +$564 over the same range. We therefore treat the dollar-denominated measure, not the rate, as the transportable quantity.
 
-**Models honor stated preferences but do not optimize.** A within-scenario manipulation — same pool, same ordering, one fixed rent oracle, one sentence changed — moves the median recommended rent by **$646/month** and the median commute by **12.3 minutes** in the correct direction (p < 0.0001). Responsiveness is high. Yet under "rent matters most" the recommendations still sit **+$606/month above the five cheapest feasible listings in the same pool**, and an unambiguous lexicographic instruction produces **no improvement at all** (+$611 vs +$606, p = 0.70). The residual gap is therefore not a prompt-clarity problem. We characterize it as **compliance without optimization**. Both claims replicate on `claude-opus-5` over the same scenarios: responsiveness −$688 (p < 0.0001), precision effect +$2 (p = 1.000), residual gap +$593.
+**Models honor stated preferences but do not optimize.** A within-scenario manipulation — same pool, same ordering, one fixed rent oracle, one sentence changed — moves the median recommended rent by **$646/month** and the median commute by **12.3 minutes** in the correct direction (p < 0.0001). Responsiveness is high. Yet under "rent matters most" the recommendations still sit **+$606/month above the five cheapest feasible listings in the same pool**, and an unambiguous lexicographic instruction produces no material improvement. We establish this by equivalence testing against a pre-specified $50/month bound rather than from a non-significant p-value: on the full grid the effect is +$3.48 with a 90% CI of [−$11, +$18] (TOST *p* < 0.0001), and on `claude-opus-5` +$2.00 with [−$1, +$5] (TOST *p* < 0.0001). The residual gap is therefore not a prompt-clarity problem. We characterize it as **compliance without optimization**. Both claims replicate on `claude-opus-5`: responsiveness −$688 (p < 0.0001), precision effect equivalent within ±$50, residual gap +$593.
 
 **The gap scales with candidate-set size, and the limitation binds early.** With filtering removed and only feasible listings shown, the share of responses containing the single cheapest available listing falls from **93.7% at ten candidates to 53.5% at eighty**, and the rent gap rises from +$111 to +$419, plateauing above forty. The model responds correctly to the stated priority but fails to execute the resulting optimization reliably over a large candidate set. We do not claim to isolate the mechanism.
 
@@ -513,7 +513,20 @@ We report **6,840 attempted calls** across three models and two vendors:
 | `claude-opus-5` | Anthropic | 60 scen × 4 cond × S1 × 3 reps | 720 | 715 (99.3%) |
 | **Total** | | | **6,840** | **6,631 (97.0%)** |
 
-**Zero hallucinated listing ids** were observed across all 6,631 parsed responses. Total API cost: **US$47.61**. Parse failures are analyzed for treatment-correlated missingness in §8.7.
+**Zero hallucinated listing ids** were observed across all parsed responses in any arm.
+
+**Table 12b. Complete call and cost reconciliation across every arm reported in this paper.**
+
+| Arm | Attempted | Parsed | Cost |
+|---|---|---|---|
+| Main grid (§8.1–8.7) | 6,840 | 6,631 (96.9%) | $47.61 |
+| Priority manipulation, luna (§8.8) | 1,350 | 1,338 (99.1%) | $1.27 |
+| Priority manipulation, Claude (§8.8) | 165 | 157 (95.2%) | $6.57 |
+| Pool density (§8.9) | 800 | 784 (98.0%) | $0.81 |
+| Size sweep (§8.10) | 790 | 691 (87.5%) | $0.75 |
+| **Total** | **9,945** | **9,601 (96.5%)** | **$57.01** |
+
+Sections 8.1–8.7 report the main grid only; §8.8–8.10 report the robustness and diagnostic arms, each with its own n stated in place. Costs are $18.46 on OpenAI and $38.55 on Anthropic. The size-sweep arm was purged of 555 records created by a spend-ledger race condition (Appendix C, deviation 8); those attempts never reached the provider and cost nothing. Parse failures are analyzed for treatment-correlated missingness in §8.7.
 
 ### 8.1 Constraint fidelity (RQ1)
 
@@ -735,11 +748,27 @@ Three results follow, and they must be stated separately because they point in d
 
 **Optimization quality is poor regardless.** Under "rent matters most" the recommendations still sit **+$606/month above the five cheapest feasible listings in the same pool.** Compliance is directional, not material.
 
-**Instruction precision does not help.** The explicit lexicographic rule — which leaves no ambiguity about what to minimize or how to break ties — produces **no improvement whatsoever** (+$611 vs +$606, paired difference +$3.5, p = 0.70). This is the negative control that matters: the residual gap is not a prompt-clarity problem, and prompt engineering is not the remedy.
+**Instruction precision does not help — established by equivalence testing, not by a non-significant p-value.** The explicit lexicographic rule leaves no ambiguity about what to minimize or how to break ties, and the observed paired difference is +$3.48/month (p = 0.70). A non-significant difference is not evidence of no difference, so we test equivalence directly.
 
-**Cross-vendor replication.** Both claims were re-tested on `claude-opus-5` over 55 of the same scenarios (165 calls, 157 parsed, US$6.57), holding the pool, ordering and oracle identical.
+We pre-specify a smallest effect size of interest of **$50/month**, justified on the paper's own terms: the instruction itself defines a $50 tie-breaking band, so an improvement below $50 is not materially meaningful. Two one-sided tests (TOST) against ±$50:
 
-**Table 20b. Within-scenario priority manipulation, two vendors, same 54 scenarios.**
+**Table 20c. Equivalence test on the precision effect (P_explicit − P_rent, rent gap).**
+
+| Sample | n paired | Effect | 90% CI | TOST *p* | Verdict |
+|---|---|---|---|---|---|
+| `gpt-5.6-luna`, full grid | 150 | +$3.48 | [−$11.3, +$18.3] | **< 0.0001** | **Equivalent within ±$50** |
+| `gpt-5.6-luna`, shared subsample | 55 | +$23.95 | [−$6.1, **+$54.0**] | 0.076 | **Not equivalent** |
+| `claude-opus-5` | 50 | +$2.00 | [−$1.4, +$5.4] | **< 0.0001** | **Equivalent within ±$50** |
+
+On the full `gpt-5.6-luna` grid and on `claude-opus-5` we can **exclude** an improvement larger than $50/month: the instruction genuinely does not help, and this is an equivalence result rather than a failure to reject. On the 55-scenario subsample the upper confidence bound reaches +$54, so there we cannot exclude a materially meaningful improvement — the reduced sample is simply too small to support the claim, and we report that rather than lean on the pooled result.
+
+The conclusion we draw is therefore bounded: **on the two adequately powered samples, an unambiguous lexicographic instruction improves the rent gap by less than $50/month, so the residual gap is not a prompt-clarity problem.** Prompt engineering is not the remedy, but the evidence for that comes from the equivalence tests, not from p = 0.70.
+
+**Cross-vendor replication.** Both claims were re-tested on `claude-opus-5` over 55 of the same scenarios, holding the pool, ordering and oracle identical: 165 calls, 157 parsed (95.2%), US$6.57.
+
+**Sample accounting.** Of the 55 scenarios requested, 54 returned at least one parsed response and **50 returned all three priority conditions**. Listwise deletion for the paired contrast therefore uses n = 50. The 8 parse failures fall across all three conditions (2 P_commute, 2 P_rent, 1 P_explicit, with one scenario losing two), so the loss is not concentrated in a single condition. Dropped scenarios have a slightly lower mean budget ($3,738 vs $4,063) and an identical mean commute ceiling (45 vs 44 minutes); with four dropped scenarios no meaningful test of differential attrition is possible, and we flag this as a complete-case limitation rather than dismiss it. Descriptive means in Table 20b are computed on all parsed responses (n = 52–53 per condition); paired contrasts use the 50 complete scenarios.
+
+**Table 20b. Within-scenario priority manipulation, two vendors (descriptives on all parsed responses; contrasts on 50 complete scenarios).**
 
 | | gpt-5.6-luna | claude-opus-5 |
 |---|---|---|
@@ -748,11 +777,11 @@ Three results follow, and they must be stated separately because they point in d
 | Median rent under P_explicit | $2,588 | $2,565 |
 | Median commute under P_commute | 12.5 min | 12.0 min |
 | Median commute under P_rent | 24.4 min | 24.8 min |
-| **Responsiveness** (P_rent − P_commute) | **−$659 (p < 0.0001)** | **−$688 (p < 0.0001)** |
-| **Precision effect** (P_explicit − P_rent) | **+$29 (p = 0.079, ns)** | **+$2 (p = 1.000, ns)** |
+| **Responsiveness** (P_rent − P_commute) | **−$659 (p < 0.0001, n=54)** | **−$688 (p < 0.0001, n=50)** |
+| **Precision effect** (P_explicit − P_rent) | +$24, TOST **not** equivalent (Table 20c) | **+$2, equivalent within ±$50** |
 | **Residual gap under P_rent** | **+$579** | **+$593** |
 
-Both findings replicate. Preference responsiveness is large and significant on both vendors, and marginally *stronger* on Claude. The explicit lexicographic instruction is null on both, and cleaner on Claude (p = 1.000 against 0.079). The residual optimization gap is within $14 across vendors.
+Preference responsiveness replicates cleanly: large, correctly directed and highly significant on both vendors, and marginally *stronger* on Claude. The residual optimization gap agrees within $14. The precision-effect claim replicates on Claude as a genuine equivalence result, while the 55-scenario `gpt-5.6-luna` subsample is underpowered for it (Table 20c) — the equivalence evidence for that model comes from its full 150-scenario grid.
 
 The corrected central claim is therefore not model-specific: **both frontier models comply directionally with a stated preference, neither improves under an unambiguous rule, and both leave roughly $580–$600 per month on the table.**
 
@@ -1027,7 +1056,7 @@ SDK `openai` 2.2.0, Python 3.8.8. Temperature at provider default; `max_completi
 
 **Outstanding work, in priority order.**
 
-**Completed since v0.2:** cross-vendor replication on `claude-opus-5` (§8.6); parse-failure sensitivity with worst-case bounds (§8.7); within-scenario priority manipulation (§8.8) with cross-vendor replication (Table 20b); pool-density and near-miss-ratio robustness (§8.9); candidate-set size sweep as a mechanism diagnostic (§8.10). Total spend US$57.01 across 9,612 priced calls.
+**Completed since v0.2:** cross-vendor replication on `claude-opus-5` (§8.6); parse-failure sensitivity with worst-case bounds (§8.7); within-scenario priority manipulation (§8.8) with cross-vendor replication (Table 20b); pool-density and near-miss-ratio robustness (§8.9); candidate-set size sweep as a mechanism diagnostic (§8.10). Total spend US$57.01 across 9,945 attempted calls (9,601 parsed).
 
 1. **Retrieval-freedom arm (§9.4).** The experiment that would convert our identity null from a bounded negative into a mitigation finding. Highest value; infrastructure already supports it.
 2. **Mechanism separation (§9.4).** Order randomization, forced full-ranking before selection, pre-sorted input, and tool-based sorting. These four would distinguish attention dilution from numeric-comparison instability from output-stage execution error. Highest-value remaining item after the retrieval-freedom arm, and cheap.

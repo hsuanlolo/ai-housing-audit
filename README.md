@@ -4,7 +4,7 @@
 
 An audit of whether AI recommenders overlook objectively better options than the ones they return — measured against a verifiable ground truth, priced in dollars and minutes, and tested for equality across users who differ only by an identity cue.
 
-**9,612 model calls · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$57.01 total cost**
+**9,945 model calls (9,601 parsed) · 3 models · 2 vendors · 150 scenarios · 3,885 real NYC listings · US$57.01**
 
 ---
 
@@ -27,9 +27,9 @@ A within-scenario manipulation — same pool, same ordering, one fixed rent orac
 | "Rent matters most" | **$2,634** | **+$606** |
 | "Minimize rent first; break ties within $50" | $2,637 | **+$611** |
 
-The models **do** honor stated preferences — one sentence moves the median recommendation **$646/month** and **12.3 minutes** in the right direction (p < 0.0001). But under "rent matters most" they still sit **$606/month above the five cheapest suitable listings on the same screen**, and an unambiguous lexicographic rule improves this by **$3.50 (p = 0.70)**. The residual gap is not a prompting problem.
+The models **do** honor stated preferences — one sentence moves the median recommendation **$646/month** and **12.3 minutes** in the right direction (p < 0.0001). But under "rent matters most" they still sit **$606/month above the five cheapest suitable listings on the same screen**, and an unambiguous lexicographic rule produces no material improvement — established by **equivalence testing** against a pre-specified $50/month bound, not from a non-significant p-value: effect +$3.48, 90% CI [−$11, +$18], TOST *p* < 0.0001. The residual gap is not a prompting problem.
 
-**Both claims replicate on a second vendor.** Re-run on `claude-opus-5` over the same 54 scenarios: responsiveness **−$688 (p < 0.0001)**, precision effect **+$2 (p = 1.000)**, residual gap **+$593** — against luna's −$659 / +$29 / +$579.
+**Both claims replicate on a second vendor.** Re-run on `claude-opus-5` over the same scenarios (n=50 complete): responsiveness **−$688 (p < 0.0001)**, precision effect **+$2, equivalent within ±$50 (TOST p < 0.0001)**, residual gap **+$593** — against luna's −$659 and +$579.
 
 **The gap grows with the candidate set.** Filtering removed, only feasible listings shown, explicit rule held fixed:
 
