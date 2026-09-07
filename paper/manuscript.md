@@ -42,11 +42,11 @@ Five addresses is a consequential compression. The renter sees what the system s
 
 This paper is about that difference: its size, and whether it is the same for everyone.
 
-Two literatures bear on the question and neither answers it. The first audits **steering**. Liu et al. (2024) issued 168,000 prompts to GPT-4 across the ten largest majority-minority U.S. cities and documented racial steering, default whiteness, and the routing of minority homeseekers toward lower-opportunity neighborhoods; a 2026 audit extended this to seven models and four cities and found that steering is an emergent property of how a model interprets user identity and place rather than a fixed model attribute (Anonymous, 2026a). These studies establish *where* models send people. They do not establish what the alternative was, because they have no enumerated inventory against which "where" could be scored.
+Two literatures bear on the question and neither answers it. The first audits **steering**. Liu et al. (2024) issued 168,000 prompts to GPT-4 across the ten largest majority-minority U.S. cities and documented racial steering, default whiteness, and the routing of minority homeseekers toward lower-opportunity neighborhoods; a 2026 audit extended this to seven models and four cities and found that steering is an emergent property of how a model interprets user identity and place rather than a fixed model attribute (Samad et al., 2026). These studies establish *where* models send people. They do not establish what the alternative was, because they have no enumerated inventory against which "where" could be scored.
 
 The second literature evaluates **ranking quality**. Ntimane et al. (2026) built a 960,000-pair offline evaluation set for conversational real-estate search and reported a statistically significant lift in click-through and scheduled visits from an LLM re-ranker. This establishes that LLM re-ranking moves engagement. It does not establish that engagement tracks user welfare, and its relevance labels are themselves LLM-generated.
 
-A third, very recent line closes part of the gap in another domain. *Invisible to the Machine* (Anonymous, 2026b) enumerated all 4,776 food-and-drink venues in two Balinese markets and tested 2,208 assistant responses against that census, finding that 85.6% of venues were never recommended and that the dominant failure mode was staleness rather than hallucination. This is an omission audit with a complete ground truth — the design move we adopt. But restaurants carry no protected class, no legally cognizable user constraint, and no natural denomination of loss. A diner who misses a good café has not been harmed in a way the law recognizes or a spreadsheet can price.
+A third, very recent line closes part of the gap in another domain. *Invisible to the Machine* (Pitenin, 2026) enumerated all 4,776 food-and-drink venues in two Balinese markets and tested 2,208 assistant responses against that census, finding that 85.6% of venues were never recommended and that the dominant failure mode was staleness rather than hallucination. This is an omission audit with a complete ground truth — the design move we adopt. But restaurants carry no protected class, no legally cognizable user constraint, and no natural denomination of loss. A diner who misses a good café has not been harmed in a way the law recognizes or a spreadsheet can price.
 
 Housing is, to our knowledge, the only consumer search domain that satisfies three conditions simultaneously:
 
@@ -70,13 +70,13 @@ The remainder of the paper is organized as follows. Section 2 positions the work
 
 Paired testing is the canonical method in fair housing enforcement: matched testers differing only in a protected characteristic approach the same provider, and systematic differences in treatment constitute evidence of discrimination (Turner et al., 2013). The correspondence-study tradition in labor economics applies the same logic to names (Bertrand & Mullainathan, 2004).
 
-Liu et al. (2024) transposed paired testing to LLMs, varying race, sexuality, gender, family status, and source of income across 168,000 GPT-4 prompts about renting and buying, and reported racial steering and default whiteness. Anonymous (2026a) extended the design to seven open-weight and proprietary models across four cities under three progressively context-rich prompting conditions, and reached a conclusion with direct methodological consequences for us: steering varies substantially by city, so "the city is not a neutral testing unit." We accordingly do not claim generality beyond New York and treat the single-city restriction as a design choice requiring justification (Section 10).
+Liu et al. (2024) transposed paired testing to LLMs, varying race, sexuality, gender, family status, and source of income across 168,000 GPT-4 prompts about renting and buying, and reported racial steering and default whiteness. Samad et al. (2026) extended the design to seven open-weight and proprietary models across four cities under three progressively context-rich prompting conditions, and reached a conclusion with direct methodological consequences for us: steering varies substantially by city, so "the city is not a neutral testing unit." We accordingly do not claim generality beyond New York and treat the single-city restriction as a design choice requiring justification (Section 10).
 
 What these studies share is that the outcome is a *location* — a neighborhood name, a ZIP code — evaluated against an external index of neighborhood quality. There is no inventory, so there is no counterfactual listing and no way to ask whether a better option existed.
 
 ### 2.2 Omission and coverage audits
 
-A parallel strand asks not what a system recommends but what it never recommends. Anonymous (2026b) enumerated a complete market census of 4,776 venues and found 85.6% never surfaced across 2,208 responses from four assistants, with visibility predicted by documentation artifacts — review volume, having a website, listed price information, web mentions — rather than by quality, and with 93 permanently closed venues recommended. The related "Whose X does the AI recommend?" audits apply randomized conjoint designs to hotels (Anonymous, 2026c) and physicians (Anonymous, 2026d), isolating the attribute weights implicit in assistant recommendations.
+A parallel strand asks not what a system recommends but what it never recommends. Pitenin (2026) enumerated a complete market census of 4,776 venues and found 85.6% never surfaced across 2,208 responses from four assistants, with visibility predicted by documentation artifacts — review volume, having a website, listed price information, web mentions — rather than by quality, and with 93 permanently closed venues recommended. The related "Whose X does the AI recommend?" audits apply randomized conjoint designs to hotels (Baig et al., 2026) and physicians (Gillani & Baig, 2026), isolating the attribute weights implicit in assistant recommendations.
 
 This is the closest prior art to our RQ2, and we adopt its central move: score recommendations against an enumerated universe rather than against other recommendations. We depart from it in three ways. First, our universe is constrained per user rather than global, because in housing the relevant denominator is not "all listings" but "all listings this user could actually take." Second, we use dominance rather than coverage, which converts a visibility statistic into a cost. Third, we cross the omission measurement with an identity manipulation, which the venue and hotel audits do not do.
 
@@ -86,11 +86,11 @@ Industrial deployments report engagement gains from LLM re-ranking. Ntimane et a
 
 We take this work seriously as evidence that LLM re-ranking is being deployed at scale, and we treat its evaluation design as the thing our study is built to complement rather than contradict. Its relevance labels are model-generated; ours are computed from listing attributes and a routing engine. Its outcome is engagement; ours is the gap between what was recommended and what was available. Both are legitimate, and they can diverge: a re-ranker can lift scheduled visits while systematically omitting the cheapest feasible unit, because the user cannot schedule a visit to a listing they never saw.
 
-Surveys of fairness in LLM-based recommendation (Anonymous, 2026e) and counterfactual audits of LLM treatment across user groups (Anonymous, 2026f) supply the fairness framing, which in the recommender setting is usually stated as *quality-of-service* parity: equivalent users should receive recommendations of equivalent quality. Our contribution to that framing is to make "quality" a priced quantity rather than a ranking metric.
+Surveys of fairness in LLM-based recommendation (Ma et al., 2026) and counterfactual audits of LLM treatment across user groups (Amiri-Margavi et al., 2026) supply the fairness framing, which in the recommender setting is usually stated as *quality-of-service* parity: equivalent users should receive recommendations of equivalent quality. Our contribution to that framing is to make "quality" a priced quantity rather than a ranking metric.
 
 ### 2.4 Constraint following in LLMs
 
-That LLMs degrade as simultaneous constraints accumulate is established outside the recommendation setting. Work on compositional constraint satisfaction reports phase-transition-like degradation as constraint count rises (Anonymous, 2026g), and multi-turn constraint-following benchmarks such as SEQUOR (Anonymous, 2026h) document failure under realistic dialogue conditions. We therefore do **not** claim to discover that multi-constraint requests are harder. Our hypothesis H1b is a domain-specific quantification: how large the penalty is when the interacting constraints are budget, bedrooms, and commute, and how it distributes across users.
+That LLMs degrade as simultaneous constraints accumulate is established outside the recommendation setting. Work on compositional constraint satisfaction reports phase-transition-like degradation as constraint count rises (Vasileva, 2026), and multi-turn constraint-following benchmarks such as SEQUOR (Canaverde et al., 2026) document failure under realistic dialogue conditions. We therefore do **not** claim to discover that multi-constraint requests are harder. Our hypothesis H1b is a domain-specific quantification: how large the penalty is when the interacting constraints are budget, bedrooms, and commute, and how it distributes across users.
 
 ### 2.5 Positioning
 
@@ -101,10 +101,10 @@ Table 1 states the gap as an intersection rather than a void.
 | | Enumerated ground truth | Protected-class manipulation | Verifiable user constraint | Loss in natural units | Mitigation comparison |
 |---|---|---|---|---|---|
 | Liu et al. (2024) | — | ✓ | — | — | — |
-| Anonymous (2026a), housing steering | — | ✓ | — | — | — |
+| Samad et al. (2026), housing steering | — | ✓ | — | — | — |
 | Ntimane et al. (2026), industry re-ranking | partial (candidate set) | — | partial (LLM-judged) | — | ✓ |
-| Anonymous (2026b), venue census | ✓ | — | — | — | — |
-| Anonymous (2026c,d), hotel / physician conjoint | — | partial | — | — | — |
+| Pitenin (2026), venue census | ✓ | — | — | — | — |
+| Baig et al. (2026); Gillani and Baig (2026), hotel / physician conjoint | — | partial | — | — | — |
 | **This paper** | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 ---
@@ -154,7 +154,7 @@ Because our research questions concern **ranking behavior over a known choice se
 
 Exact model identifiers, SDK versions and call dates are in Appendix C. Temperature is at provider default rather than 0, because deployment is stochastic and a single greedy draw cannot separate model bias from sampling noise; we take three replicates per cell and report within-cell variance (§7.4, Table 10).
 
-**Secondary study — product probe (specified, NOT executed).** No product probe was run for this version; the design below is retained as a specification for future work and no result is reported against it. A deliberately small, separately reported probe of three consumer products (ChatGPT with search enabled, Perplexity, and the Gemini app) on a 20-scenario subset under the neutral and voucher conditions, executed manually or via browser automation on a single date. This probe cannot support causal claims and is not pooled with the main results. Its sole function is to indicate whether the failure modes we characterize under controlled conditions are visible at all in shipped systems — and, because product pipelines retrieve their own inventory, to let us report the one thing the main study structurally cannot: whether the listings products surface even exist and are currently available. Anonymous (2026b) found 93 permanently closed venues recommended; the analogous check in housing is whether recommended units are still on the market.
+**Secondary study — product probe (specified, NOT executed).** No product probe was run for this version; the design below is retained as a specification for future work and no result is reported against it. A deliberately small, separately reported probe of three consumer products (ChatGPT with search enabled, Perplexity, and the Gemini app) on a 20-scenario subset under the neutral and voucher conditions, executed manually or via browser automation on a single date. This probe cannot support causal claims and is not pooled with the main results. Its sole function is to indicate whether the failure modes we characterize under controlled conditions are visible at all in shipped systems — and, because product pipelines retrieve their own inventory, to let us report the one thing the main study structurally cannot: whether the listings products surface even exist and are currently available. Pitenin (2026) found 93 permanently closed venues recommended; the analogous check in housing is whether recommended units are still on the market.
 
 ### 4.2 The four recommendation architectures
 
@@ -423,7 +423,7 @@ The identity contrast is the within-scenario difference in these gaps across con
 
 **S2 — Refusal and information-withholding rate.** The share of responses that decline to recommend, decline to discuss neighborhood characteristics, or substitute a safety or fair-housing statement for substantive content. **As executed, this was detected by a keyword pattern** matching refusal and fair-housing hedging language over the first 600 characters of each response, not by human coding. Because the observed rate was exactly 0.0% across all 5,916 parsed responses (Table 11) and every response contained five valid listing ids, we did not proceed to the planned human double-coding: there were no candidate cases to adjudicate. A non-zero rate would require the rubric-based protocol originally specified.
 
-**S3 — Neighborhood exposure.** Distribution of ACS tract characteristics across recommended listings. This is the measure that connects our results to the existing steering literature and permits direct comparison with Liu et al. (2024) and Anonymous (2026a).
+**S3 — Neighborhood exposure.** Distribution of ACS tract characteristics across recommended listings. This is the measure that connects our results to the existing steering literature and permits direct comparison with Liu et al. (2024) and Samad et al. (2026).
 
 **S4 — Conventional IR metrics.** Tolerance-band Capture@k (a recommendation counts as a hit if within $50 and 5 minutes of an oracle top-5 member), NDCG@5, and Precision@5. All relevance labels derive from the pre-specified constraints and benchmark; none is generated post hoc or by a model judging itself.
 
@@ -619,7 +619,7 @@ Under the interpretive rule pre-specified in §7.4 — if the replicate variance
 
 **H4b is rejected.** No refusals, no substitution of safety language for substance, no differential withholding. The guardrail trade-off we anticipated did not materialize in this setting.
 
-**What this null does and does not license.** It is a well-powered negative result for *ranking over a fixed candidate pool*: 150 matched scenarios, byte-identical requests and pools across conditions, 10,000-draw randomization inference. It is **not** evidence that these models do not steer. Prior work finding steering (Liu et al., 2024; Anonymous, 2026a) used open-ended prompts in which the model selects neighborhoods itself. Our design removes that degree of freedom by construction. Whether fixing the candidate set *causes* the disparity to vanish is a plausible hypothesis that **this study does not test**, because we did not run an open-ended comparison arm. Section 9.4 specifies that experiment.
+**What this null does and does not license.** It is a well-powered negative result for *ranking over a fixed candidate pool*: 150 matched scenarios, byte-identical requests and pools across conditions, 10,000-draw randomization inference. It is **not** evidence that these models do not steer. Prior work finding steering (Liu et al., 2024; Samad et al., 2026) used open-ended prompts in which the model selects neighborhoods itself. Our design removes that degree of freedom by construction. Whether fixing the candidate set *causes* the disparity to vanish is a plausible hypothesis that **this study does not test**, because we did not run an open-ended comparison arm. Section 9.4 specifies that experiment.
 
 ### 8.5 Capability does not reduce opportunity loss
 
@@ -875,7 +875,7 @@ Dominance auditing transfers to any high-stakes search domain with an enumerable
 
 **Listing coverage is biased in a known direction.** RentCast's New York coverage derives from MLS syndication, which under-represents the no-fee and small-landlord segment that constitutes a substantial share of the city's rental market. Table 2a quantifies the divergence. Because the bias is common to all conditions and architectures, it threatens external validity — the absolute magnitude of cost gaps — but not the internal validity of within-scenario identity contrasts.
 
-**One city.** Anonymous (2026a) found steering patterns vary by city and concluded that the city is not a neutral testing unit. Our magnitudes are New York facts. The dominance method generalizes; the numbers do not.
+**One city.** Samad et al. (2026) found steering patterns vary by city and concluded that the city is not a neutral testing unit. Our magnitudes are New York facts. The dominance method generalizes; the numbers do not.
 
 **Name cues confound race and class, and were not validated.** A name carries race and socioeconomic signals simultaneously (Gaddis, 2017). Our pool draws on Bertrand & Mullainathan (2004) with four names Gaddis flags as SES-atypical excluded a priori, but **we did not obtain the published perception scores**, so Appendix B is incomplete and the C1/C2 conditions rest on an unvalidated instrument. This is a material weakness for those two conditions specifically. It does not affect C3 (voucher), which is an explicit disclosure rather than an inferred signal, nor any non-identity result. Name-level variance components were specified in §4.3 but not computed.
 
@@ -915,23 +915,23 @@ The practical conclusion is unglamorous and, we suspect, general. Filtering and 
 
 ## References
 
-*Every reference below must be verified against the published record before submission. arXiv identifiers are cited as preprints; several have since appeared at peer-reviewed venues and should be updated to the version of record. Author names for 2026 preprints are marked "Anonymous" here pending verification and must be completed.*
+*Author names were verified against arXiv abstract pages and, for Liu et al. (2024), the EAAMO '24 proceedings record, on 7 September 2026. arXiv identifiers are cited as preprints; where a preprint has since appeared at a peer-reviewed venue the citation should be updated to the version of record before final submission — Samad et al. (2026) is marked as appearing at AIES '26 and its page numbers are not yet available.*
 
-Anonymous. (2026a). The geography of algorithmic judgment: LLM intermediaries, place identity, and racial steering in housing search. *arXiv:2606.06694*. [AIES '26]
+Samad, H., Lam, T., Mügge-Durum, C., & Akinwumi, M. (2026). The geography of algorithmic judgment: LLM intermediaries, place identity, and racial steering in housing search. *arXiv:2606.06694*. [AIES '26]
 
-Anonymous. (2026b). Invisible to the machine: Auditing AI restaurant, café, and bar recommendation against a complete market census. *arXiv:2608.07069*.
+Pitenin, V. (2026). Invisible to the machine: Auditing AI restaurant, café, and bar recommendation against a complete market census. *arXiv:2608.07069*.
 
-Anonymous. (2026c). Whose hotel does the AI recommend? An algorithm audit of reputation signals in LLM-assisted hotel selection. *arXiv:2606.16344*.
+Baig, M. S. A., Gillani, S. A., & Ali, A. (2026). Whose hotel does the AI recommend? An algorithm audit of reputation signals in LLM-assisted hotel selection. *arXiv:2606.16344*.
 
-Anonymous. (2026d). Whose doctor does the AI recommend? An algorithm audit of reputation and demographic signals in large language model-assisted physician choice. *arXiv:2608.14399*.
+Gillani, S. A., & Baig, M. S. A. (2026). Whose doctor does the AI recommend? An algorithm audit of reputation and demographic signals in large language model-assisted physician choice. *arXiv:2608.14399*.
 
-Anonymous. (2026e). Rethinking fairness in LLM-based recommender systems: A survey. *arXiv:2606.28340*.
+Ma, S.-D., Chen, C.-Y., Li, B.-A., Chen, P.-Y., Hsu, S.-Y., & Chen, Y.-N. (2026). Rethinking fairness in LLM-based recommender systems: A survey. *arXiv:2606.28340*.
 
-Anonymous. (2026f). Equal access, unequal interaction: A counterfactual audit of LLM fairness. *arXiv:2602.02932*.
+Amiri-Margavi, A., Gharagozlou, A., Gholami Davodi, A., Mousavi Davoudi, S. P., & Hasani Balyani, H. (2026). Equal access, unequal interaction: A counterfactual audit of LLM fairness. *arXiv:2602.02932*.
 
-Anonymous. (2026g). Large language models can follow instructions, but not many at once: Phase transitions in compositional constraint satisfaction. *arXiv:2608.12426*.
+Vasileva, M. I. (2026). Large language models can follow instructions, but not many at once: Phase transitions in compositional constraint satisfaction. *arXiv:2608.12426*.
 
-Anonymous. (2026h). SEQUOR: A multi-turn benchmark for realistic constraint following. *arXiv:2605.06353*.
+Canaverde, B., Alves, D. M., Pombal, J., Attanasio, G., & Martins, A. F. T. (2026). SEQUOR: A multi-turn benchmark for realistic constraint following. *arXiv:2605.06353*.
 
 Bertrand, M., & Mullainathan, S. (2004). Are Emily and Greg more employable than Lakisha and Jamal? A field experiment on labor market discrimination. *American Economic Review*, 94(4), 991–1013.
 
@@ -943,17 +943,17 @@ Gaddis, S. M. (2017). How black are Lakisha and Jamal? Racial perceptions from n
 
 Järvelin, K., & Kekäläinen, J. (2002). Cumulated gain-based evaluation of IR techniques. *ACM Transactions on Information Systems*, 20(4), 422–446.
 
-Liu, [initials]. et al. (2024). Racial steering by large language models: A prospective audit of GPT-4 on housing recommendations. *Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '24)*. https://doi.org/10.1145/3689904.3694709
+Liu, E. J., So, W., Hosoi, P., & D'Ignazio, C. (2024). Racial steering by large language models: A prospective audit of GPT-4 on housing recommendations. *Proceedings of the 4th ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '24)*. https://doi.org/10.1145/3689904.3694709
 
 New York City Human Rights Law, N.Y.C. Admin. Code § 8-107(5).
 
-Ntimane, N., et al. (2026). LLM-based re-ranking for real estate search. *arXiv:2607.14835*.
+Ntimane, N., Guedes, R., Cunha, T., & Nogueira, P. (2026). LLM-based re-ranking for real estate search. *arXiv:2607.14835*.
 
 Robertson, S., & Zaragoza, H. (2009). The probabilistic relevance framework: BM25 and beyond. *Foundations and Trends in Information Retrieval*, 3(4), 333–389.
 
 Sandvig, C., Hamilton, K., Karahalios, K., & Langbort, C. (2014). Auditing algorithms: Research methods for detecting discrimination on internet platforms. *Data and Discrimination: Converting Critical Concerns into Productive Inquiry*, 22, 4349–4357.
 
-Turner, M. A., et al. (2013). *Housing discrimination against racial and ethnic minorities 2012*. U.S. Department of Housing and Urban Development.
+Turner, M. A., Santos, R., Levy, D. K., Wissoker, D., Aranda, C., & Pitingolo, R. (2013). *Housing discrimination against racial and ethnic minorities 2012*. U.S. Department of Housing and Urban Development, Office of Policy Development and Research.
 
 ---
 
@@ -1065,7 +1065,7 @@ SDK `openai` 2.2.0, Python 3.8.8. Temperature at provider default; `max_completi
 5. **Name-perception validation (Appendix B).** Gaddis (2017) scores, without which C1/C2 rest on an unvalidated instrument.
 5b. **Router cross-validation.** The nine-route check in §5.2 is a sanity test, not a validation. A 50–100 route comparison against an independent routing source, reporting MAE, median absolute error and 90th-percentile error stratified by borough, is needed before the commute layer can be called validated.
 5c. **Human coding of information withholding.** §6.2 detection is keyword-based. The observed rate is 0.0% across 6,631 responses, but a blind double-coding of 100–200 sampled responses with reported agreement would establish that the rule is not simply failing to fire.
-5d. **Reference verification.** Author names for the 2026 preprints are incomplete and marked "Anonymous" throughout the reference list. Every citation must be resolved to the version of record before submission.
+5d. **Version-of-record updates.** Author names were verified on 7 September 2026 (see References note). Samad et al. (2026) is listed as appearing at AIES '26 and its proceedings pagination is not yet available; any preprint that reaches a peer-reviewed venue before final submission should be recited to the version of record.
 6. **Table 2b.** ACS/NYCHVS coverage benchmark; requires a free Census API key.
 7. **Open-weight arm.** A fixed-weight model so at least one result remains reproducible after snapshot deprecation.
 8. **Registration.** Any additional data collection should be registered before it begins (§7.6).
