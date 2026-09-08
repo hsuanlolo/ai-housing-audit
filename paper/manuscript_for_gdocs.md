@@ -16,7 +16,7 @@ Generated from paper/manuscript.md — that file remains authoritative.
 
 # Following the Preference, Missing the Optimum: Compliance Without Optimization in AI Housing Recommendation
 
-**Author.** Hsuan Lo. Independent Researcher. Correspondence: hsuanlo@alumni.harvard.edu
+**Author.** Hsuan Lo, DDes (Harvard University). Independent Researcher. Correspondence: hsuanlo@alumni.harvard.edu
 
 **Status.** v0.2, 6 September 2026. Sections 1–8 and 10 report completed results from 6,120 audited model calls. Section 9 is written against those results. Earlier status note (pre-data, v0.1) superseded.
 
