@@ -315,7 +315,8 @@
 </tbody>
 </table>
 <p>6,631 of 6,840 (97.0%) yielded parseable output with at least one valid listing id. Realized cost <strong>US$47.61</strong>.</p>
-<p><strong>Specified but not executed in this version</strong>, and reported nowhere in Section 8: the S0 BM25 baseline; the commute-hidden arm; prompt-wording variants; top-<em>k</em> sensitivity; the N ∈ {60, 120} pool-density arm; and the consumer-product probe. The pool-density arm matters most of these, because §6.1 identifies pool size as the principal sensitivity of the dominance measure; until it is run, the absolute level of P2a should be read as conditional on N = 120. These are the first items in any revision.</p>
+<p><strong>Specified but not executed in this version</strong>, and reported nowhere in Section 8: the S0 BM25 baseline; the commute-hidden arm; prompt-wording variants; top-<em>k</em> sensitivity; the S3 neighborhood-exposure measure (§6.2), which requires ACS tract covariates we did not retrieve; and the consumer-product probe. These are the first items in any revision.</p>
+<p>The N ∈ {60, 120} pool-density arm was listed here as outstanding in v0.1 and <strong>has since been executed</strong>: §8.9 reports it over five configurations and 800 runs (Table 21). It confirmed the concern that motivated it — the dominance <em>rate</em> moves from 17.6% to 51.1% with pool configuration, while the rent gap moves only from +$518 to +$564 — which is why this paper treats the dollar-denominated measure as the transportable quantity and always quotes P2a with its configuration.</p>
 <hr />
 <h2 id="data">5. Data</h2>
 <h3 id="listing-universe">5.1 Listing universe</h3>
@@ -329,9 +330,10 @@
 <p>Departure time is fixed rather than varied because no hypothesis concerns time-of-day variation, and three anchors are used rather than the larger set initially contemplated for the same reason. Walk access to and from stops is computed as straight-line distance with a 1.3 detour factor at 4.8 km/h rather than routed over the street network, within a <strong>1,200 m</strong> access radius. The radius was set empirically rather than by convention. At the literature-standard 800 m, 11% of listings fall outside walking range of any station, and those listings are <strong>$600/month cheaper at the median</strong> and concentrated in Queens (28.7% of the excluded versus 13.2% of the retained), Staten Island (14.0% versus 1.1%) and the Bronx (19.8% versus 11.0%) — that is, the filter removes precisely the cheap, bus-dependent outer-borough inventory that a study of rent gaps cannot afford to lose. Widening to 1,200 m retains 94.6% of listings while moving the median commute only from 30.0 to 30.4 minutes. The 800 m universe is reported as a robustness check. Buses remain excluded; this is the residual cost of that exclusion, and it is measured rather than assumed.</p>
 <p>The Staten Island Railway has no track connection to the subway, so a subway-only network renders every Staten Island listing unreachable and silently deletes a borough. We add the Staten Island Ferry explicitly as a fixed-cost link (25 minute crossing plus 15 minute mean wait on a 30 minute headway).</p>
 <h3 id="tract-covariates">5.3 Tract covariates</h3>
-<p>ACS 5-year estimates at census-tract level: median household income, median gross rent, rent burden, renter share, and racial and ethnic composition. These enter the analysis <strong>only</strong> as the neighborhood-exposure outcome (§6, S3) and as descriptive context. They are not inputs to the feasible set, the dominance computation, or any primary outcome.</p>
+<p>ACS 5-year estimates at census-tract level were specified as: median household income, median gross rent, rent burden, renter share, and racial and ethnic composition. They were to enter the analysis <strong>only</strong> as the neighborhood-exposure outcome (§6, S3) and as descriptive context, and are not inputs to the feasible set, the dominance computation, or any primary outcome.</p>
+<p><strong>These covariates were not retrieved.</strong> The spatial join executed in <code>code/03_build_dataset.py</code> resolves each listing to a census-tract <code>GEOID</code> and a borough from TIGER geometry, which requires no API access; the ACS tables themselves require a Census API key that was not obtained (Appendix D, item 6). The analysis dataset therefore carries <code>GEOID</code> and <code>borough</code> and no ACS variable. Because no primary outcome depends on them, nothing in Sections 8 or 9 is affected, but two specified items fall away with them: the S3 neighborhood-exposure measure (§6.2) and the benchmark half of Table 2b.</p>
 <h3 id="coverage-benchmark">5.4 Coverage benchmark</h3>
-<p>New York’s rental market transacts substantially through StreetEasy and REBNY channels rather than MLS syndication, so a syndication-derived sample may under-represent no-fee units and small-landlord inventory. We benchmark the listing sample’s rent distribution and borough composition against ACS median gross rent by tract and against the NYC Housing and Vacancy Survey, and report the direction and magnitude of divergence in Table 2a. This does not eliminate the bias; it makes it legible, and it bounds the claims in Section 9.</p>
+<p>New York’s rental market transacts substantially through StreetEasy and REBNY channels rather than MLS syndication, so a syndication-derived sample may under-represent no-fee units and small-landlord inventory. We benchmark the listing sample’s rent distribution and borough composition against ACS median gross rent by tract and against the NYC Housing and Vacancy Survey, and report the direction and magnitude of divergence in <strong>Table 2b</strong>; Table 2a reports a separate and fully computed exclusion check, the walk-access radius. This does not eliminate the bias; it makes it legible, and it bounds the claims in Section 9.</p>
 <p><strong>Table 2a. Direction of the walk-access exclusion (n = 4,108 geocoded listings).</strong></p>
 <table>
 <thead>
@@ -385,7 +387,102 @@
 </tbody>
 </table>
 <p>Excluded listings are $700/month cheaper at the median and overwhelmingly outer-borough. At the 800 m radius the exclusion was larger (449 listings, $600/month cheaper); the 1,200 m radius adopted here halves it. The residual bias is toward <em>over-representing</em> expensive, subway-proximate inventory, which means our absolute rent levels are high relative to the true market and our cost-gap magnitudes should be read as pertaining to the transit-accessible segment.</p>
-<p><strong>Table 2b. Rent and borough distribution against ACS and NYCHVS benchmarks.</strong> <code>[[RESULT: pending Census API access -- rent decile distribution, sample vs. NYCHVS; borough shares vs. ACS renter-occupied units; estimated under-coverage by rent decile]]</code></p>
+<p><strong>Table 2b. Rent and borough distribution of the listing sample, with benchmark columns pending.</strong> The sample side is computed; the benchmark side requires a Census API key (Appendix D, item 6). Reported here so that the outstanding work is one column, not one table.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Rent decile (sample)</th>
+<th>Sample rent</th>
+<th>ACS / NYCHVS benchmark</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p10</td>
+<td>$2,867</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="even">
+<td>p20</td>
+<td>$3,224</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="odd">
+<td>p30</td>
+<td>$3,500</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="even">
+<td>p40</td>
+<td>$3,850</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="odd">
+<td>p50</td>
+<td><strong>$4,200</strong></td>
+<td><em>pending</em></td>
+</tr>
+<tr class="even">
+<td>p60</td>
+<td>$4,575</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="odd">
+<td>p70</td>
+<td>$5,250</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="even">
+<td>p80</td>
+<td>$6,103</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="odd">
+<td>p90</td>
+<td>$7,680</td>
+<td><em>pending</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Borough</th>
+<th>Sample share</th>
+<th>ACS renter-occupied share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Manhattan</td>
+<td>37.3%</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="even">
+<td>Brooklyn</td>
+<td>36.0%</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="odd">
+<td>Queens</td>
+<td>13.5%</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="even">
+<td>Bronx</td>
+<td>11.7%</td>
+<td><em>pending</em></td>
+</tr>
+<tr class="odd">
+<td>Staten Island</td>
+<td>1.6%</td>
+<td><em>pending</em></td>
+</tr>
+</tbody>
+</table>
+<p><em>n</em> = 3,885. Median sample rent by unit size: studio $3,612 (n=546), one-bedroom $4,100 (n=1,620), two-bedroom $4,995 (n=1,081), three-bedroom $5,000 (n=523).</p>
+<p>The sample column is informative on its own, before any benchmark. Manhattan and Brooklyn together account for <strong>73.3%</strong> of listings while Staten Island is near-absent at 1.6%, and the median sample rent of <strong>$4,200</strong> sits at the upper end of the New York rental distribution rather than near its centre. Read alongside the walk-access exclusion in Table 2a — which removed listings that were $700/month cheaper at the median and 19.3% Staten Island — the sample plainly over-represents dense, subway-proximate, high-rent inventory.</p>
+<p>The <em>direction</em> of the coverage bias is therefore already established without ACS data, and it is the direction §5.4 anticipated. What the benchmark columns would add is its <strong>magnitude</strong> by decile: how far each sample decile sits from the corresponding population quantity, which is what would bound the external validity of the dollar figures in Section 8. We state the direction and decline to state a magnitude we have not computed.</p>
 <h3 id="exploratory-data-analysis-plan">5.5 Exploratory data analysis plan</h3>
 <p>EDA is specified in advance and its outputs are descriptive; no primary hypothesis is formed from it.</p>
 <p><strong>Table 3a. Cleaning cascade.</strong></p>
@@ -765,7 +862,7 @@ CommuteGap_i = median{ Commute_ij : j ∈ R_i ∩ F_i } − median{ Commute_ij :
 <h3 id="secondary-outcomes">6.2 Secondary outcomes</h3>
 <p><strong>S1 — Mean percentile rank within the feasible set.</strong> The mean percentile of recommended listings within F_i, computed separately on rent and on commute. This replaces top-<em>k</em> capture as the primary opportunity measure: when |F_i| is large and members are near-equivalent, Capture@5 approaches zero for any system including an optimal one, because it measures set size rather than recommendation quality.</p>
 <p><strong>S2 — Refusal and information-withholding rate.</strong> The share of responses that decline to recommend, decline to discuss neighborhood characteristics, or substitute a safety or fair-housing statement for substantive content. <strong>As executed, this was detected by a keyword pattern</strong> matching refusal and fair-housing hedging language over the first 600 characters of each response, not by human coding. Because the observed rate was exactly 0.0% across all 5,916 parsed responses (Table 11) and every response contained five valid listing ids, we did not proceed to the planned human double-coding: there were no candidate cases to adjudicate. A non-zero rate would require the rubric-based protocol originally specified.</p>
-<p><strong>S3 — Neighborhood exposure.</strong> Distribution of ACS tract characteristics across recommended listings. This is the measure that connects our results to the existing steering literature and permits direct comparison with Liu et al. (2024) and Samad et al. (2026).</p>
+<p><strong>S3 — Neighborhood exposure (specified; not computed in this version).</strong> Distribution of ACS tract characteristics across recommended listings. This is the measure that would connect our results to the existing steering literature and permit direct comparison with Liu et al. (2024) and Samad et al. (2026). It is <strong>not reported in Section 8</strong>: the tract join in §5.3 resolved each listing to a GEOID and borough but did not retrieve the ACS covariates themselves, which requires a Census API key we did not obtain (Appendix D, item 6). No claim in this paper rests on it, and its absence is the main reason our null on identity conditioning cannot be compared directly against the steering literature (§8.4, §9.5).</p>
 <p><strong>S4 — Conventional IR metrics.</strong> Tolerance-band Capture@k (a recommendation counts as a hit if within $50 and 5 minutes of an oracle top-5 member), NDCG@5, and Precision@5. All relevance labels derive from the pre-specified constraints and benchmark; none is generated post hoc or by a model judging itself.</p>
 <h3 id="tertiary-robustness-only">6.3 Tertiary (robustness only)</h3>
 <p><strong>T1 — Weighted opportunity loss.</strong></p>
@@ -2092,7 +2189,7 @@ C3  {as C0, with} &quot;I have a CityFHEPS voucher that covers part of my rent.&
 <li><strong>Mechanism separation (§9.4).</strong> Order randomization, forced full-ranking before selection, pre-sorted input, and tool-based sorting. These four would distinguish attention dilution from numeric-comparison instability from output-stage execution error. Highest-value remaining item after the retrieval-freedom arm, and cheap. 2b. <strong>Replicate §8.10 (size sweep) on a second vendor.</strong> ~US$30 on Claude. §8.8 has already been replicated (Table 20b).</li>
 <li><strong>Naturalistic-pool arm.</strong> Candidates sampled as a real search would return them, without the enforced 2:1 infeasible ratio, before any claim about real-world prevalence.</li>
 <li><strong>Name-perception validation (Appendix B).</strong> Gaddis (2017) scores, without which C1/C2 rest on an unvalidated instrument. 5b. <strong>Router cross-validation.</strong> The nine-route check in §5.2 is a sanity test, not a validation. A 50–100 route comparison against an independent routing source, reporting MAE, median absolute error and 90th-percentile error stratified by borough, is needed before the commute layer can be called validated. 5c. <strong>Human coding of information withholding.</strong> §6.2 detection is keyword-based. The observed rate is 0.0% across 6,631 responses, but a blind double-coding of 100–200 sampled responses with reported agreement would establish that the rule is not simply failing to fire. 5d. <strong>Version-of-record updates.</strong> Author names were verified on 7 September 2026 (see References note). Samad et al. (2026) is listed as appearing at AIES ’26 and its proceedings pagination is not yet available; any preprint that reaches a peer-reviewed venue before final submission should be recited to the version of record.</li>
-<li><strong>Table 2b.</strong> ACS/NYCHVS coverage benchmark; requires a free Census API key.</li>
+<li><strong>ACS covariates: Table 2b benchmark columns and the S3 outcome.</strong> Both depend on ACS 5-year tables, which require a free Census API key that was not obtained. The key is free from <code>api.census.gov/data/key_signup.html</code> and issued immediately. Note that the API returns HTTP 200 for an unauthenticated request but redirects to an HTML page titled “Missing Key” — status code alone is not a valid check, and an earlier draft of this appendix reported the endpoint as open on that basis. With the key, two things follow: the benchmark columns of Table 2b (sample side already computed, §5.4), and the S3 neighborhood-exposure measure (§6.2), which is the item that would permit direct comparison with the steering literature. Both are the highest-value outstanding items.</li>
 <li><strong>Open-weight arm.</strong> A fixed-weight model so at least one result remains reproducible after snapshot deprecation.</li>
 <li><strong>Registration.</strong> Any additional data collection should be registered before it begins (§7.6).</li>
 </ol>
