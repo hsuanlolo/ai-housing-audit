@@ -37,7 +37,7 @@
 <p><strong>Models honor stated preferences but do not optimize.</strong> A within-scenario manipulation — same pool, same ordering, one fixed rent oracle, one sentence changed — moves the median recommended rent by <strong>$646/month</strong> and the median commute by <strong>12.3 minutes</strong> in the correct direction (p &lt; 0.0001). Responsiveness is high. Yet under “rent matters most” the recommendations still sit <strong>+$606/month above the five cheapest feasible listings in the same pool</strong>, and an unambiguous lexicographic instruction produces no material improvement. We establish this by equivalence testing against a pre-specified $50/month bound rather than from a non-significant p-value: on the full grid the effect is +$3.48 with a 90% CI of [−$11, +$18] (TOST <em>p</em> &lt; 0.0001), and on <code>claude-opus-5</code> +$2.00 with [−$1, +$5] (TOST <em>p</em> &lt; 0.0001). The residual gap is therefore not a prompt-clarity problem. We characterize it as <strong>compliance without optimization</strong>. Both claims replicate on <code>claude-opus-5</code>: responsiveness −$688 (p &lt; 0.0001), precision effect equivalent within ±$50, residual gap +$593.</p>
 <p><strong>The gap scales with candidate-set size, and the limitation binds early.</strong> With filtering removed and only feasible listings shown, the share of responses containing the single cheapest available listing falls from <strong>93.7% at ten candidates to 53.5% at eighty</strong>, and the rent gap rises from +$111 to +$419, plateauing above forty. The model responds correctly to the stated priority but fails to execute the resulting optimization reliably over a large candidate set. We do not claim to isolate the mechanism.</p>
 <p><strong>The finding replicates across vendors, and capability does not fix it.</strong> We audited three models spanning a 45x range in price per token — <code>gpt-5.6-luna</code>, <code>gpt-5.6-sol</code> (OpenAI) and <code>claude-opus-5</code> (Anthropic). The rent-first gap is <strong>+$700, +$699 and +$702</strong> respectively, agreeing to within $3. Paired within-scenario contrasts on the rent-first condition are statistically indistinguishable (difference &lt;= $3, p &gt;= 0.86), though Claude is modestly better on general dominance (34.3% vs 39.4%, p=0.0001). We present this as evidence of a shared failure mode rather than a model ranking.</p>
-<p><strong>Almost no identity-conditioned disparity was detected.</strong> Of 48 pre-specified contrasts across three models, 47 return null after Benjamini–Hochberg correction. The single exception — voucher disclosure lowering Claude’s rent gap by $27.60/month — favors the user, is 4% of the preference-infidelity gap, and falls below replicate noise under our pre-specified variance rule; we report it as an observation warranting replication, not a finding. Between-condition variance is smaller than replicate noise for every primary outcome, so under our pre-specified rule we report no effect. Refusal and information-withholding rates were 0.0% in all conditions. This null holds for ranking over a fixed candidate pool and does not license claims about open-ended recommendation, where prior work has found steering.</p>
+<p><strong>Almost no identity-conditioned disparity was detected.</strong> Of 48 pre-specified contrasts across three models, 47 return null after Benjamini–Hochberg correction. A further 105 contrasts on the ACS tract characteristics of recommended listings — the measure most directly comparable to the steering literature — return <strong>no</strong> significant effect after correction, with replicate noise exceeding between-condition variance for all seven neighborhood outcomes (§8.11). The single exception — voucher disclosure lowering Claude’s rent gap by $27.60/month — favors the user, is 4% of the preference-infidelity gap, and falls below replicate noise under our pre-specified variance rule; we report it as an observation warranting replication, not a finding. Between-condition variance is smaller than replicate noise for every primary outcome, so under our pre-specified rule we report no effect. Refusal and information-withholding rates were 0.0% in all conditions. This null holds for ranking over a fixed candidate pool and does not license claims about open-ended recommendation, where prior work has found steering.</p>
 <p>Conventional deployment metrics cannot surface this failure, because they score a returned list against itself or against a judge sharing the ranker’s priors. We propose dominance-rate instrumentation as a deployable diagnostic and release all code, prompts, and per-call results.</p>
 <p><strong>Keywords:</strong> algorithm auditing; large language models; recommender systems; constrained optimization; opportunity cost; fair housing; algorithmic fairness</p>
 <hr />
@@ -315,7 +315,7 @@
 </tbody>
 </table>
 <p>6,631 of 6,840 (97.0%) yielded parseable output with at least one valid listing id. Realized cost <strong>US$47.61</strong>.</p>
-<p><strong>Specified but not executed in this version</strong>, and reported nowhere in Section 8: the S0 BM25 baseline; the commute-hidden arm; prompt-wording variants; top-<em>k</em> sensitivity; the S3 neighborhood-exposure measure (§6.2), which requires ACS tract covariates we did not retrieve; and the consumer-product probe. These are the first items in any revision.</p>
+<p><strong>Specified but not executed in this version</strong>, and reported nowhere in Section 8: the S0 BM25 baseline; the commute-hidden arm; prompt-wording variants; top-<em>k</em> sensitivity; and the consumer-product probe. These are the first items in any revision.</p>
 <p>The N ∈ {60, 120} pool-density arm was listed here as outstanding in v0.1 and <strong>has since been executed</strong>: §8.9 reports it over five configurations and 800 runs (Table 21). It confirmed the concern that motivated it — the dominance <em>rate</em> moves from 17.6% to 51.1% with pool configuration, while the rent gap moves only from +$518 to +$564 — which is why this paper treats the dollar-denominated measure as the transportable quantity and always quotes P2a with its configuration.</p>
 <hr />
 <h2 id="data">5. Data</h2>
@@ -331,7 +331,8 @@
 <p>The Staten Island Railway has no track connection to the subway, so a subway-only network renders every Staten Island listing unreachable and silently deletes a borough. We add the Staten Island Ferry explicitly as a fixed-cost link (25 minute crossing plus 15 minute mean wait on a 30 minute headway).</p>
 <h3 id="tract-covariates">5.3 Tract covariates</h3>
 <p>ACS 5-year estimates at census-tract level were specified as: median household income, median gross rent, rent burden, renter share, and racial and ethnic composition. They were to enter the analysis <strong>only</strong> as the neighborhood-exposure outcome (§6, S3) and as descriptive context, and are not inputs to the feasible set, the dominance computation, or any primary outcome.</p>
-<p><strong>These covariates were not retrieved.</strong> The spatial join executed in <code>code/03_build_dataset.py</code> resolves each listing to a census-tract <code>GEOID</code> and a borough from TIGER geometry, which requires no API access; the ACS tables themselves require a Census API key that was not obtained (Appendix D, item 6). The analysis dataset therefore carries <code>GEOID</code> and <code>borough</code> and no ACS variable. Because no primary outcome depends on them, nothing in Sections 8 or 9 is affected. Two specified items are affected: the S3 neighborhood-exposure measure (§6.2), which falls away entirely, and the borough column of Table 2b. The rent-distribution half of Table 2b does <strong>not</strong> depend on ACS and is computed from NYCHVS public-use microdata, which requires no key (§5.4).</p>
+<p>These covariates <strong>were</strong> retrieved, in <code>code/17_fetch_acs.py</code>, for all <strong>2,327</strong> census tracts in the five New York counties, matching the tract count in the TIGER geometry used for the spatial join. 99.5% of listings resolve to a tract with a non-suppressed median-income estimate; the remainder fall in tracts where ACS suppresses the estimate for small population, and are dropped from S3 only.</p>
+<p>An earlier version of this paper reported these covariates as not retrieved and dropped the S3 measure accordingly. That was a consequence of the Census API key not yet being available, not of any design decision, and it has been corrected: S3 is reported in §8.11.</p>
 <h3 id="coverage-benchmark">5.4 Coverage benchmark</h3>
 <p>New York’s rental market transacts substantially through StreetEasy and REBNY channels rather than MLS syndication, so a syndication-derived sample may under-represent no-fee units and small-landlord inventory. We benchmark the listing sample’s rent distribution and borough composition against ACS median gross rent by tract and against the NYC Housing and Vacancy Survey, and report the direction and magnitude of divergence in <strong>Table 2b</strong>; Table 2a reports a separate and fully computed exclusion check, the walk-access radius. This does not eliminate the bias; it makes it legible, and it bounds the claims in Section 9.</p>
 <p><strong>Table 2a. Direction of the walk-access exclusion (n = 4,108 geocoded listings).</strong></p>
@@ -387,7 +388,7 @@
 </tbody>
 </table>
 <p>Excluded listings are $700/month cheaper at the median and overwhelmingly outer-borough. At the 800 m radius the exclusion was larger (449 listings, $600/month cheaper); the 1,200 m radius adopted here halves it. The residual bias is toward <em>over-representing</em> expensive, subway-proximate inventory, which means our absolute rent levels are high relative to the true market and our cost-gap magnitudes should be read as pertaining to the transit-accessible segment.</p>
-<p><strong>Table 2b. Rent distribution of the listing sample against NYCHVS 2023, with ACS borough benchmark pending.</strong> Gross rent, weighted by the NYCHVS final household weight <code>FW</code>. The NYCHVS half needs no API key and is computed; the ACS half does and is not (Appendix D, item 6). Tenure coding was verified rather than assumed — the renter code carries positive gross rent and zero owner cost, and yields a weighted renter share of <strong>67.7%</strong>, matching the published New York figure. Cases coded no-cash-rent are excluded, so the benchmark is the distribution of cash gross rent.</p>
+<p><strong>Table 2b. Rent and borough distribution of the listing sample against NYCHVS 2023 and ACS 2023.</strong> Gross rent, weighted by the NYCHVS final household weight <code>FW</code>. The NYCHVS rent benchmark requires no API key; the ACS borough benchmark below requires one and it was obtained (Appendix D, item 6). Tenure coding was verified rather than assumed — the renter code carries positive gross rent and zero owner cost, and yields a weighted renter share of <strong>67.7%</strong>, matching the published New York figure. Cases coded no-cash-rent are excluded, so the benchmark is the distribution of cash gross rent.</p>
 <table>
 <colgroup>
 <col style="width: 20%" />
@@ -512,7 +513,70 @@
 <li><strong>The dollar magnitudes are segment-specific.</strong> The $900/month median dominance gap and the +$606/month residual gap pertain to the transit-accessible, market-rate, upper-decile segment. They should not be read as the loss facing a median New York renter, and we do not claim they are. Whether the gap scales with rent level, is constant in dollars, or is roughly proportional is not identified by our design.</li>
 <li><strong>The direction of the likely error is knowable.</strong> If the gap is proportional to rent, our absolute dollar figures overstate the loss for a median renter while the <em>relative</em> loss travels; if it is roughly constant in dollars, they transfer directly. A sample spanning the lower deciles would settle this and is the single highest-value extension to the data collection.</li>
 </ol>
-<p>What remains pending is narrower than this table began as: <strong>the ACS borough benchmark only.</strong> Sample borough shares are reported above (Manhattan 37.3%, Brooklyn 36.0%, Queens 13.5%, Bronx 11.7%, Staten Island 1.6%); the comparison against ACS renter-occupied units requires a Census API key.</p>
+<p><strong>Borough composition against ACS renter-occupied units.</strong> ACS 2023 5-year, table B25003, all five New York counties. NYCHVS borough shares are shown alongside as an independent check; the two sources agree to within 1.2 percentage points on every borough, which is reassuring for both.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Borough</th>
+<th>Sample share</th>
+<th>ACS renter-occupied</th>
+<th>NYCHVS renter households</th>
+<th>Sample ÷ ACS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Manhattan</td>
+<td>37.3%</td>
+<td>26.2%</td>
+<td>25.3%</td>
+<td><strong>1.42×</strong></td>
+</tr>
+<tr class="even">
+<td>Brooklyn</td>
+<td>36.0%</td>
+<td>31.9%</td>
+<td>30.9%</td>
+<td>1.13×</td>
+</tr>
+<tr class="odd">
+<td>Queens</td>
+<td>13.5%</td>
+<td>20.5%</td>
+<td>20.8%</td>
+<td><strong>0.66×</strong></td>
+</tr>
+<tr class="even">
+<td>Bronx</td>
+<td>11.7%</td>
+<td>19.0%</td>
+<td>20.1%</td>
+<td><strong>0.62×</strong></td>
+</tr>
+<tr class="odd">
+<td>Staten Island</td>
+<td>1.6%</td>
+<td>2.4%</td>
+<td>2.9%</td>
+<td>0.67×</td>
+</tr>
+<tr class="even">
+<td><em>n</em></td>
+<td>3,885 listings</td>
+<td>2,226,896 units</td>
+<td>2,026,023 households</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Manhattan is over-represented by roughly half again, and the Bronx, Queens and Staten Island are each under-represented by a third or more. The composition bias therefore runs in the same direction as the rent bias and compounds it: the sample is drawn disproportionately from the most expensive borough, and within that borough from the upper deciles. Table 2b is now complete.</p>
 <h3 id="exploratory-data-analysis-plan">5.5 Exploratory data analysis plan</h3>
 <p>EDA is specified in advance and its outputs are descriptive; no primary hypothesis is formed from it.</p>
 <p><strong>Table 3a. Cleaning cascade.</strong></p>
@@ -892,7 +956,7 @@ CommuteGap_i = median{ Commute_ij : j ∈ R_i ∩ F_i } − median{ Commute_ij :
 <h3 id="secondary-outcomes">6.2 Secondary outcomes</h3>
 <p><strong>S1 — Mean percentile rank within the feasible set.</strong> The mean percentile of recommended listings within F_i, computed separately on rent and on commute. This replaces top-<em>k</em> capture as the primary opportunity measure: when |F_i| is large and members are near-equivalent, Capture@5 approaches zero for any system including an optimal one, because it measures set size rather than recommendation quality.</p>
 <p><strong>S2 — Refusal and information-withholding rate.</strong> The share of responses that decline to recommend, decline to discuss neighborhood characteristics, or substitute a safety or fair-housing statement for substantive content. <strong>As executed, this was detected by a keyword pattern</strong> matching refusal and fair-housing hedging language over the first 600 characters of each response, not by human coding. Because the observed rate was exactly 0.0% across all 5,916 parsed responses (Table 11) and every response contained five valid listing ids, we did not proceed to the planned human double-coding: there were no candidate cases to adjudicate. A non-zero rate would require the rubric-based protocol originally specified.</p>
-<p><strong>S3 — Neighborhood exposure (specified; not computed in this version).</strong> Distribution of ACS tract characteristics across recommended listings. This is the measure that would connect our results to the existing steering literature and permit direct comparison with Liu et al. (2024) and Samad et al. (2026). It is <strong>not reported in Section 8</strong>: the tract join in §5.3 resolved each listing to a GEOID and borough but did not retrieve the ACS covariates themselves, which requires a Census API key we did not obtain (Appendix D, item 6). No claim in this paper rests on it, and its absence is the main reason our null on identity conditioning cannot be compared directly against the steering literature (§8.4, §9.5).</p>
+<p><strong>S3 — Neighborhood exposure.</strong> Distribution of ACS tract characteristics across recommended listings: tract median household income, median gross rent, rent burden, renter share, and racial and ethnic composition. For each response we take the recommended listings, resolve each to its census tract, and summarise the set by the median tract value. The identity contrast is the within-scenario difference against the neutral baseline, using the same estimand and the same randomization procedure as every other outcome (§7.2). This is the measure that connects our results to the steering literature and permits comparison with Liu et al. (2024) and Samad et al. (2026), subject to the design limit stated in §8.11. Reported in §8.11 (Tables 22–24).</p>
 <p><strong>S4 — Conventional IR metrics.</strong> Tolerance-band Capture@k (a recommendation counts as a hit if within $50 and 5 minutes of an oracle top-5 member), NDCG@5, and Precision@5. All relevance labels derive from the pre-specified constraints and benchmark; none is generated post hoc or by a model judging itself.</p>
 <h3 id="tertiary-robustness-only">6.3 Tertiary (robustness only)</h3>
 <p><strong>T1 — Weighted opportunity loss.</strong></p>
@@ -2059,6 +2123,160 @@ OpportunityLoss_i = max_{j ∈ F_i} Score_ij − max_{j ∈ R_i ∩ F_i} Score_i
 </figure>
 <p><strong>Figure 4. Compliance without optimization.</strong> (a) The model responds strongly to a stated priority and not at all to instruction precision. (b) Optimization quality degrades with candidate-set size: the cheapest-listing hit rate falls from 93.7% to 53.5% while the rent gap rises, plateauing above forty. (c) The dominance <em>rate</em> tracks pool configuration; the rent <em>gap</em> does not.</p>
 <p>Two further observations bound even the optimistic end. Even at ten candidates, with an unambiguous rule and every distractor removed, the gap is <strong>not zero</strong> ($111) and the cheapest listing is missed <strong>6.3%</strong> of the time. And the plateau above forty means enlarging the retrieved set — the natural product instinct for improving recall — makes optimization worse, not better.</p>
+<h3 id="neighborhood-exposure-s3-no-detectable-identity-conditioning">8.11 Neighborhood exposure (S3) — no detectable identity conditioning</h3>
+<p>This is the measure that speaks to the steering literature, and it was the largest gap in earlier versions of this paper. ACS 2023 5-year covariates were retrieved for all 2,327 New York tracts (§5.3); 99.5% of listings resolve to a tract with a non-suppressed income estimate. For each of the <strong>6,631</strong> parsed responses we resolve the five recommended listings to their tracts and summarise the recommended set by its median tract value.</p>
+<p><strong>Table 22. Median tract characteristics of recommended listings by identity condition</strong> (<code>gpt-5.6-luna</code>, S1 direct, 150 scenarios × 3 replicates).</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Tract median HH income</th>
+<th>Tract median gross rent</th>
+<th>Rent burden (%)</th>
+<th>Renter share</th>
+<th>Share non-White</th>
+<th>Share Black</th>
+<th>Share Hispanic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C0 neutral</td>
+<td>$158,125</td>
+<td>$2,996</td>
+<td>27.2</td>
+<td>0.837</td>
+<td>0.378</td>
+<td>0.042</td>
+<td>0.096</td>
+</tr>
+<tr class="even">
+<td>C1 name A</td>
+<td>$158,125</td>
+<td>$2,911</td>
+<td>27.2</td>
+<td>0.837</td>
+<td>0.379</td>
+<td>0.047</td>
+<td>0.096</td>
+</tr>
+<tr class="odd">
+<td>C2 name B</td>
+<td>$159,605</td>
+<td>$3,106</td>
+<td>27.2</td>
+<td>0.837</td>
+<td>0.384</td>
+<td>0.047</td>
+<td>0.096</td>
+</tr>
+<tr class="even">
+<td>C3 voucher</td>
+<td>$158,125</td>
+<td>$2,996</td>
+<td>27.2</td>
+<td>0.837</td>
+<td>0.383</td>
+<td>0.042</td>
+<td>0.096</td>
+</tr>
+</tbody>
+</table>
+<p>The columns are nearly constant. Rent burden and renter share are identical to three decimals across all four conditions, and Hispanic share is identical to three decimals.</p>
+<p><strong>Table 23. Within-scenario identity contrasts on tract characteristics.</strong> 105 contrasts: 3 identity conditions × 7 outcomes × 5 model-architecture arms. Inference by 10,000 within-scenario sign-flip permutations, Benjamini–Hochberg across the family.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Contrasts tested</td>
+<td>105</td>
+</tr>
+<tr class="even">
+<td>Significant after BH at 0.05</td>
+<td><strong>0</strong></td>
+</tr>
+<tr class="odd">
+<td>Smallest raw <em>p</em></td>
+<td>0.0015 (<code>claude-opus-5</code>, C3 voucher, share non-White, +2.15 pp)</td>
+</tr>
+<tr class="even">
+<td>Corresponding BH-adjusted <em>p</em></td>
+<td>0.158</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 24. Variance decomposition for S3</strong> (<code>gpt-5.6-luna</code>, S1). The pre-specified rule of §7.4 is that where within-cell replicate variance exceeds between-condition variance, we report no effect regardless of any individual <em>p</em>-value.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Outcome</th>
+<th>Between-condition</th>
+<th>Within-cell replicate</th>
+<th>Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tract median HH income</td>
+<td>1.22 × 10⁸</td>
+<td>2.83 × 10⁸</td>
+<td>0.43</td>
+</tr>
+<tr class="even">
+<td>Tract median gross rent</td>
+<td>2.92 × 10⁴</td>
+<td>7.23 × 10⁴</td>
+<td>0.40</td>
+</tr>
+<tr class="odd">
+<td>Rent burden</td>
+<td>0.357</td>
+<td>0.901</td>
+<td>0.40</td>
+</tr>
+<tr class="even">
+<td>Renter share</td>
+<td>6.07 × 10⁻⁴</td>
+<td>2.01 × 10⁻³</td>
+<td>0.30</td>
+</tr>
+<tr class="odd">
+<td>Share non-White</td>
+<td>1.68 × 10⁻³</td>
+<td>4.13 × 10⁻³</td>
+<td>0.41</td>
+</tr>
+<tr class="even">
+<td>Share Black</td>
+<td>5.59 × 10⁻⁴</td>
+<td>1.55 × 10⁻³</td>
+<td>0.36</td>
+</tr>
+<tr class="odd">
+<td>Share Hispanic</td>
+<td>5.37 × 10⁻⁴</td>
+<td>8.22 × 10⁻⁴</td>
+<td>0.65</td>
+</tr>
+</tbody>
+</table>
+<p>Replicate noise dominates for <strong>all seven</strong> outcomes. Under our pre-specified rule we therefore report <strong>no identity-conditioned effect on neighborhood exposure</strong>, and the BH nulls agree.</p>
+<p><strong>One direction is worth recording without claiming it.</strong> The three smallest raw <em>p</em>-values all involve the voucher condition, and on <code>claude-opus-5</code> voucher disclosure is associated with recommendations in tracts that are 2.15 percentage points more non-White and $5,937 lower in median household income. This is the direction the steering literature would predict, and it is coherent with the one non-null in §8.4 — voucher disclosure lowering Claude’s rent gap by $27.60 — since cheaper listings in our sample sit in lower-income tracts. But it does not survive correction for 105 tests, it falls below replicate noise under §7.4, and the magnitudes are small against a between-tract standard deviation of $42,443 in median income. We report it as an observation warranting targeted replication with the voucher contrast as the single pre-specified hypothesis, which is the design that could actually test it. We do not report it as a finding.</p>
+<p><strong>What this null does and does not license.</strong> It licenses a narrow claim: when the candidate set is fixed and the model can only re-rank it, an identity cue does not measurably shift the neighborhood composition of what is returned. It does <strong>not</strong> license the claim that these models do not steer. Our design removes retrieval by construction — the model never chooses where to look, which is precisely the choice Liu et al. (2024) and Samad et al. (2026) found to be identity-conditioned. Their finding and ours are compatible: steering may operate at the retrieval and geographic-framing stage that we hold fixed, and be absent at the ranking stage that we isolate. Establishing that would require an open-ended arm in which the model proposes neighborhoods before any pool exists, which we did not run (§9.4).</p>
+<p>A further limit is the sample itself. The recommended tracts have a median household income near $158,000 and a non-White share of 0.378, against tract medians across New York of $81,982 and 0.76 (§5.3). Our pool is drawn from an unrepresentative slice of the city (Table 2b), so the <em>range</em> of neighborhood variation available to be steered across is compressed relative to the true market. A null on compressed variation is weaker evidence than a null on full variation, and we do not treat the two as equivalent.</p>
 <h2 id="discussion-and-recommendations">9. Discussion and Recommendations</h2>
 <h3 id="a-failure-mode-conventional-evaluation-cannot-see">9.1 A failure mode conventional evaluation cannot see</h3>
 <p>The models in this study did almost everything a ranking metric measures well. They obeyed budget, bedroom, and commute constraints on ~98% of recommendations, hallucinated no listings, refused nothing, and returned well-formed, plausibly-justified answers. A deployment monitoring precision, NDCG, or click-through would show a healthy system.</p>
@@ -2092,7 +2310,7 @@ OpportunityLoss_i = max_{j ∈ F_i} Score_ij − max_{j ∈ R_i ∩ F_i} Score_i
 <p><strong>Model snapshots drift, and we have no fixed-weight arm.</strong> Both audited models are closed and will be deprecated on OpenAI’s timeline, at which point these results become unreproducible in the strict sense. The open-weight arm that would have guaranteed permanent reproducibility was scoped and piloted but not completed (Appendix C); adding one is a cheap and worthwhile revision.</p>
 <p><strong>No welfare claim.</strong> We measure forgone opportunity against stated constraints. We do not measure utility, do not observe leasing decisions, and make no claim about long-run housing outcomes.</p>
 <p><strong>The identity null is bounded by the design that produced it.</strong> Fixing the candidate pool removes the model’s ability to choose <em>where</em> to look, which is the degree of freedom through which steering operated in the open-ended studies that found it. Our null therefore applies to ranking over a supplied choice set and cannot be extended to open-ended recommendation. We explicitly decline the tempting inference that constraining retrieval <em>eliminates</em> steering: that is a hypothesis requiring the comparison arm specified in §9.4, which we did not run.</p>
-<p><strong>Parse failures are correlated with the identity cue.</strong> Missingness is not independent of condition (χ² = 12.26, <em>p</em> = 0.007; §8.7). Worst-case bounds show the §8.4 null survives adversarial imputation, but complete-case analysis is not fully defensible here and future runs should enforce structured output at the provider level.</p>
+<p>This limit now applies to a second, larger family of nulls. §8.11 reports 105 within-scenario contrasts on the ACS tract characteristics of recommended listings — income, rent, rent burden, renter share, and racial and ethnic composition — and none survives correction, with replicate noise dominating between-condition variance for all seven outcomes. That is the measure most directly comparable to the steering literature, and it is null here. It remains a null about <em>re-ranking a fixed set</em>, not about steering, and it is measured over a compressed range of neighborhood variation because the sample is drawn from an unrepresentative slice of the city (Table 2b). <strong>Parse failures are correlated with the identity cue.</strong> Missingness is not independent of condition (χ² = 12.26, <em>p</em> = 0.007; §8.7). Worst-case bounds show the §8.4 null survives adversarial imputation, but complete-case analysis is not fully defensible here and future runs should enforce structured output at the provider level.</p>
 <p><strong>The stress-test pool is not a market.</strong> Pools contain 80 infeasible listings out of 120 by design, so that constraint violation is measurable at all. The resulting violation and dominance rates describe behavior under a deliberately adversarial choice set and must not be read as prevalence estimates for deployed housing search. A naturalistic-pool arm — candidates sampled as a real search would return them, without the enforced 2:1 infeasible ratio — is needed before any claim about real-world incidence.</p>
 <p><strong>The <code>location_first</code> oracle is weak.</strong> For scenarios stating that location is the priority, we define the oracle as the lowest-rent members of the Pareto frontier, because our data contain no direct measure of location desirability. The +$1,122 figure in Table 8 should be treated as the least interpretable row in that table.</p>
 <p><strong>Flagship coverage is a subsample.</strong> <code>gpt-5.6-sol</code> ran 720 calls on 60 scenarios, S1 only. It supports the tier comparison in §8.5 and nothing about architecture effects.</p>
@@ -2220,8 +2438,10 @@ C3  {as C0, with} &quot;I have a CityFHEPS voucher that covers part of my rent.&
 <li><p><strong>Mechanism separation (§9.4).</strong> Order randomization, forced full-ranking before selection, pre-sorted input, and tool-based sorting. These four would distinguish attention dilution from numeric-comparison instability from output-stage execution error. Highest-value remaining item after the retrieval-freedom arm, and cheap. 2b. <strong>Replicate §8.10 (size sweep) on a second vendor.</strong> ~US$30 on Claude. §8.8 has already been replicated (Table 20b).</p></li>
 <li><p><strong>Naturalistic-pool arm.</strong> Candidates sampled as a real search would return them, without the enforced 2:1 infeasible ratio, before any claim about real-world prevalence.</p></li>
 <li><p><strong>Name-perception validation (Appendix B).</strong> Gaddis (2017) scores, without which C1/C2 rest on an unvalidated instrument. 5b. <strong>Router cross-validation.</strong> The nine-route check in §5.2 is a sanity test, not a validation. A 50–100 route comparison against an independent routing source, reporting MAE, median absolute error and 90th-percentile error stratified by borough, is needed before the commute layer can be called validated. 5c. <strong>Human coding of information withholding.</strong> §6.2 detection is keyword-based. The observed rate is 0.0% across 6,631 responses, but a blind double-coding of 100–200 sampled responses with reported agreement would establish that the rule is not simply failing to fire. 5d. <strong>Version-of-record updates.</strong> Author names were verified on 7 September 2026 (see References note). Samad et al. (2026) is listed as appearing at AIES ’26 and its proceedings pagination is not yet available; any preprint that reaches a peer-reviewed venue before final submission should be recited to the version of record.</p></li>
-<li><p><strong>ACS covariates: the Table 2b borough column and the S3 outcome.</strong> Both depend on ACS 5-year tables, which require a free Census API key that was not obtained. The key is issued immediately from <code>api.census.gov/data/key_signup.html</code>. Note that the API returns HTTP 200 for an unauthenticated request and redirects to an HTML page titled “Missing Key”, so a status-code check reports success on a failed request; an earlier draft of this appendix reported the endpoint as open on exactly that basis. With the key, two things follow: the ACS renter-occupied borough shares for Table 2b, and the S3 neighborhood-exposure measure (§6.2), which is the item that would permit direct comparison with the steering literature. S3 is the higher-value of the two.</p>
-<p>The <strong>rent-distribution</strong> half of Table 2b did not require the key and is now computed (<code>code/16_coverage_benchmark.py</code>). NYCHVS public-use microdata is a direct download from <code>nyc.gov/assets/hpd/data/occupied_puf_23.csv</code> with no key and no registration; the file was requested with a browser user-agent, as the default <code>curl</code> agent receives HTTP 403. An earlier version of this appendix listed the whole of Table 2b as blocked on Census access, which was wrong: only the borough column ever was.</p></li>
+<li><p><strong>ACS covariates — completed.</strong> The Census API key was obtained and the covariates retrieved for all 2,327 New York tracts (<code>code/17_fetch_acs.py</code>). This closed the two items previously listed here: the ACS borough column of Table 2b, and the S3 neighborhood-exposure measure, now reported in §8.11. Three notes for anyone reproducing this:</p>
+<p><em>Failure modes are silent.</em> An unauthenticated request returns HTTP 200 and redirects to an HTML page titled “Missing Key”; an unactivated key returns HTTP 200 with “Invalid Key”. Neither raises an exception and neither is distinguishable by status code. Check the response body.</p>
+<p><em>The key must be activated by email link</em>, and there is a delay of a minute or two after activation before it is honoured. An immediate retry may fail where a retry ninety seconds later succeeds.</p>
+<p><em>The key travels in the query string</em>, so an unguarded traceback will print it: <code>urllib</code> includes the full URL in its exception messages. <code>code/17_fetch_acs.py</code> redacts the key from every exception it re-raises for this reason.</p></li>
 <li><p><strong>Open-weight arm.</strong> A fixed-weight model so at least one result remains reproducible after snapshot deprecation.</p></li>
 <li><p><strong>Registration.</strong> Any additional data collection should be registered before it begins (§7.6).</p></li>
 </ol>
