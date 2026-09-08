@@ -93,18 +93,31 @@ for arch,c in zip(["S1","S2","S3"],["#c0392b","#e67e22","#2980b9"]):
     v=M[(M.model=="gpt-5.6-luna")&(M.arch==arch)].d_rent
     ax.hist(v,bins=np.arange(0,3000,100),histtype="step",lw=1.6,color=c,label=arch,density=True)
 ax.set_xlabel("$/month forgone vs. best dominating listing"); ax.set_ylabel("density")
-ax.legend(frameon=False,fontsize=9); ax.set_title("Per dominated recommendation",fontsize=10)
+ax.legend(frameon=False,fontsize=9); ax.set_title("(a) Per dominated recommendation",fontsize=10)
 ax.grid(alpha=.25,lw=.5)
 ax=axes[1]
-order=["commute_first","rent_first","location_first"]
-data=[L[(L.arch=="S1")&(L.priority==p)].rent_gap.dropna() for p in order]
-bp=ax.boxplot(data,labels=["commute\nfirst","rent\nfirst","location\nfirst"],showfliers=False,
-              patch_artist=True)
+# Panel (b) uses the WITHIN-scenario manipulation (12_priority_swap.py), not a
+# grouping of scenarios by their own stated priority. The latter is the
+# comparison retracted in 8.3: the scenarios differ and the oracle moves with
+# the condition, so responsiveness and selection are not separable. Here the
+# scenario, the pool, the ordering and the oracle are all held fixed and one
+# sentence changes, so the between-box shift IS responsiveness and the distance
+# from the zero line is the residual gap no wording closes.
+_sw=[json.loads(l) for l in open(OUT/"priority_swap.jsonl") if l.strip()]
+_sw=[r for r in _sw if r.get("parse_ok") and r.get("rent_gap") is not None]
+order=["P_commute","P_rent","P_explicit"]
+data=[[r["rent_gap"] for r in _sw if r["priority_cond"]==p] for p in order]
+bp=ax.boxplot(data,labels=["commute\nfirst","rent\nfirst","rent first,\nexplicit"],
+              showfliers=False,patch_artist=True)
 for b in bp["boxes"]: b.set_facecolor("#d5dbdb")
-ax.axhline(261,ls="--",c="#c0392b",lw=1.2,label="random floor (+$261)")
-ax.axhline(0,ls="-",c="#2c3e50",lw=.8)
-ax.set_ylabel("rent gap vs. oracle ($/month)"); ax.legend(frameon=False,fontsize=9)
-ax.set_title("By user's stated priority",fontsize=10); ax.grid(alpha=.25,lw=.5,axis="y")
+ax.axhline(0,ls="-",c="#2c3e50",lw=1.1,label="oracle (5 cheapest feasible)")
+for i,d in enumerate(data,start=1):
+    ax.plot(i,np.median(d),marker="D",ms=5,color="#c0392b",zorder=5)
+ax.set_ylabel("rent gap vs. fixed oracle ($/month)"); ax.legend(frameon=False,fontsize=8)
+ax.set_title("(b) Within-scenario priority manipulation",fontsize=10)
+ax.grid(alpha=.25,lw=.5,axis="y")
+for _p,_d in zip(order,data):
+    print(f"  fig3b {_p:12s} n={len(_d):4d} median gap ${np.median(_d):8.2f}")
 fig.suptitle("Figure 3. Priced opportunity loss",fontsize=12)
 fig.tight_layout(); fig.savefig(FIG/"figure3_opportunity.png",dpi=170,bbox_inches="tight")
 print(f"\nfigures -> {FIG}\ntables  -> {TAB}")

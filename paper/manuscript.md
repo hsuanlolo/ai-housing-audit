@@ -16,7 +16,7 @@ We audit AI housing recommendation against a verifiable ground truth. For each o
 
 **Constraint compliance is near-perfect.** Direct prompting violates a stated hard constraint on 1.8% of recommendations against a 66.6% random-selection floor; over-budget violations occur on 0.08%. Deterministic pre-filtering eliminates them entirely, by construction.
 
-**Opportunity loss is large and priced.** 39.0% of recommendations are strictly dominated by a listing the model was shown; across 11,066 dominated recommendations the dominating listing is a median **$900/month cheaper and 3.5 minutes faster**. Mean rent gap against the oracle is **+$498/month** versus **+$261** for uniform random selection — on price specifically the model underperforms chance, though its dominance rate stays well below the 55.1% random floor.
+**Opportunity loss is large and priced.** 39.0% of recommendations are strictly dominated by a listing the model was shown; across the 11,066 dominated recommendations from the two OpenAI models the dominating listing is a median **$900/month cheaper and 3.5 minutes faster** (12,281 including `claude-opus-5`; Table 7b). Mean rent gap against the oracle is **+$498/month** versus **+$261** for uniform random selection — on price specifically the model underperforms chance, though its dominance rate stays well below the 55.1% random floor.
 
 **A robustness arm separates what travels from what does not.** Varying pool size and infeasible share, the dominance *rate* ranges from 17.6% to 51.1% and tracks the number of feasible listings almost mechanically — it is substantially an artifact of sampling parameters and must always be quoted with its configuration. The *rent gap* moves only between +$518 and +$564 over the same range. We therefore treat the dollar-denominated measure, not the rate, as the transportable quantity.
 
@@ -331,7 +331,9 @@ Router validation against known routes (to Midtown): Grand Central 10.2 min, Wal
 
 The rent–commute correlations are the material result in this table. They are negative, as theory requires, but far from −1. Had they approached −1, rent and commute would collapse onto a single dimension and strict dominance would lose all discriminating power (design check B, §5.5).
 
-**Figure 1. Rent–commute structure of the listing universe, with Pareto frontiers, by bedroom count.** [`out/figures/figure1_pareto.png`] Each panel plots all listings of one bedroom type on transit commute to Midtown against monthly rent. Highlighted points are the Pareto frontier: no listing in the sample is both cheaper and faster. Frontier sizes in the full universe are 8 of 546 studios (1.5%), 8 of 1,620 one-bedrooms (0.5%), and 13 of 1,081 two-bedrooms (1.2%). The scale of the dominated region is the visual statement of the paper's construct — and the reason P2 must be reported separately against the pool and against the universe (§6.1).
+![Figure 1](../out/figures/figure1_pareto.png)
+
+**Figure 1. Rent–commute structure of the listing universe, with Pareto frontiers, by bedroom count.** Each panel plots all listings of one bedroom type on transit commute to Midtown against monthly rent. Highlighted points are the Pareto frontier: no listing in the sample is both cheaper and faster. Frontier sizes in the full universe are 8 of 546 studios (1.5%), 8 of 1,620 one-bedrooms (0.5%), and 13 of 1,081 two-bedrooms (1.2%). The scale of the dominated region is the visual statement of the paper's construct — and the reason P2 must be reported separately against the pool and against the universe (§6.1).
 
 **Table 5. Feasible-set descriptives across the 150 scenarios.**
 
@@ -543,6 +545,10 @@ Sections 8.1–8.7 report the main grid only; §8.8–8.10 report the robustness
 
 S3's zero rate is definitional, not empirical, and is reported only as an implementation check (§3, H4a).
 
+![Figure 2](../out/figures/figure2_violation.png)
+
+**Figure 2. Constraint violation by constraint tightness.** Violation rate (%) against terciles of feasible-set size, by architecture, with the random-selection floor at 66.6%. The vertical axis is symmetric-log because S3's rate is identically zero by construction. All three architectures sit one to two orders of magnitude below chance across every tightness tercile, and the ordering S3 < S2 < S1 is stable. Tightness moves the rate only slightly, so near-perfect compliance is not an artifact of loose constraints: it holds where the feasible set is smallest and a careless selector would be most likely to fail.
+
 ### 8.2 Forgone opportunity (RQ2)
 
 **Table 7. Opportunity measures, `gpt-5.6-luna`.**
@@ -556,7 +562,7 @@ S3's zero rate is definitional, not empirical, and is reported only as an implem
 
 **H2a is supported.** Roughly two in five recommendations are strictly dominated — beaten on rent *and* commute *and* bedroom count by a listing on the same screen. The model is meaningfully better than chance at avoiding dominated listings (39.0% vs 55.1%), so it is not selecting arbitrarily. But **on price specifically it underperforms random selection**, with a rent gap nearly double the chance floor. These two facts are compatible and jointly diagnostic: the model avoids listings that are bad on *every* dimension while systematically overpaying, because it is buying proximity (commute gap −4.0 min against a +10.2 min floor).
 
-**Table 7b. Magnitude of dominance — gap to the best dominating listing (11,066 dominated recommendations).**
+**Table 7b. Magnitude of dominance — gap to the best dominating listing (12,281 dominated recommendations across all three models).**
 
 | Model | Arch | n | Median $/mo | Mean $/mo | p75 $/mo | Median extra minutes |
 |---|---|---|---|---|---|---|
@@ -564,10 +570,18 @@ S3's zero rate is definitional, not empirical, and is reported only as an implem
 | luna | S2 | 3,334 | 900 | 934 | 1,310 | 3.4 |
 | luna | S3 | 3,022 | 900 | 949 | 1,310 | 3.4 |
 | sol | S1 | 1,364 | 960 | 1,035 | 1,395 | 3.7 |
+| claude-opus-5 | S1 | 1,215 | 900 | 871 | 1,250 | 3.5 |
+| *OpenAI models only* | — | *11,066* | *900* | *949* | *1,310* | *3.5* |
 
 When a recommendation is dominated, the listing that beats it is typically **$900/month cheaper and 3.5 minutes closer** — simultaneously. This is the paper's central quantity, and it requires no assumption about what the user values.
 
 **Architecture barely helps.** Constraint-first reduces dominance from 39.0% to 34.8% and rent gap from $498 to $467 — real but modest. Prompt-level grounding (S2) does nothing at all (39.1%, +$506). **The mitigation that eliminates every hard-constraint violation leaves ~89% of the opportunity loss intact**, which localizes the failure firmly in the soft ranking stage rather than in constraint comprehension.
+
+![Figure 3](../out/figures/figure3_opportunity.png)
+
+**Figure 3. Priced opportunity loss.** (a) Distribution of the rent gap to the best dominating listing, per dominated recommendation, by architecture (`gpt-5.6-luna`). The mass well to the right of zero is the paper's central quantity: it is not a near-miss distribution. Architecture shifts it barely. (b) The within-scenario priority manipulation of §8.8, plotted against the *single fixed* oracle used for every condition — the five cheapest feasible listings in that scenario's pool. Two things are visible at once. The drop from commute-first to rent-first (median $1,200 to $550) is responsiveness: the model moves in the correct direction when the stated priority changes. But every box sits far above the oracle line, and adding an unambiguous lexicographic instruction ("rent first, explicit") moves the median not at all. Responsiveness and optimization are separate capabilities, and only the first is present.
+
+**Note on panel (b).** An earlier version of this figure grouped scenarios by their *own* stated priority against a priority-defined oracle — the between-scenario comparison reported in Table 8 below and retracted in §8.3. Because the scenarios and the oracle both move with the condition, that version could not separate responsiveness from selection, and it is not shown. Panel (b) holds the scenario, the pool, the candidate ordering and the oracle fixed and varies one sentence.
 
 ### 8.3 Opportunity loss varies with the stated priority (superseded by §8.8)
 
@@ -826,7 +840,7 @@ Paired against the largest set: n=10 vs n=80 is **−$305 (p < 0.0001)**; n=20 v
 
 We state the interpretation conservatively: **the model responds correctly to the stated priority but fails to execute the resulting optimization reliably over a large candidate set.** That is what the data support. We do not claim to have identified a search or attention mechanism — distinguishing attention dilution from numeric-comparison instability from output-stage execution error would require interventions this study did not run (ordering manipulations, forced full-ranking before selection, tool-based sorting, and pre-sorted inputs), and §9.4 lists them.
 
-**[INSERT FIGURE 4 HERE — `out/figures/figure4_mechanism.png`]**
+![Figure 4](../out/figures/figure4_mechanism.png)
 
 **Figure 4. Compliance without optimization.** (a) The model responds strongly to a stated priority and not at all to instruction precision. (b) Optimization quality degrades with candidate-set size: the cheapest-listing hit rate falls from 93.7% to 53.5% while the rent gap rises, plateauing above forty. (c) The dominance *rate* tracks pool configuration; the rent *gap* does not.
 

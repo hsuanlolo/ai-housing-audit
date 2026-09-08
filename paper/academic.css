@@ -13,3 +13,7 @@ pre { background: #f7f7f7; border: 1px solid #ddd; padding: 8px; font-size: 9pt;
 code { font-family: "SF Mono", Consolas, monospace; font-size: 9.5pt; }
 blockquote { border-left: 3px solid #bbb; margin-left: 0; padding-left: 1em; color: #333; }
 h2 { page-break-after: avoid; }
+
+/* figures: keep each image with its caption, never split across a page */
+img { max-width: 100%; height: auto; display: block; margin: 1.1em auto .3em; }
+p > img { page-break-inside: avoid; page-break-after: avoid; }
