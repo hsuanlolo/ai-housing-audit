@@ -1,0 +1,65 @@
+TITLE
+Following the Preference, Missing the Optimum: Compliance Without
+Optimization in AI Housing Recommendation
+
+AUTHOR
+Hsuan Lo, Independent Researcher
+
+ABSTRACT (for the OSF submission form; plain text, ~320 words)
+
+Large language models are becoming the first point of contact for consumer
+search in domains where the stakes are material and the law is explicit.
+Existing audits of AI housing search show that models steer users toward
+different neighborhoods depending on perceived racial identity. None can say
+what a user loses when a recommender simply overlooks a suitable option,
+because none has an enumerated inventory to score omissions against.
+
+This paper audits AI housing recommendation against a verifiable ground truth.
+For each of 150 synthetic renter scenarios in New York City we build a
+candidate pool of 120 real rental listings with known rent, bedroom count, and
+transit commute computed from MTA GTFS schedules; we then compute the exact
+set satisfying the renter's stated hard constraints and derive its Pareto
+frontier. The primary outcome assumes no utility function: a recommendation is
+strictly dominated if the same pool contains a listing that is cheaper, faster
+to commute from, and no smaller in bedrooms. We report 9,945 model calls
+(96.5% parsed) across three models and two vendors, for US$57.01 in total API
+cost.
+
+Three findings. First, constraint compliance is near-perfect: models violate a
+stated hard constraint on 1.8% of recommendations against a 66.6%
+random-selection floor. Second, optimization is poor and priced. 39.0% of
+recommendations are strictly dominated, and where a recommendation is
+dominated the dominating listing is a median $900/month cheaper and 3.5
+minutes closer. On rent specifically the models underperform uniform random
+selection (+$498/month versus +$261 against the oracle). A within-scenario
+manipulation shows models do honor stated preferences — changing one sentence
+moves median recommended rent by $646/month in the correct direction — yet
+recommendations still sit +$606/month above the five cheapest qualifying
+listings, and an unambiguous lexicographic instruction yields no improvement
+(equivalence established against a pre-specified $50 bound, TOST p < 0.0001).
+The gap grows with candidate-set size. Third, we detect almost no
+identity-conditioned disparity: 47 of 48 pre-specified contrasts return null
+after Benjamini-Hochberg correction.
+
+We characterize the failure as compliance without optimization, propose
+dominance-rate instrumentation as a deployable diagnostic, and release all
+code, prompts, and per-call results.
+
+KEYWORDS
+algorithm auditing; large language models; recommender systems; constrained
+optimization; opportunity cost; fair housing; algorithmic fairness
+
+SUBJECTS (OSF picker)
+Social and Behavioral Sciences > Urban Studies and Planning
+Engineering > Computer Sciences  (add if offered)
+
+LICENSE
+CC-BY 4.0
+
+CODE / DATA LINK (paste into the "Supplements" or first line of the abstract)
+https://github.com/hsuanlolo/ai-housing-audit
+
+NOTE ON WHAT NOT TO CLAIM
+This is a preprint. It has not been peer reviewed, and it was not
+pre-registered -- Section 7.6 says so explicitly. Do not describe it as
+either. "Pre-specified" is accurate; "pre-registered" is not.
