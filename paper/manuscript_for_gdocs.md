@@ -18,7 +18,7 @@ Generated from paper/manuscript.md — that file remains authoritative.
 
 **Author.** Hsuan Lo, DDes (Harvard University). Independent Researcher. Correspondence: hsuanlo@alumni.harvard.edu
 
-**Status.** v0.2, 6 September 2026. Sections 1–8 and 10 report completed results from 6,120 audited model calls. Section 9 is written against those results. Earlier status note (pre-data, v0.1) superseded.
+**Status.** v0.2, 6 September 2026. Sections 1–8 and 10 report completed results from **9,945 attempted model calls (9,601 parsed, 96.5%)** across three models and two vendors, of which the matched identity grid is 6,840 attempted (6,631 parsed); the remainder are the within-scenario priority, pool-density and candidate-set-size arms (Table 12b). Section 9 is written against those results. Earlier status note (pre-data, v0.1) superseded.
 
 **Prior status (v0.1, 23 August 2026).** Sections 1–7 and 10 are complete. Sections 8 (Results) and the empirical half of Section 5 are specified but **not populated**: the audit has not yet been executed. Written to be lodged as a pre-registration prior to data collection. All numeric slots have since been populated from the completed audit.
 
@@ -524,7 +524,7 @@ estimated as a within-scenario matched contrast, since scenario, pool, and pool-
 
 ### 7.1 Design
 
-The study is a **within-scenario matched design**: the four identity conditions face an identical request and an identical candidate pool. Identity effects are matched contrasts, not between-group comparisons, and the effective sample size for identity inference is the number of scenarios (150), not the number of model calls (6,120). We state this explicitly because treating calls as independent observations is the characteristic inferential error of large-scale LLM audits.
+The study is a **within-scenario matched design**: the four identity conditions face an identical request and an identical candidate pool. Identity effects are matched contrasts, not between-group comparisons, and the effective sample size for identity inference is the number of scenarios (150), not the number of model calls (6,840). We state this explicitly because treating calls as independent observations is the characteristic inferential error of large-scale LLM audits.
 
 ### 7.2 Primary inference: randomization
 

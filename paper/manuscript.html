@@ -25,7 +25,7 @@
 </header>
 <h1 id="following-the-preference-missing-the-optimum-compliance-without-optimization-in-ai-housing-recommendation">Following the Preference, Missing the Optimum: Compliance Without Optimization in AI Housing Recommendation</h1>
 <p><strong>Author.</strong> Hsuan Lo, DDes (Harvard University). Independent Researcher. Correspondence: hsuanlo@alumni.harvard.edu</p>
-<p><strong>Status.</strong> v0.2, 6 September 2026. Sections 1–8 and 10 report completed results from 6,120 audited model calls. Section 9 is written against those results. Earlier status note (pre-data, v0.1) superseded.</p>
+<p><strong>Status.</strong> v0.2, 6 September 2026. Sections 1–8 and 10 report completed results from <strong>9,945 attempted model calls (9,601 parsed, 96.5%)</strong> across three models and two vendors, of which the matched identity grid is 6,840 attempted (6,631 parsed); the remainder are the within-scenario priority, pool-density and candidate-set-size arms (Table 12b). Section 9 is written against those results. Earlier status note (pre-data, v0.1) superseded.</p>
 <p><strong>Prior status (v0.1, 23 August 2026).</strong> Sections 1–7 and 10 are complete. Sections 8 (Results) and the empirical half of Section 5 are specified but <strong>not populated</strong>: the audit has not yet been executed. Written to be lodged as a pre-registration prior to data collection. All numeric slots have since been populated from the completed audit.</p>
 <hr />
 <h2 id="abstract">Abstract</h2>
@@ -971,7 +971,7 @@ OpportunityLoss_i = max_{j ∈ F_i} Score_ij − max_{j ∈ R_i ∩ F_i} Score_i
 <hr />
 <h2 id="statistical-analysis">7. Statistical Analysis</h2>
 <h3 id="design">7.1 Design</h3>
-<p>The study is a <strong>within-scenario matched design</strong>: the four identity conditions face an identical request and an identical candidate pool. Identity effects are matched contrasts, not between-group comparisons, and the effective sample size for identity inference is the number of scenarios (150), not the number of model calls (6,120). We state this explicitly because treating calls as independent observations is the characteristic inferential error of large-scale LLM audits.</p>
+<p>The study is a <strong>within-scenario matched design</strong>: the four identity conditions face an identical request and an identical candidate pool. Identity effects are matched contrasts, not between-group comparisons, and the effective sample size for identity inference is the number of scenarios (150), not the number of model calls (6,840). We state this explicitly because treating calls as independent observations is the characteristic inferential error of large-scale LLM audits.</p>
 <h3 id="primary-inference-randomization">7.2 Primary inference: randomization</h3>
 <p>Because condition assignment is randomized within scenario, randomization inference is the method matched to the design. We permute identity labels within scenario across 10,000 draws to construct the null distribution of each primary contrast, and report the observed paired difference with a permutation <em>p</em>-value and a percentile confidence interval.</p>
 <p>This is preferred to cluster-robust OLS for a substantive reason: P1 and P2 are zero-inflated proportions, and with 150 clusters the asymptotic properties of clustered standard errors are unreliable in exactly the regime where our effects are expected to lie.</p>
