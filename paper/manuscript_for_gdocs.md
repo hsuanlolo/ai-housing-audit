@@ -195,11 +195,11 @@ Four conditions per scenario. The request text, the candidate pool, and the pool
 | Condition | Operationalization |
 |---|---|
 | **C0 Neutral** | No name, no demographic or economic disclosure |
-| **C1 Name cue A** | Signing name drawn from a validated name pool |
-| **C2 Name cue B** | Signing name drawn from a contrasting validated pool |
+| **C1 Name cue A** | Signing name from the Bertrand–Mullainathan "white-sounding" list (Appendix B) |
+| **C2 Name cue B** | Signing name from the contrasting "Black-sounding" list. **Joint race-and-class cue** — the pools are unbalanced on the Gaddis (2017) SES correlate; see Appendix B |
 | **C3 Voucher disclosure** | Neutral name plus: "I have a CityFHEPS voucher that covers part of my rent." |
 
-Three commitments govern the name conditions. First, names are **not invented**; they are drawn from published name-perception datasets, and we report each name's measured perceived-race and perceived-socioeconomic-status scores, directly confronting the critique that name-based cues confound race with class (Gaddis, 2017). Second, names **rotate randomly** within condition across scenarios, so that name identity enters as a random factor rather than as two fixed exemplars whose idiosyncrasies would be indistinguishable from the cue itself. Third, we report name-level variance components; if between-name variance within a condition rivals between-condition variance, we do not interpret the condition contrast.
+Three commitments govern the name conditions. First, names are **not invented**; they are drawn from published name-perception datasets, and we report each name's recoverable measured perceived-race and perceived-socioeconomic-status scores, directly confronting the critique that name-based cues confound race with class (Gaddis, 2017). Second, names **rotate randomly** within condition across scenarios, so that name identity enters as a random factor rather than as two fixed exemplars whose idiosyncrasies would be indistinguishable from the cue itself. Third, we report name-level variance components; if between-name variance within a condition rivals between-condition variance, we do not interpret the condition contrast.
 
 The voucher condition is the design's principal advance over name-only audits. Source of income is protected under N.Y.C. Admin. Code § 8-107(5), which makes New York a substantively motivated site rather than a convenient one. It is also *analytically distinctive*: unlike a name, a voucher is a genuine material fact that legitimately bears on which listings are appropriate. This lets us separate two things a name-only design cannot: lawful adaptation to a stated circumstance (e.g., prioritizing units whose rent falls within voucher payment standards) from unlawful degradation of service (e.g., returning dominated listings, or withdrawing information). We pre-specify that adaptation and degradation are distinguished by whether the shift moves recommendations toward or away from the Pareto frontier of the same feasible set.
 
@@ -1013,7 +1013,11 @@ Because the bias is common to all conditions and architectures, it threatens ext
 
 **One city.** Samad et al. (2026) found steering patterns vary by city and concluded that the city is not a neutral testing unit. Our magnitudes are New York facts. The dominance method generalizes; the numbers do not.
 
-**Name cues confound race and class, and were not validated.** A name carries race and socioeconomic signals simultaneously (Gaddis, 2017). Our pool draws on Bertrand & Mullainathan (2004) with four names Gaddis flags as SES-atypical excluded a priori, but **we did not obtain the published perception scores**, so Appendix B is incomplete and the C1/C2 conditions rest on an unvalidated instrument. This is a material weakness for those two conditions specifically. It does not affect C3 (voucher), which is an explicit disclosure rather than an inferred signal, nor any non-identity result. Name-level variance components were specified in §4.3 but not computed.
+**C1/C2 is a joint race-and-class cue, not a clean race cue.** A name signals race and social class simultaneously (Gaddis, 2017; Crabtree et al., 2022). Appendix B recovers the one per-name characteristic the literature reports exactly — quartile of mother's education within race, from Gaddis (2017) Table 1 — and it shows our two pools are unbalanced on it: Pool A is 11 of 18 highest-quartile with no lowest-quartile name, and Pool B has no highest-quartile name and two lowest-quartile names. Per-name *perceived* race and *perceived* class exist in the literature only as figures, so we do not tabulate them rather than read values off a chart.
+
+The confound is single-directional, which is why the results survive it: Pool A signals both higher-status race and higher-status class, so any mechanism acting on either attribute pushes the contrast the same way and the design is biased **toward** detecting a difference. None is detected (§8.4, §8.11). A null under an amplifying confound is stronger evidence of absence than a null under a clean cue. What the confound forbids is decomposition — we cannot attribute the absent effect to race or to class separately, and we do not.
+
+Appendix B also documents that the four names excluded before the main grid were attributed to Gaddis without basis for two of them, and that two lowest-quartile names were retained that the stated rule would have dropped. The exclusion is constant across conditions and so cannot manufacture a contrast, but it is not reproducible from the citation originally given. None of this affects C3 (voucher), which is an explicit disclosure requiring no name instrument, and C3 now carries the identity analysis. Name-level variance components were specified in §4.3 but not computed.
 
 **Three dominance dimensions.** Rent, commute, and bedroom count do not exhaust what renters care about. Listings dominated on these three might be preferred on unmeasured attributes — light, building condition, landlord quality, unit-level accessibility. Dominance is therefore a *necessary but not sufficient* indicator of a mistake, and our estimates should be read as identifying recommendations that are hard to justify on the stated criteria, not as proof of error. Fields absent from listing data are coded `unknown` and excluded from violation counts, making P1 a floor.
 
@@ -1070,6 +1074,8 @@ Amiri-Margavi, A., Gharagozlou, A., Gholami Davodi, A., Mousavi Davoudi, S. P., 
 Vasileva, M. I. (2026). Large language models can follow instructions, but not many at once: Phase transitions in compositional constraint satisfaction. *arXiv:2608.12426*.
 
 Canaverde, B., Alves, D. M., Pombal, J., Attanasio, G., & Martins, A. F. T. (2026). SEQUOR: A multi-turn benchmark for realistic constraint following. *arXiv:2605.06353*.
+
+Crabtree, C., Gaddis, S. M., Holbein, J. B., & Nergård Larsen, E. (2022). Racially distinctive names signal both race/ethnicity and social class. *Sociological Science*, 9, 454–472. https://doi.org/10.15195/v9.a18
 
 Bertrand, M., & Mullainathan, S. (2004). Are Emily and Greg more employable than Lakisha and Jamal? A field experiment on labor market discrimination. *American Economic Review*, 94(4), 991–1013.
 
@@ -1160,9 +1166,64 @@ C3  {as C0, with} "I have a CityFHEPS voucher that covers part of my rent."
 
 The 12-word cap on `why` is deliberate: verbose justifications overflowed `max_tokens` in an earlier pilot and truncated the JSON. Because verbosity may covary with the identity cue, that missingness would have been correlated with treatment (Appendix C, deviation 4).
 
-## Appendix B. Name pool and validation scores
+## Appendix B. Name pool and validation status
 
-`[[TO BE ADDED: names used, source dataset, perceived-race and perceived-SES scores per name]]`
+**Provenance.** The first-name lists are from Bertrand and Mullainathan (2004), *AER* 94(4), Appendix Table A1 — the most widely replicated correspondence-audit name set. Surnames are drawn independently from a ten-name list so that the first-name signal is not reinforced by an unvalidated surname signal. All 36 first names appear in Gaddis (2017) Table 1, so his validated set covers our pool.
+
+**What is available, and what is not.** The original specification for this appendix called for "perceived-race and perceived-SES scores per name" from Gaddis (2017). That specification was partly mistaken about what the source contains, and this appendix reports what the literature actually provides.
+
+| Quantity | Source | Form | Usable here |
+|---|---|---|---|
+| Objective SES correlate: quartile of mother's education within race | Gaddis (2017) Table 1 | Encoded typographically (bold = lowest quartile, italic = highest) | **Yes** — reported below |
+| Perceived race, per name | Gaddis (2017) Figures 1–2 | Raster bar charts; no tabular values, no appendix table | Rank order and coarse bands only; not to the precision a table implies |
+| Perceived **social class**, per name | Crabtree, Gaddis, Holbein & Larsen (2022), *Sociological Science* 9:454–472 | Figure 4, raster | Not tabulated |
+
+Gaddis (2017) measures perceived **race**; it does not report a perceived-SES score for individual names. The paper on class perceptions from names is Crabtree et al. (2022). Both report per-name results only as figures, so neither yields a per-name numeric column we could transcribe without inventing precision. We therefore report the one per-name characteristic that *is* recoverable exactly, and are explicit that the other two are not.
+
+**Table B1. Names used, with Gaddis (2017) mother's-education quartile.** Draw counts are the realized allocation across the 150 scenarios under `SEED = 20260823`; names rotate so that name identity is a random factor rather than two fixed exemplars.
+
+| Pool A (B&M white-sounding) | Sex | Quartile | Draws | | Pool B (B&M Black-sounding) | Sex | Quartile | Draws |
+|---|---|---|---|---|---|---|---|---|
+| Allison | F | highest | 6 | | Aisha | F | middle | 14 |
+| Anne | F | highest | 16 | | Ebony | F | middle | 7 |
+| Carrie | F | middle | 11 | | Keisha | F | middle | 15 |
+| Emily | F | highest | 10 | | Latoya | F | **lowest** | 11 |
+| Jill | F | highest | 8 | | Tamika | F | **lowest** | 12 |
+| Kristen | F | middle | 5 | | Tanisha | F | middle | 17 |
+| Laurie | F | middle | 5 | | Darnell | M | middle | 8 |
+| Meredith | F | highest | 10 | | Hakim | M | middle | 11 |
+| Sarah | F | highest | 5 | | Jamal | M | middle | 12 |
+| Brad | M | middle | 7 | | Jermaine | M | middle | 10 |
+| Brendan | M | highest | 12 | | Kareem | M | middle | 11 |
+| Brett | M | highest | 8 | | Leroy | M | middle | 6 |
+| Geoffrey | M | highest | 8 | | Rasheed | M | middle | 9 |
+| Greg | M | middle | 9 | | Tyrone | M | middle | 7 |
+| Jay | M | middle | 8 | | | | | |
+| Matthew | M | highest | 11 | | | | | |
+| Neil | M | highest | 4 | | | | | |
+| Todd | M | middle | 7 | | | | | |
+| **18 names** | | **11 highest, 7 middle, 0 lowest** | | | **14 names** | | **0 highest, 12 middle, 2 lowest** | |
+
+Surnames, drawn independently and shared across both pools: Baker (36), Carter (30), Ellis (36), Hayes (34), Jenkins (28), Morgan (27), Palmer (32), Reynolds (24), Sutton (24), Warren (29). Sex is matched across C1 and C2 within a scenario, so gender is not confounded with the identity cue; the realized split is 76 female and 74 male scenarios.
+
+**Two defects in the pool construction, both found after data collection.**
+
+*First, the exclusion list was not sourced to Gaddis and is wrong by its own stated rule.* Four Pool B names were dropped before the main grid — Lakisha, Latonya, Kenya, Tremayne — on the recorded ground that Gaddis "specifically flags" them as SES-atypical. Checked against Gaddis (2017) Table 1:
+
+| Excluded name | Gaddis quartile | Consistent with the stated rule? |
+|---|---|---|
+| Lakisha | lowest | Yes |
+| Latonya | lowest | Yes |
+| Kenya | middle | **No basis** |
+| Tremayne | middle | **No basis** |
+
+And two names in the lowest quartile — **Latoya** and **Tamika** — were retained, which the same rule would have excluded. The exclusion therefore removed two names it had no ground to remove and kept two it did. Because the exclusion is applied identically across every scenario and condition, it cannot generate a spurious identity contrast; its effect is on which names constitute the cue, not on the comparison between cues. We report it because it was an unsourced intervention presented as a sourced one, and because it is not reproducible from the citation given.
+
+*Second, and more consequentially, the two pools are not balanced on the SES correlate.* Pool A is 11 of 18 highest-quartile and contains no lowest-quartile name; Pool B contains no highest-quartile name and two lowest-quartile names. This is precisely the confound Gaddis (2017) identifies: a raw Bertrand–Mullainathan contrast varies perceived race and perceived class together. **The C1/C2 contrast in this paper must therefore be read as a joint race-and-class cue, not as a clean race cue,** and §3, §4.3 and §10 are written accordingly.
+
+**Why the results survive this.** The confound runs in a single direction: the Pool A names signal both higher-status race and higher-status class, and the Pool B names the reverse. Any steering or opportunity-loss mechanism operating on either attribute would push the C1/C2 contrast the *same* way, so the design is biased **toward** detecting a difference. We detect none — 47 of 48 contrasts null in §8.4, and 105 of 105 null in §8.11, with replicate noise exceeding between-condition variance throughout. A null under a confound that should amplify the effect is stronger evidence of absence than a null under a clean cue, not weaker. What the confound does forbid is the *decomposition*: we cannot say whether the absent effect is absent for race, for class, or for both, and we do not claim to.
+
+**What would close this properly.** Per-name numeric scores for both perceived race and perceived social class, obtained as data rather than read off a figure. Crabtree et al. (2022) is the correct source for the class dimension and Gaddis (2017) for race; both are open access, and the underlying per-name estimates would need to be requested from the authors or taken from a replication archive. With those in hand the correct procedure is to rebuild both pools matched on perceived class and re-run C1/C2 — which is a new data collection, not a re-analysis. Until then C1/C2 stands as a joint cue and the voucher contrast C3, which requires no name instrument at all, carries the identity analysis.
 
 ## Appendix C. Snapshots and protocol deviations
 
@@ -1200,7 +1261,9 @@ SDK `openai` 2.2.0, Python 3.8.8. Temperature at provider default; `max_completi
 2. **Mechanism separation (§9.4).** Order randomization, forced full-ranking before selection, pre-sorted input, and tool-based sorting. These four would distinguish attention dilution from numeric-comparison instability from output-stage execution error. Highest-value remaining item after the retrieval-freedom arm, and cheap.
 2b. **Replicate §8.10 (size sweep) on a second vendor.** ~US$30 on Claude. §8.8 has already been replicated (Table 20b).
 4. **Naturalistic-pool arm.** Candidates sampled as a real search would return them, without the enforced 2:1 infeasible ratio, before any claim about real-world prevalence.
-5. **Name-perception validation (Appendix B).** Gaddis (2017) scores, without which C1/C2 rest on an unvalidated instrument.
+5. **Name-perception validation (Appendix B) — partially closed, and rescoped.** The objective SES correlate is now recovered exactly from Gaddis (2017) Table 1 and reported for all 36 names; Appendix B has no remaining placeholder. What is *not* closed is the per-name numeric score for perceived race and perceived social class, because neither source tabulates them — Gaddis (2017) reports per-name perceived race only in raster figures, and per-name perceived *class* is not in that paper at all but in Crabtree et al. (2022), also as a figure. Reading values off those charts would fabricate precision, so we did not.
+
+   The original framing of this item was wrong in two ways worth recording. It attributed perceived-SES scores to Gaddis (2017), which does not measure them; and it treated the absence of scores as leaving C1/C2 simply "unvalidated". The recovered quartile data shows something more specific and more useful: the pools are systematically unbalanced on the SES correlate, so C1/C2 is a joint race-and-class cue whose confound biases *toward* detecting an effect. Closing this item properly means obtaining per-name estimates as data from the authors or a replication archive, rebuilding both pools matched on perceived class, and re-running C1/C2 — a new collection, not a re-analysis. Until then C3 (voucher) carries the identity analysis, and it needs no name instrument.
 5b. **Router cross-validation.** The nine-route check in §5.2 is a sanity test, not a validation. A 50–100 route comparison against an independent routing source, reporting MAE, median absolute error and 90th-percentile error stratified by borough, is needed before the commute layer can be called validated.
 5c. **Human coding of information withholding.** §6.2 detection is keyword-based. The observed rate is 0.0% across 6,631 responses, but a blind double-coding of 100–200 sampled responses with reported agreement would establish that the rule is not simply failing to fire.
 5d. **Version-of-record updates.** Author names were verified on 7 September 2026 (see References note). Samad et al. (2026) is listed as appearing at AIES '26 and its proceedings pagination is not yet available; any preprint that reaches a peer-reviewed venue before final submission should be recited to the version of record.
