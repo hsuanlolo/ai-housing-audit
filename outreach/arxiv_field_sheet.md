@@ -30,15 +30,28 @@ them. Do not add "DDes" here: arXiv's author field is names only.
 ------------------------------------------------------------------
 ABSTRACT
 ------------------------------------------------------------------
-Do NOT copy from this file -- it is too easy to catch the separator line
-below and blow the limit. That is what happened the first time: the
-abstract is 1,853 characters but a selection running to the next divider
-came to 1,949, over the 1,920 cap.
+Copy the whole of  outreach/arxiv_abstract.txt  -- it holds the abstract
+and nothing else. 1,877 characters of the 1,920 allowed, pure ASCII,
+single block, no leading "Abstract".
 
-Copy the whole of  outreach/arxiv_abstract.txt  instead. That file holds
-the abstract and nothing else: 1,853 characters, 67 to spare, pure ASCII
-so character and byte counts agree. Paste as one block; do not begin with
-the word "Abstract".
+TWO TRAPS ALREADY HIT, BOTH NOW DESIGNED OUT:
+
+  Length. Selecting the abstract out of this sheet caught the dash
+  separator line and came to 1,949, over the cap. Hence the separate file.
+
+  Dollar signs. arXiv runs MathJax over the abstract, so a bare $ opens
+  math mode and the next $ closes it. With five amounts in the text,
+  everything between "$900" and "$646" was rendered as a formula: spaces
+  collapsed and the words ran together as
+  "900/monthcheaperand3.5minutescloser". Every amount is now written as
+  "900 USD/month", so the file contains no $, backslash, underscore,
+  caret, brace or tilde at all. Escaping as \$ would also work where
+  MathJax runs, but arXiv abstracts also go out in listing emails, RSS
+  and API responses where the backslash can show through, so the symbol
+  is avoided rather than escaped.
+
+  Percent signs are kept: % is only special inside math mode and is
+  routine in arXiv abstracts.
 
 ------------------------------------------------------------------
 COMMENTS
