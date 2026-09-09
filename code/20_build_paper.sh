@@ -33,4 +33,5 @@ echo "building pdf ..."
   --print-to-pdf="$OUT.pdf" --virtual-time-budget=20000 \
   "file://$PWD/paper/manuscript.html" 2>/dev/null | grep -i "bytes written" || true
 
+python3 code/21_add_page_numbers.py "$OUT.pdf"
 python3 code/check_pdf.py "$OUT.pdf"

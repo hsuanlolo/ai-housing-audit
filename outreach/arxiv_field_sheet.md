@@ -1,7 +1,7 @@
 # arXiv submission — metadata field sheet
 
 File to upload:  paper/Lo_2026_Following_the_Preference_v2.pdf   (58 pages)
-  sha256 f2a317b397746442697beb8c899809258f755f522c649793558a4f1b0559cf35
+  sha256 afec6c88a137278852f4b4bc3cb7b0513bde62f0b822ee316fc7f9b2280b69ce
 NOT the SocArXiv v1 (also 58 pages, sha256 fbc5ca30...). Confirm the file you pick
 contains the phrase "Summary of findings" -- that is only in v2.
 
