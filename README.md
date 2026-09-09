@@ -131,12 +131,18 @@ The Staten Island Railway has no track connection to the subway, so a subway-onl
 
 `data/public/` contains everything releasable:
 
-| File | Contents |
-|---|---|
-| `audit_log.jsonl` | All 6,120 calls — pool-local ids, scores, tokens, cost |
-| `listing_derived.csv` | Listing ids, census tract, borough, and our GTFS-computed commute times |
-| `scenarios.csv` | 150 scenario definitions with feasible-set statistics |
-| `random_baseline.csv` | Chance floor per scenario |
+| File | Contents | Rows |
+|---|---|---|
+| `audit_log.jsonl` | The matched identity grid — pool-local ids, model response, tokens, cost, every derived outcome | 6,840 (6,631 parsed) |
+| `priority_swap.jsonl` | Within-scenario priority manipulation, `gpt-5.6-luna` (§8.8) | 1,350 (1,338) |
+| `priority_swap_claude.jsonl` | The same manipulation replicated on `claude-opus-5` | 165 (157) |
+| `pool_density.jsonl` | Pool-size and near-miss-ratio robustness arm (§8.9) | 800 (784) |
+| `size_sweep.jsonl` | Candidate-set-size mechanism diagnostic (§8.10) | 790 (691) |
+| `listing_derived.csv` | Listing ids, census tract, borough, and our GTFS-computed commute times | 3,885 |
+| `scenarios.csv` | 150 scenario definitions with feasible-set statistics | 150 |
+| `random_baseline.csv` | Chance floor per scenario | 150 |
+
+**9,945 calls attempted, 9,601 parsed (96.5%)** — matching the totals reported in the paper. Refresh the bundle with `python3 code/19_make_release.py` after collecting any new arm; the audit log was once copied by hand and silently went a whole vendor arm out of date.
 
 **Raw listing records are not redistributed.** RentCast's Terms of Use prohibit transfer or sublicense of their data, so rent, bedrooms, addresses and coordinates are withheld. Released fields are limited to identifiers and values *we* derived from public sources (MTA GTFS, Census TIGER). Re-run `01_fetch_listings.py` with your own RentCast key to reconstruct the full dataset.
 

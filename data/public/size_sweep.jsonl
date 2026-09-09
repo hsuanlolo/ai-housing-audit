@@ -1,0 +1,790 @@
+{"scenario_id": "S000", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005512000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S000", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006412000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S000", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008966, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S000", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006871999999999999, "parse_ok": true, "rent_gap": 960.0, "med_rent": 2950.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S000", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000977, "parse_ok": true, "rent_gap": 960.0, "med_rent": 2950.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S000", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0011714, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S001", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005262, "parse_ok": true, "rent_gap": 1595.0, "med_rent": 3195.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S001", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007997999999999999, "parse_ok": true, "rent_gap": 600.0, "med_rent": 2200.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S001", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007994, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S000", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00142728, "parse_ok": true, "rent_gap": 960.0, "med_rent": 2950.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S001", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008726, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S001", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0005939999999999999, "parse_ok": true, "rent_gap": 600.0, "med_rent": 2200.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S001", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0010505999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S000", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0023322, "parse_ok": true, "rent_gap": 210.0, "med_rent": 2200.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S002", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000832, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S002", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009176, "parse_ok": true, "rent_gap": 1560.0, "med_rent": 3220.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S001", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017963999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S003", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004824, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S001", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00140874, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S003", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004908, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S003", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006374, "parse_ok": true, "rent_gap": 150.0, "med_rent": 1800.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S002", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015038, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S003", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008462, "parse_ok": true, "rent_gap": 150.0, "med_rent": 1800.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S003", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000887, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S002", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014183, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S002", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.002092, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S003", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000698, "parse_ok": true, "rent_gap": 150.0, "med_rent": 1800.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S003", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011828, "parse_ok": true, "rent_gap": 350.0, "med_rent": 2000.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S004", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.00043739999999999995, "parse_ok": true, "rent_gap": 1150.0, "med_rent": 2800.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S003", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007931, "parse_ok": true, "rent_gap": 350.0, "med_rent": 2000.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S004", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005226, "parse_ok": true, "rent_gap": 1150.0, "med_rent": 2800.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S004", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006282799999999999, "parse_ok": true, "rent_gap": 945.0, "med_rent": 2595.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S004", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009854, "parse_ok": true, "rent_gap": 945.0, "med_rent": 2595.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S004", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001036, "parse_ok": true, "rent_gap": 945.0, "med_rent": 2595.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S002", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.002747, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S004", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00078226, "parse_ok": true, "rent_gap": 945.0, "med_rent": 2595.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S005", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006434, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S004", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012766000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S005", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006424000000000001, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S004", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014434, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S005", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005332000000000001, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S005", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007286, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S005", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0005123199999999999, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S005", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0009964000000000002, "parse_ok": true, "rent_gap": 766.0, "med_rent": 2556.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S005", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007954000000000001, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S005", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00078598, "parse_ok": true, "rent_gap": 766.0, "med_rent": 2556.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S006", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014575999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014636, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001341, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014035599999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014227999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.00152, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0021093999999999996, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S007", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007331999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S006", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0023682, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S007", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000665, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S007", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007681999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S007", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000755, "parse_ok": true, "rent_gap": 410.0, "med_rent": 2200.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S007", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009842, "parse_ok": true, "rent_gap": 410.0, "med_rent": 2200.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S007", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011784, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.00039939999999999995, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005457999999999999, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00054856, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S007", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017758, "parse_ok": true, "rent_gap": 410.0, "med_rent": 2200.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S007", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00142564, "parse_ok": true, "rent_gap": 460.0, "med_rent": 2250.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S008", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013959999999999997, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0017343999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00079464, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016042, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008977999999999999, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S008", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017645999999999998, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008797999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014711999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014388, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00075778, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011916, "parse_ok": true, "rent_gap": 250.0, "med_rent": 1900.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005298, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005082, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007063799999999999, "parse_ok": true, "rent_gap": 250.0, "med_rent": 1900.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010184, "parse_ok": true, "rent_gap": 129.0, "med_rent": 1779.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009292, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006805, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011862, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014753999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S009", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0020884000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S011", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008357999999999999, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S011", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000894, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S011", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0012018, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S011", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0013281999999999999, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S011", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0018378, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S011", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007836399999999999, "parse_ok": true, "rent_gap": 330.0, "med_rent": 1990.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S011", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014537999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S010", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0026525, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S011", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00139722, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008324, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008766, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014708, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008182199999999999, "parse_ok": true, "rent_gap": 645.0, "med_rent": 2245.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S012", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00077802, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014958, "parse_ok": true, "rent_gap": 190.0, "med_rent": 1790.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017651999999999998, "parse_ok": true, "rent_gap": 645.0, "med_rent": 2245.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S013", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005494, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S012", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.001614, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009178000000000001, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00064336, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004412, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004052, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0016845999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0018339999999999997, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007581999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010623599999999998, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2690.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000559, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000714, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001767, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2690.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S013", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.002428, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00052086, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S015", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0004412, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S015", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006104, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0009168, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S014", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0005578200000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S015", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0010735999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S015", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007194799999999999, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S015", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011366, "parse_ok": true, "rent_gap": 1337.0, "med_rent": 2997.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S016", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006806000000000001, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S015", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0010826199999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S016", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008227999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S016", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006517999999999999, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S016", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008431999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S015", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014103999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S015", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0016532, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S016", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0011848, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S016", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001117, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S016", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.000745, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S017", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0009006, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00062764, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0008998, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013805999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.000906, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S016", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00140806, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S018", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000353, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S018", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0003638, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00079578, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S018", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005232, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S018", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005928, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0020754, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S018", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00053616, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S018", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009954, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00046760000000000004, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S018", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00063822, "parse_ok": true, "rent_gap": 150.0, "med_rent": 2350.0, "opt_rent": 2200.0, "got_cheapest": false}
+{"scenario_id": "S018", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001182, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S017", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.002085, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008611999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00071208, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S019", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007910599999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014652, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015012, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0013327999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S019", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001167, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S020", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008472, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000539, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007106, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007905999999999999, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009797200000000001, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012599999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017974, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S020", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00142876, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S021", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0012078, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S021", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.001143, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S021", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00117874, "parse_ok": true, "rent_gap": 1640.0, "med_rent": 3300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S021", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.001462, "parse_ok": true, "rent_gap": 1740.0, "med_rent": 3400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S021", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008127400000000001, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S021", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0020993999999999995, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S021", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0020742, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S022", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011171999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S021", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0018063999999999999, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S022", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0005212799999999999, "parse_ok": true, "rent_gap": 950.0, "med_rent": 2600.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S022", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008698000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S022", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014699999999999997, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S022", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0010626, "parse_ok": true, "rent_gap": 425.0, "med_rent": 2075.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S022", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001195, "parse_ok": true, "rent_gap": 425.0, "med_rent": 2075.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S022", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.001519, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S022", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00141784, "parse_ok": true, "rent_gap": 425.0, "med_rent": 2075.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S023", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013867999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009878, "parse_ok": true, "rent_gap": 436.0, "med_rent": 2086.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0012205999999999999, "parse_ok": true, "rent_gap": 436.0, "med_rent": 2086.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00134, "parse_ok": true, "rent_gap": 436.0, "med_rent": 2086.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.001472, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015106000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015094000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S024", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000722, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S023", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00124058, "parse_ok": true, "rent_gap": 436.0, "med_rent": 2086.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S024", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009714000000000001, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S024", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008726, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S025", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00042740000000000003, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S024", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013208, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S025", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004862, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S025", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005136, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S024", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015242, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S024", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0008029199999999999, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S025", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005472000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S024", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001191, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S025", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0004820599999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S025", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000848, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S026", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005906, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S026", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007777999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S025", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00063812, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S026", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007528, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S026", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007948, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S025", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011522000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S026", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006574599999999999, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S026", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0009916, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S026", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0009392000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S027", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007076000000000001, "parse_ok": true, "rent_gap": 1630.0, "med_rent": 3280.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S027", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008504, "parse_ok": true, "rent_gap": 1630.0, "med_rent": 3280.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S026", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001184, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S027", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007876599999999999, "parse_ok": true, "rent_gap": 1512.0, "med_rent": 3162.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S027", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014944000000000001, "parse_ok": true, "rent_gap": 1512.0, "med_rent": 3162.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S027", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0018131999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S027", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014634, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014424, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007777999999999999, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S027", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0014206199999999998, "parse_ok": true, "rent_gap": 10.0, "med_rent": 1660.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S028", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014941999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00061528, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.002088, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S027", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.002091, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S029", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008422, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0016798, "parse_ok": true, "rent_gap": 436.0, "med_rent": 2086.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0015038, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S029", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013942, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S029", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011606, "parse_ok": true, "rent_gap": 1300.0, "med_rent": 2950.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S029", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013788, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S028", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00201512, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S029", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0013655, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S030", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005367999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S030", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005912000000000001, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S030", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007732, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S024", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00081144, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S029", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0010511, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S030", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006104, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S030", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00058102, "parse_ok": true, "rent_gap": 475.0, "med_rent": 2075.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S030", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00077542, "parse_ok": true, "rent_gap": 475.0, "med_rent": 2075.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S030", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007941599999999999, "parse_ok": true, "rent_gap": 475.0, "med_rent": 2075.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S029", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00204488, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S031", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005636, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S029", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.002136, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S031", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008298, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S031", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012558, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S030", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0024233999999999996, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S031", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0008864, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S031", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00069472, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S031", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014912, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S031", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001525, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S031", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0011872999999999999, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S032", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008223999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S032", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014548, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S032", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000929, "parse_ok": true, "rent_gap": 1340.0, "med_rent": 2990.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S032", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011428000000000002, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S032", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007836799999999999, "parse_ok": true, "rent_gap": 1340.0, "med_rent": 2990.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S032", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0012423999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S033", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007984000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S033", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006316, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S033", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007781999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S032", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0017176, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S033", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008862, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S032", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00126406, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S033", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00041386, "parse_ok": true, "rent_gap": 910.0, "med_rent": 2900.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S033", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009664, "parse_ok": true, "rent_gap": 910.0, "med_rent": 2900.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S034", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S034", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S034", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S033", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010345999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S033", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00069236, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S034", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008273999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S034", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008734, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S034", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011851999999999998, "parse_ok": true, "rent_gap": 540.0, "med_rent": 2200.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S034", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00108194, "parse_ok": true, "rent_gap": 540.0, "med_rent": 2200.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S034", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014525999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000986, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S035", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.001456, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007826600000000001, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014788, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015316, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011336, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S035", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0025192, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000856, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008144, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008623999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.001432, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006232400000000001, "parse_ok": true, "rent_gap": 1335.0, "med_rent": 2995.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S037", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008234, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014294, "parse_ok": true, "rent_gap": 1335.0, "med_rent": 2995.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S037", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0009734, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S037", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.00089, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S036", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00156684, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S036", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0024126, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S037", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008936, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S037", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009805999999999999, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S037", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007434799999999999, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S038", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005172, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S038", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006251999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S038", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005784, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S038", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008304, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S038", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00055204, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S039", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S039", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S037", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001749, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S038", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0010965999999999999, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S038", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00074508, "parse_ok": true, "rent_gap": 460.0, "med_rent": 2250.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S038", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011765999999999999, "parse_ok": true, "rent_gap": 460.0, "med_rent": 2250.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S037", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017607599999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S040", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S039", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007574, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S039", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008785999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S039", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007685999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S039", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00065628, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S040", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000703, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S040", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009764, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S040", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.001466, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S040", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015178, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S041", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S041", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S040", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009459799999999999, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S040", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008086, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S041", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000652, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S041", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00049, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S041", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007457999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S041", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00060492, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S042", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00043139999999999997, "parse_ok": true, "rent_gap": 1595.0, "med_rent": 3195.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S041", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011776, "parse_ok": true, "rent_gap": 200.0, "med_rent": 2900.0, "opt_rent": 2700.0, "got_cheapest": false}
+{"scenario_id": "S042", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005357999999999999, "parse_ok": true, "rent_gap": 1595.0, "med_rent": 3195.0, "opt_rent": 1600.0, "got_cheapest": false}
+{"scenario_id": "S042", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005204, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S041", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00102238, "parse_ok": true, "rent_gap": 200.0, "med_rent": 2900.0, "opt_rent": 2700.0, "got_cheapest": false}
+{"scenario_id": "S040", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0023997999999999997, "parse_ok": true, "rent_gap": 50.0, "med_rent": 1700.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S042", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005995999999999999, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S042", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009893999999999999, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S042", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00060382, "parse_ok": true, "rent_gap": 900.0, "med_rent": 2500.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S042", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007738799999999999, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005792000000000001, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005696000000000001, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014648, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S042", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017955999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S044", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S044", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S043", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014708, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009846, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008686, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S043", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007160399999999999, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S044", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005187999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S044", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007094, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S044", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000706, "parse_ok": true, "rent_gap": 960.0, "med_rent": 2950.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S044", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0005973399999999999, "parse_ok": true, "rent_gap": 960.0, "med_rent": 2950.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S044", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00068274, "parse_ok": true, "rent_gap": 1010.0, "med_rent": 3000.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S044", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011748, "parse_ok": true, "rent_gap": 1010.0, "med_rent": 3000.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S045", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000803, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S045", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000767, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S045", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013252, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S045", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011635999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S045", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013743999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S045", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016134, "parse_ok": true, "rent_gap": 840.0, "med_rent": 2500.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S046", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S046", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S045", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00130968, "parse_ok": true, "rent_gap": 840.0, "med_rent": 2500.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S045", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00099086, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S046", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0004996, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S046", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000801, "parse_ok": true, "rent_gap": 645.0, "med_rent": 2245.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S046", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011644, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S046", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012544, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S046", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017958, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S046", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00202932, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008902000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014663999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S048", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S047", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012648, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0018118, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0015995999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0013970999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S048", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007142, "parse_ok": true, "rent_gap": 600.0, "med_rent": 2250.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S048", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014794, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S048", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00059804, "parse_ok": true, "rent_gap": 600.0, "med_rent": 2250.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S048", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0021384, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S047", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0026006, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S048", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0021156, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S048", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008121999999999999, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S049", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008366, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S049", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S049", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008428, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S049", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007634000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S049", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007348, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S050", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000603, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S050", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004878, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S049", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011902, "parse_ok": true, "rent_gap": 540.0, "med_rent": 2200.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S050", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007417999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S049", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016145999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S050", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S048", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0030646, "parse_ok": false}
+{"scenario_id": "S050", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006192999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S049", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0023301999999999997, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S051", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006674, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S050", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011804, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S051", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000527, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S051", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S051", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S051", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S051", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005016, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S051", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007164000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S051", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006454, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S050", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0013296199999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S052", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004662, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S050", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0022275999999999997, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S052", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S052", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005506, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S053", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S052", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008273999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S052", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008074, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S052", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00078146, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S053", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000632, "parse_ok": true, "rent_gap": 1515.0, "med_rent": 3175.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S052", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016232, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S053", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0010156, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S053", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0010844000000000001, "parse_ok": true, "rent_gap": 1515.0, "med_rent": 3175.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S052", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017804000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S054", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S054", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S053", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009778, "parse_ok": true, "rent_gap": 1335.0, "med_rent": 2995.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S053", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00076732, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S053", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011626, "parse_ok": true, "rent_gap": 665.0, "med_rent": 2325.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S054", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005694, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S053", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00110152, "parse_ok": true, "rent_gap": 665.0, "med_rent": 2325.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S054", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007944200000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S054", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001509, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S055", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0010077999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S055", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S055", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S054", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00133368, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S054", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0017202, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S054", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0022208, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007208, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S055", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011745999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S055", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014401999999999998, "parse_ok": true, "rent_gap": 75.0, "med_rent": 1725.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S055", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009496, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S055", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014782, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S055", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011756800000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005914, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00044274, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000649, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007668, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.000759, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S057", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005052, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S057", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005748, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S057", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008384, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S056", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00080868, "parse_ok": true, "rent_gap": 210.0, "med_rent": 2200.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S057", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000969, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S057", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00074976, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S057", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012704, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S057", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007725599999999999, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S058", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013242, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S058", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008801999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S058", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009782, "parse_ok": true, "rent_gap": 1321.0, "med_rent": 2971.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S058", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00068336, "parse_ok": true, "rent_gap": 1321.0, "med_rent": 2971.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S057", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0028422, "parse_ok": true, "rent_gap": 1635.0, "med_rent": 3295.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S058", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0018702, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S059", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004412, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S058", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00109426, "parse_ok": true, "rent_gap": 1197.0, "med_rent": 2847.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S059", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005407999999999999, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S058", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0027066, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S059", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006102000000000001, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S059", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006966, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S058", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0018052, "parse_ok": true, "rent_gap": 1197.0, "med_rent": 2847.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S059", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00077948, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S060", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008564, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S059", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00114, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S059", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008000999999999999, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S059", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.001547, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S060", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0013088, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S060", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000875, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S060", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0012793999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S060", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0009626, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S060", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009706000000000001, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S060", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00050576, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S060", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007909600000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008272, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000897, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0009054000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014487999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00064028, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S061", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011726, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S062", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008364, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S062", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006588, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0015988000000000003, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S061", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014161000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S062", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009926, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S062", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00052976, "parse_ok": true, "rent_gap": 1140.0, "med_rent": 2800.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S062", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0006261199999999999, "parse_ok": true, "rent_gap": 740.0, "med_rent": 2400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S062", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013066, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S063", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S062", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011786, "parse_ok": true, "rent_gap": 740.0, "med_rent": 2400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S062", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013438, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S063", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008574, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S063", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000901, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S063", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00079362, "parse_ok": true, "rent_gap": 740.0, "med_rent": 2400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S063", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009984000000000002, "parse_ok": true, "rent_gap": 740.0, "med_rent": 2400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S063", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012558, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S064", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0003936, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S064", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00044039999999999997, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S063", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00081206, "parse_ok": true, "rent_gap": 540.0, "med_rent": 2200.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S064", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S064", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000778, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S063", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0018164000000000001, "parse_ok": true, "rent_gap": 540.0, "med_rent": 2200.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S064", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0010726800000000001, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S065", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S065", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S065", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008558, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S065", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S065", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S064", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008871999999999999, "parse_ok": true, "rent_gap": 990.0, "med_rent": 2650.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S065", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011798, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S064", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0018138, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S066", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S066", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S064", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0014964000000000002, "parse_ok": true, "rent_gap": 658.0, "med_rent": 2318.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S065", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011721999999999998, "parse_ok": true, "rent_gap": 940.0, "med_rent": 2600.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S067", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S066", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008437999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S067", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.00041020000000000005, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S066", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0010726, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S067", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006286, "parse_ok": true, "rent_gap": 550.0, "med_rent": 2200.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S066", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014474, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S065", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0021712, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S067", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0008577999999999999, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S067", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014439999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S067", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010405999999999998, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S067", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0008434, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S067", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00100712, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S066", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0028473999999999995, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009916, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013073999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.001473, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011745999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015258, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S068", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00112666, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S069", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0004971999999999999, "parse_ok": true, "rent_gap": 1650.0, "med_rent": 3300.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S068", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00143656, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S069", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0012642, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S069", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011902, "parse_ok": true, "rent_gap": 1000.0, "med_rent": 2650.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S069", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0018017999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S069", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0008074, "parse_ok": true, "rent_gap": 1100.0, "med_rent": 2750.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S069", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0021124, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S069", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0015956, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S070", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000486, "parse_ok": true, "rent_gap": 1640.0, "med_rent": 3300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S070", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008217999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S070", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005736000000000001, "parse_ok": true, "rent_gap": 1640.0, "med_rent": 3300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S070", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011518, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S070", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009662000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S070", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00077072, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S069", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00203822, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S071", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00046340000000000004, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S070", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011895999999999999, "parse_ok": true, "rent_gap": 1190.0, "med_rent": 2850.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S071", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S071", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004658, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S070", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007378599999999999, "parse_ok": true, "rent_gap": 1190.0, "med_rent": 2850.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S072", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00046280000000000003, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S071", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000992, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S072", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000548, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S072", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0005074, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S072", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S072", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S072", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S071", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015318, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S071", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001786, "parse_ok": true, "rent_gap": 1121.0, "med_rent": 2781.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S071", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0016443999999999999, "parse_ok": true, "rent_gap": 1121.0, "med_rent": 2781.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S073", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S073", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S072", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000523, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S072", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.000929, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S071", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0021318, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S073", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008085999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S074", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S074", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S074", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S074", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S074", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S073", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00072434, "parse_ok": true, "rent_gap": 1490.0, "med_rent": 3150.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S073", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009752, "parse_ok": true, "rent_gap": 1490.0, "med_rent": 3150.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S073", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010808, "parse_ok": true, "rent_gap": 715.0, "med_rent": 2375.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S073", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008374, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S073", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011252, "parse_ok": true, "rent_gap": 715.0, "med_rent": 2375.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S075", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005726, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S075", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007574, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S075", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007048, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S074", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0012304, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S074", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017116000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S075", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007812, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S075", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008968, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S074", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00193138, "parse_ok": true, "rent_gap": 450.0, "med_rent": 2100.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S075", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00078342, "parse_ok": true, "rent_gap": 1101.0, "med_rent": 2891.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S075", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011535999999999999, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S075", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00070318, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S076", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007015999999999999, "parse_ok": true, "rent_gap": 715.0, "med_rent": 2375.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S076", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008515999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S076", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S076", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0010747999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S076", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00066614, "parse_ok": true, "rent_gap": 715.0, "med_rent": 2375.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S076", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014131999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S078", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S078", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006797999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2200.0, "opt_rent": 2200.0, "got_cheapest": true}
+{"scenario_id": "S077", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010546, "parse_ok": true, "rent_gap": 150.0, "med_rent": 2350.0, "opt_rent": 2200.0, "got_cheapest": false}
+{"scenario_id": "S076", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001186, "parse_ok": true, "rent_gap": 590.0, "med_rent": 2250.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S076", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015224, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S078", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007352799999999999, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S078", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009141999999999999, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S078", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0009984000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S078", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.001236, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S079", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S079", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S079", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S079", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S077", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0013638399999999998, "parse_ok": true, "rent_gap": 150.0, "med_rent": 2350.0, "opt_rent": 2200.0, "got_cheapest": false}
+{"scenario_id": "S079", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000845, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S078", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017775999999999998, "parse_ok": true, "rent_gap": 540.0, "med_rent": 2200.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S078", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00102994, "parse_ok": true, "rent_gap": 640.0, "med_rent": 2300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S079", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011378, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S080", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000838, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S079", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0017616, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S080", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S080", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S080", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S080", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008356, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S081", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S081", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S081", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S079", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00142278, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S080", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007708, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S081", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0011461999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S081", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0013633999999999999, "parse_ok": true, "rent_gap": 140.0, "med_rent": 1790.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S080", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016006000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S081", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00139772, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S082", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000443, "parse_ok": true, "rent_gap": 1405.0, "med_rent": 3195.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S080", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0021076, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S082", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000454, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S082", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007693999999999999, "parse_ok": true, "rent_gap": 1405.0, "med_rent": 3195.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S082", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007708, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1790.0, "opt_rent": 1790.0, "got_cheapest": true}
+{"scenario_id": "S082", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0006524, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S082", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00045697999999999995, "parse_ok": true, "rent_gap": 605.0, "med_rent": 2395.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S083", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005655999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S081", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0015699999999999998, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S082", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001107, "parse_ok": true, "rent_gap": 766.0, "med_rent": 2556.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S083", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006675999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S083", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007302000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S081", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0030705999999999997, "parse_ok": false}
+{"scenario_id": "S082", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00142284, "parse_ok": true, "rent_gap": 766.0, "med_rent": 2556.0, "opt_rent": 1790.0, "got_cheapest": false}
+{"scenario_id": "S083", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000826, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S083", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000868, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000495, "parse_ok": true, "rent_gap": 1595.0, "med_rent": 3195.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S084", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S083", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007725599999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000441, "parse_ok": true, "rent_gap": 1595.0, "med_rent": 3195.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00070878, "parse_ok": true, "rent_gap": 200.0, "med_rent": 1800.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.001116, "parse_ok": true, "rent_gap": 200.0, "med_rent": 1800.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008828, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S084", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009308, "parse_ok": true, "rent_gap": 795.0, "med_rent": 2395.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S083", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0012270599999999999, "parse_ok": true, "rent_gap": 200.0, "med_rent": 2900.0, "opt_rent": 2700.0, "got_cheapest": false}
+{"scenario_id": "S085", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005912000000000001, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S085", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0007241999999999999, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S083", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0024132, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S085", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013422, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S085", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0010372, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S085", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014468, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S085", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00108522, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S085", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.001386, "parse_ok": true, "rent_gap": 1187.0, "med_rent": 2847.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S086", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008696, "parse_ok": true, "rent_gap": 10.0, "med_rent": 1660.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S086", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000811, "parse_ok": true, "rent_gap": 175.0, "med_rent": 1825.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S086", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S086", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000852, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S086", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013172000000000001, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S085", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00144886, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S086", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0007335, "parse_ok": true, "rent_gap": 250.0, "med_rent": 1900.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S087", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S086", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0009216, "parse_ok": true, "rent_gap": 250.0, "med_rent": 1900.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008294, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0005882, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011702000000000001, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009802, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007994, "parse_ok": true, "rent_gap": 5.0, "med_rent": 3000.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S087", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.00132, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2995.0, "opt_rent": 2995.0, "got_cheapest": true}
+{"scenario_id": "S086", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.002077, "parse_ok": true, "rent_gap": 10.0, "med_rent": 1660.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S088", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000552, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S088", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.000831, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S088", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006588, "parse_ok": true, "rent_gap": 690.0, "med_rent": 2350.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S088", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008598, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S088", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0004984, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S088", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000919, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S088", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011882000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S088", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00080372, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S089", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006837999999999999, "parse_ok": true, "rent_gap": 1640.0, "med_rent": 3300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S089", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S089", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008902, "parse_ok": true, "rent_gap": 1640.0, "med_rent": 3300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S089", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S090", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S091", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S091", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S089", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008286, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S089", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000991, "parse_ok": true, "rent_gap": 1640.0, "med_rent": 3300.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S089", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0014622, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S091", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.000821, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S091", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006167999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S092", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S092", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S092", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S092", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S091", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006684, "parse_ok": true, "rent_gap": 910.0, "med_rent": 2900.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S092", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0004684, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S092", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0006232000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 2700.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S092", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011715999999999999, "parse_ok": true, "rent_gap": 250.0, "med_rent": 2950.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S092", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0007879, "parse_ok": true, "rent_gap": 250.0, "med_rent": 2950.0, "opt_rent": 2700.0, "got_cheapest": true}
+{"scenario_id": "S091", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0014006, "parse_ok": true, "rent_gap": 410.0, "med_rent": 2400.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S093", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008493999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S093", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S094", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S093", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0006248, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S094", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S094", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "parse_ok": false}
+{"scenario_id": "S094", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "parse_ok": false}
+{"scenario_id": "S093", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0007774, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1990.0, "opt_rent": 1990.0, "got_cheapest": true}
+{"scenario_id": "S089", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0026438799999999995, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S094", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "parse_ok": false}
+{"scenario_id": "S095", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S093", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008744, "parse_ok": true, "rent_gap": 910.0, "med_rent": 2900.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S094", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0008372000000000001, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S093", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016031999999999997, "parse_ok": true, "rent_gap": 210.0, "med_rent": 2200.0, "opt_rent": 1990.0, "got_cheapest": false}
+{"scenario_id": "S094", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0019108000000000003, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S095", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009032, "parse_ok": true, "rent_gap": 850.0, "med_rent": 2500.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S094", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.002107, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S095", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014464, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S096", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S096", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S095", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0020878, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S095", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0021376, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S095", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0005384599999999999, "parse_ok": true, "rent_gap": 850.0, "med_rent": 2500.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S095", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011754, "parse_ok": true, "rent_gap": 475.0, "med_rent": 2125.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S095", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00078612, "parse_ok": true, "rent_gap": 475.0, "med_rent": 2125.0, "opt_rent": 1650.0, "got_cheapest": false}
+{"scenario_id": "S096", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00066538, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S096", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0013228, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S097", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S096", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0012056, "parse_ok": true, "rent_gap": 340.0, "med_rent": 1990.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S096", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00093214, "parse_ok": true, "rent_gap": 250.0, "med_rent": 1900.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S096", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0018052, "parse_ok": true, "rent_gap": 250.0, "med_rent": 1900.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S096", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0018428, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S097", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0008484, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S097", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000882, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S097", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0016906000000000002, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S098", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "parse_ok": false}
+{"scenario_id": "S097", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00077886, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S098", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.00048220000000000007, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S097", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0016068, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S098", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0009374, "parse_ok": true, "rent_gap": 740.0, "med_rent": 2400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S098", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.000881, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1660.0, "opt_rent": 1660.0, "got_cheapest": true}
+{"scenario_id": "S097", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00142336, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S098", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00059204, "parse_ok": true, "rent_gap": 740.0, "med_rent": 2400.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S097", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0022762, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1650.0, "opt_rent": 1650.0, "got_cheapest": true}
+{"scenario_id": "S098", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0014186, "parse_ok": true, "rent_gap": 1040.0, "med_rent": 2700.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S098", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0011635999999999999, "parse_ok": true, "rent_gap": 940.0, "med_rent": 2600.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S098", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00078914, "parse_ok": true, "rent_gap": 940.0, "med_rent": 2600.0, "opt_rent": 1660.0, "got_cheapest": false}
+{"scenario_id": "S099", "n_feas": 10, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.001449, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 20, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0015178, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 40, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.00077916, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 20, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 20, "usd": 0.0013557999999999999, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 10, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 10, "usd": 0.0016518, "parse_ok": true, "rent_gap": 0.0, "med_rent": 1600.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 40, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 40, "usd": 0.0015918, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 80, "rep": 1, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.00079304, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
+{"scenario_id": "S099", "n_feas": 80, "rep": 0, "model": "gpt-5.6-luna", "pool_n": 80, "usd": 0.0018134, "parse_ok": true, "rent_gap": 25.0, "med_rent": 1625.0, "opt_rent": 1600.0, "got_cheapest": true}
