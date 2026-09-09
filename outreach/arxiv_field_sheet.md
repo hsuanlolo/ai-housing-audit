@@ -28,12 +28,17 @@ and Independent Researcher as the affiliation. No honorifics; arXiv forbids
 them. Do not add "DDes" here: arXiv's author field is names only.
 
 ------------------------------------------------------------------
-ABSTRACT   (1,884 of the 1,920 characters arXiv allows)
+ABSTRACT
 ------------------------------------------------------------------
-Paste as ONE block, no blank lines. arXiv wraps at 80 characters itself and
-treats stray carriage returns oddly. Do not begin with the word "Abstract".
+Do NOT copy from this file -- it is too easy to catch the separator line
+below and blow the limit. That is what happened the first time: the
+abstract is 1,853 characters but a selection running to the next divider
+came to 1,949, over the 1,920 cap.
 
-Large language models are becoming the first point of contact for consumer search in domains where the stakes are material and the law is explicit. Existing audits show that models steer housing seekers by perceived identity, but none can say what a user loses when a recommender overlooks a suitable option, because none has an enumerated inventory to score omissions against. We audit AI housing recommendation against a verifiable ground truth. For each of 150 synthetic renter scenarios in New York City we build a pool of 120 real listings with known rent, bedrooms, and GTFS-computed transit commute, compute the exact set satisfying the renter's stated constraints, and derive its Pareto frontier. The primary outcome assumes no utility function: a recommendation is strictly dominated if the same pool holds a listing that is cheaper, faster to commute from, and no smaller in bedrooms. Across 9,945 calls to three models from two vendors, constraint compliance is near-perfect (1.8% violation against a 66.6% random floor), but 39.0% of recommendations are strictly dominated, and the dominating listing is a median $900/month cheaper and 3.5 minutes closer. A within-scenario manipulation separates two capabilities usually conflated: changing one sentence moves median recommended rent by $646/month in the correct direction, so preferences are honored, yet recommendations still sit $606/month above the five cheapest qualifying listings on the same screen, and an unambiguous lexicographic instruction yields no improvement under equivalence testing against a pre-specified $50 bound. The gap widens with candidate-set size and replicates across OpenAI and Anthropic models to within $3. We characterize the failure as compliance without optimization, propose dominance-rate instrumentation as a deployable diagnostic, and release all code, prompts, and per-call results.
+Copy the whole of  outreach/arxiv_abstract.txt  instead. That file holds
+the abstract and nothing else: 1,853 characters, 67 to spare, pure ASCII
+so character and byte counts agree. Paste as one block; do not begin with
+the word "Abstract".
 
 ------------------------------------------------------------------
 COMMENTS
