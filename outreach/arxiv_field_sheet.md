@@ -1,8 +1,15 @@
 # arXiv submission — metadata field sheet
 
 File to upload:  paper/Lo_2026_Following_the_Preference_v2.pdf   (59 pages)
-NOT the SocArXiv v1 (58 pages). Confirm the file you pick contains the phrase
-"Summary of findings" -- that is only in v2.
+  sha256 27ab8a554970af11c94f2b303258c42e38f1d93b2371b32e852505d8a9baa9be
+NOT the SocArXiv v1 (58 pages, sha256 fbc5ca30...). Confirm the file you pick
+contains the phrase "Summary of findings" -- that is only in v2.
+
+Rebuild with ./code/20_build_paper.sh, never by invoking pandoc directly. The
+hand-run command passed --metadata title= with a shortened title, which made
+pandoc emit its own title block on top of the manuscript's own heading, so
+page 1 printed the title twice. Fixed by using pagetitle, which sets the HTML
+<title> element without rendering a visible block.
 
 ------------------------------------------------------------------
 TITLE
