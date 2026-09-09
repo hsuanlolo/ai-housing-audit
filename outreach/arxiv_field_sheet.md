@@ -1,8 +1,8 @@
 # arXiv submission — metadata field sheet
 
-File to upload:  paper/Lo_2026_Following_the_Preference_v2.pdf   (59 pages)
-  sha256 27ab8a554970af11c94f2b303258c42e38f1d93b2371b32e852505d8a9baa9be
-NOT the SocArXiv v1 (58 pages, sha256 fbc5ca30...). Confirm the file you pick
+File to upload:  paper/Lo_2026_Following_the_Preference_v2.pdf   (58 pages)
+  sha256 f2a317b397746442697beb8c899809258f755f522c649793558a4f1b0559cf35
+NOT the SocArXiv v1 (also 58 pages, sha256 fbc5ca30...). Confirm the file you pick
 contains the phrase "Summary of findings" -- that is only in v2.
 
 Rebuild with ./code/20_build_paper.sh, never by invoking pandoc directly. The
@@ -38,7 +38,7 @@ Large language models are becoming the first point of contact for consumer searc
 ------------------------------------------------------------------
 COMMENTS
 ------------------------------------------------------------------
-59 pages, 4 figures, 31 tables. Code, prompts, and per-call results: https://github.com/hsuanlolo/ai-housing-audit
+58 pages, 4 figures, 31 tables. Code, prompts, and per-call results: https://github.com/hsuanlolo/ai-housing-audit
 
 Note the space after the URL is deliberate -- arXiv warns that a period
 directly after a URL gets absorbed into the link. End the field with the URL

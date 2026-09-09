@@ -33,14 +33,4 @@ echo "building pdf ..."
   --print-to-pdf="$OUT.pdf" --virtual-time-budget=20000 \
   "file://$PWD/paper/manuscript.html" 2>/dev/null | grep -i "bytes written" || true
 
-python3 - "$OUT.pdf" <<'PY'
-import fitz, sys, re
-d = fitz.open(sys.argv[1]); t = "".join(p.get_text() for p in d)
-lines = [l for l in d[0].get_text().split("\n") if l.strip()][:3]
-print(f"  pages {d.page_count}  images {len(re.findall(r'/Subtype', open(sys.argv[1],'rb').read().decode('latin1')))//1 and len([1 for pg in d for _ in pg.get_images()])}")
-print(f"  searchable: {len(t):,} chars")
-print("  page-1 first lines:")
-for l in lines: print("    ", l[:100])
-dup = lines[0].strip() and lines[1].strip().startswith(lines[0].strip()[:40])
-print(f"  DUPLICATE TITLE: {'YES -- still broken' if dup else 'no'}")
-PY
+python3 code/check_pdf.py "$OUT.pdf"
